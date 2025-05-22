@@ -1,10 +1,17 @@
 {
-  "name": "queenscare-cms-site",
+  "name": "queenscare-cms-site-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
   },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.4.4",
+    "@11ty/eleventy": "^2.0.1"
   }
 }
