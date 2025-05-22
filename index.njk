@@ -1,0 +1,72 @@
+---
+layout: "base.njk"
+title: "Queens Care Laboratories"
+---
+<section class="hero">
+  <h1>{{ hero.headline }}</h1>
+  <p>{{ hero.subheadline }}</p>
+  <a href="{{ hero.cta_link }}" class="cta">{{ hero.cta }}</a>
+</section>
+<section class="about">
+  <h2>About Us</h2>
+  <div>
+    <h3>Our Story</h3>
+    <p>{{ about.story | safe }}</p>
+    <h3>Our Values</h3>
+    <p>{{ about.values | safe }}</p>
+    <h3>Our Mission</h3>
+    <p>{{ about.mission | safe }}</p>
+  </div>
+</section>
+<section class="products">
+  <h2>Our Products</h2>
+  <div class="product-list">
+    {% for product in collections.products %}
+    <div class="product-card">
+      <img src="{{ product.data.image }}" alt="{{ product.data.name }}">
+      <h3>{{ product.data.name }}</h3>
+      <p>{{ product.data.description | safe }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="why">
+  <h2>Why Choose Us</h2>
+  <ul>
+    {% for bullet in why.bullets %}
+    <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+</section>
+<section class="testimonials">
+  <h2>Testimonials</h2>
+  {% for t in testimonials.items %}
+    <blockquote>
+      "{{ t.quote }}"
+      <footer>— {{ t.name }}, {{ t.role }}</footer>
+    </blockquote>
+  {% endfor %}
+</section>
+<section class="faqs">
+  <h2>FAQs</h2>
+  <dl>
+    {% for faq in faqs.questions %}
+      <dt>{{ faq.question }}</dt>
+      <dd>{{ faq.answer | safe }}</dd>
+    {% endfor %}
+  </dl>
+</section>
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+  <p>Phone: <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
+  <p>WhatsApp: <a href="{{ contact.whatsapp }}">Chat</a></p>
+  <p>Address: {{ contact.address }}</p>
+  <div class="map">{{ contact.map | safe }}</div>
+</section>
+<footer>
+  <div class="social">
+    <!-- Add your social icons here -->
+  </div>
+  <p>&copy; {{ "now" | date("yyyy") }} Queens Care Laboratories. All rights reserved.</p>
+</footer>
