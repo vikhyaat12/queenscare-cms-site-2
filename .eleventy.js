@@ -1,12 +1,20 @@
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-  // Netlify CMS ke liye admin folder ko output (_site/admin) me copy karega
+  // Netlify CMS के लिए admin folder को output (_site/admin) में copy करेगा
   eleventyConfig.addPassthroughCopy("admin");
 
   // Date filter for Nunjucks templates
   eleventyConfig.addFilter("date", (dateObj, format = "yyyy-LL-dd") => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(format);
+    // dateObj को JS Date में safely बदलो
+    let jsDate;
+    if (!dateObj) return "";
+    if (typeof dateObj === "string" || typeof dateObj === "number") {
+      jsDate = new Date(dateObj);
+    } else {
+      jsDate = dateObj;
+    }
+    return DateTime.fromJSDate(jsDate, { zone: "utc" }).toFormat(format);
   });
 
   return {
