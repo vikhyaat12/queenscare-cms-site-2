@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-  auth_type: implicit
-  base_url: https://stupendous-mousse-21b169.netlify.app/
+  auth_type: oauth2
+  base_url: https://dev-0bf4vx8x3mwd8qwm.us.auth0.com/
   auth_endpoint: /authorize
   app_id: H8cBbhBhkgppdzhHdESN3B7V99yAaPgh
   token_endpoint: /oauth/token
