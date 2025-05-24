@@ -25,22 +25,3 @@ collections:
           - label: "Body"
             name: "body"
             widget: "markdown"
-
-
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "About"
-        name: "about"
-        file: "about.md"
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
