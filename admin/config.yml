@@ -1,11 +1,31 @@
 backend:
-  name: oauth2
+  name: git-gateway
+  branch: main
   auth_type: implicit
   base_url: https://stupendous-mousse-21b169.netlify.app/
   auth_endpoint: /authorize
   app_id: H8cBbhBhkgppdzhHdESN3B7V99yAaPgh
   token_endpoint: /oauth/token
-  api_root: https://api.github.com
+  api_root: https://api.github.com # assuming you're storing content on GitHub
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "about.md"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
