@@ -1,2 +1,4 @@
 /.netlify/identity/*    /admin    200
-/*    /index.html   200
+/admin/*                /admin    200
+/admin                  /admin    200
+/*                      /index.html   200
