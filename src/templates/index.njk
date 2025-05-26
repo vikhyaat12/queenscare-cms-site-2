@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title | default("Queens Care Laboratories - Enhancing Health & Life Naturally") }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description | default("Queens Care Laboratories: Premium health and wellness products. Enhancing Health & Life Naturally.") }}">
+  <meta property="og:title" content="{{ site.title | default('Queens Care Laboratories') }}" />
+  <meta property="og:description" content="{{ site.description | default('Premium health and wellness products. Enhancing Health & Life Naturally.') }}" />
+  <meta property="og:image" content="{{ site.hero_image | default('/images/hero-lab.jpg') }}" />
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="icon" href="{{ site.logo | default('/images/logo-qcl.png') }}">
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <!-- HEADER / NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#hero" class="logo">
+        <img src="{{ site.logo | default('/images/logo-qcl.png') }}" alt="Queens Care Laboratories Logo" />
+        <span>{{ site.title | default("Queens Care Laboratories") }}</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg" style="background-image:url('{{ site.hero_image | default('/images/hero-lab.jpg') }}')"></div>
+    <div class="container hero-content">
+      <h1>{{ hero.title | default('Enhancing Health &amp; Life <span class="highlight">Naturally</span>') | safe }}</h1>
+      <p class="hero-desc">{{ hero.description | default('Premium health & wellness products trusted by doctors and families.') }}</p>
+      <a href="#products" class="cta-btn">{{ hero.cta | default('Explore Products') }}</a>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="about-section section">
+    <div class="container about-content">
+      <div class="about-img">
+        <img src="{{ about.image | default('/images/about-lab.jpg') }}" alt="Modern Laboratory" />
+      </div>
+      <div class="about-text">
+        <h2>{{ about.heading | default('Our Story') }}</h2>
+        <p>{{ about.story | default('Founded in <strong>2010</strong>, Queens Care Laboratories is dedicated to enhancing your well-being through innovative, high-quality health and wellness solutions.') | safe }}</p>
+        <h3>Mission</h3>
+        <p>{{ about.mission | default('To deliver premium, safe, and effective products that improve the quality of life for our customers.') }}</p>
+        <h3>Values</h3>
+        <ul>
+          {% for value in about.values %}
+            <li>{{ value.item }}</li>
+          {% else %}
+            <li>Innovation in healthcare</li>
+            <li>Premium packaging for safety & freshness</li>
+            <li>Customer-centric approach</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products-section section">
+    <div class="container">
+      <h2 class="section-title">{{ products.title | default('Our Products') }}</h2>
+      <div class="products-grid">
+        {% for product in products.items %}
+        <div class="product-card">
+          <img src="{{ product.image | default('/images/product-placeholder1.jpg') }}" alt="{{ product.name }}">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+        </div>
+        {% else %}
+        <div class="product-card">
+          <img src="/images/product-likeoq.jpg" alt="Likeoq Multivitamin Syrup" />
+          <h3>Likeoq Multivitamin Syrup</h3>
+          <p>Complete multivitamin syrup for daily wellness. Tasty, doctor-formulated, and suitable for all ages.</p>
+        </div>
+        <div class="product-card">
+          <img src="/images/product-placeholder1.jpg" alt="Herbal Immunity Capsules" />
+          <h3>Herbal Immunity Capsules</h3>
+          <p>Natural blend to strengthen immunity. 100% herbal, safe, and effective for the whole family.</p>
+        </div>
+        <div class="product-card">
+          <img src="/images/product-placeholder2.jpg" alt="Kids Growth Tonic" />
+          <h3>Kids Growth Tonic</h3>
+          <p>Specially designed tonic to support healthy growth and development in children.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="why-section section">
+    <div class="container">
+      <h2 class="section-title">{{ why.title | default('Why Choose Us') }}</h2>
+      <div class="why-grid">
+        {% for item in why.reasons %}
+        <div class="why-card">
+          <img src="{{ item.icon | default('/images/why-doctor.png') }}" alt="{{ item.title }}" />
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.text }}</p>
+        </div>
+        {% else %}
+        <div class="why-card">
+          <img src="/images/why-doctor.png" alt="Doctor Recommended" />
+          <h4>Doctor Recommended</h4>
+          <p>Trusted by healthcare professionals nationwide.</p>
+        </div>
+        <div class="why-card">
+          <img src="/images/why-quality.png" alt="Premium Quality" />
+          <h4>Premium Quality</h4>
+          <p>We use only the highest quality ingredients and processes.</p>
+        </div>
+        <div class="why-card">
+          <img src="/images/why-packaging.png" alt="Attractive Packaging" />
+          <h4>Attractive Packaging</h4>
+          <p>Innovative, safe, and visually appealing product packaging.</p>
+        </div>
+        <div class="why-card">
+          <img src="/images/why-customer.png" alt="Customer Satisfaction" />
+          <h4>Customer Satisfaction</h4>
+          <p>Thousands of happy customers and a dedicated support team.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials-section section">
+    <div class="container">
+      <h2 class="section-title">{{ testimonials.title | default('Testimonials') }}</h2>
+      <div class="testimonials-grid">
+        {% for t in testimonials.items %}
+        <div class="testimonial-card">
+          <img src="{{ t.avatar | default('/images/testimonial-customer1.jpg') }}" alt="{{ t.name }}" class="testimonial-avatar" />
+          <blockquote>{{ t.quote }}</blockquote>
+          <cite>{{ t.name }}<br><span>{{ t.title }}</span></cite>
+        </div>
+        {% else %}
+        <div class="testimonial-card">
+          <img src="/images/testimonial-customer1.jpg" alt="Dr. Priya Sharma" class="testimonial-avatar" />
+          <blockquote>“Queens Care’s Likeoq Syrup is my top recommendation for families. The quality and results are outstanding.”</blockquote>
+          <cite>Dr. Priya Sharma<br><span>Paediatrician</span></cite>
+        </div>
+        <div class="testimonial-card">
+          <img src="/images/testimonial-customer2.jpg" alt="Mr. Rajesh Kumar" class="testimonial-avatar" />
+          <blockquote>“We love the premium packaging and effectiveness of the products. Excellent for my family’s health!”</blockquote>
+          <cite>Rajesh Kumar<br><span>Customer</span></cite>
+        </div>
+        <div class="testimonial-card">
+          <img src="/images/testimonial-customer3.jpg" alt="Dr. Neha Agarwal" class="testimonial-avatar" />
+          <blockquote>“Innovative and trustworthy! Queens Care Labs always delivers top-notch wellness solutions.”</blockquote>
+          <cite>Dr. Neha Agarwal<br><span>General Physician</span></cite>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faqs" class="faq-section section">
+    <div class="container">
+      <h2 class="section-title">{{ faqs.title | default('Frequently Asked Questions') }}</h2>
+      <div class="faq-list">
+        {% for faq in faqs.items %}
+        <div class="faq-item">
+          <button class="faq-question">{{ faq.question }}</button>
+          <div class="faq-answer">{{ faq.answer }}</div>
+        </div>
+        {% else %}
+        <div class="faq-item">
+          <button class="faq-question">Are Queens Care products safe for daily use?</button>
+          <div class="faq-answer">Yes, all our products are formulated with safe, clinically tested ingredients, suitable for daily use as directed.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Where can I buy your products?</button>
+          <div class="faq-answer">Our products are available at leading pharmacies, healthcare stores, and online platforms.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer products for children?</button>
+          <div class="faq-answer">Yes, we have specially formulated products for children, including our best-selling Kids Growth Tonic.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How can I contact customer support?</button>
+          <div class="faq-answer">You can contact us via email, WhatsApp, or the contact form below for any assistance.</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section id="contact" class="contact-section section">
+    <div class="container contact-content">
+      <div class="contact-form-block">
+        <h2>{{ contact.title | default('Contact Us') }}</h2>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <label>
+            Name:
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email:
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message:
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="cta-btn">{{ contact.button | default('Send Message') }}</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:{{ contact.email | default('info@queenscarelabs.com') }}">{{ contact.email | default('info@queenscarelabs.com') }}</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/{{ contact.whatsapp | default('9760006841') }}" target="_blank">Chat Now</a></p>
+        </div>
+      </div>
+      <div class="contact-map-block">
+        <iframe src="{{ contact.map_embed | default('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1234567890!2d75.789012!3d26.912345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2sQueens%20Care%20Laboratories!5e0!3m2!1sen!2sin!4v1682600000000!5m2!1sen!2sin') }}" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="{{ site.logo | default('/images/logo-qcl.png') }}" alt="Queens Care Laboratories Logo" />
+        <span>{{ site.title | default("Queens Care Laboratories") }}</span>
+      </div>
+      <nav class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#why">Why Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://wa.me/{{ contact.whatsapp | default('9760006841') }}" target="_blank" aria-label="WhatsApp">
+          <img src="/images/icon-whatsapp.svg" alt="WhatsApp"/>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <img src="/images/icon-facebook.svg" alt="Facebook"/>
+        </a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <img src="/images/icon-instagram.svg" alt="Instagram"/>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © {{ site.year | default('2025') }} Queens Care Laboratories. All Rights Reserved.
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>
