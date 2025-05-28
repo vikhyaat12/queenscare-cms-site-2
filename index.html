@@ -560,6 +560,7 @@
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
             padding: 10px;
             border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .layer-btn {
@@ -571,11 +572,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap; /* Prevent wrapping */
+            font-weight: 500;
         }
         
         .layer-btn:hover, .layer-btn.active {
             background: var(--secondary);
             color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .future-products {
@@ -809,6 +812,19 @@
             font-weight: 600;
             color: var(--primary);
             margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .testimonial-author span {
@@ -816,6 +832,15 @@
             font-size: 0.9rem;
             color: var(--gray);
             font-weight: 400;
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .stars i {
+            font-size: 1.1rem;
+            margin: 0 2px;
         }
 
         /* FAQs Section */
@@ -1087,6 +1112,31 @@
             color: #adb5bd;
             font-size: 0.9rem;
         }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            background-color: #1DA851;
+        }
         
         @media (max-width: 768px) {
             .hero h1 {
@@ -1142,6 +1192,14 @@
             .contact-form, .contact-info-block {
                 min-width: unset;
                 width: 100%;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -1428,17 +1486,17 @@
                 <div class="featured-image">
                     <div id="molecule-container"></div> 
                     <div class="nutrient-layers">
-                        <div class="layer-btn active">Vitamin Complex</div>
-                        <div class="layer-btn">Mineral Matrix</div>
-                        <div class="layer-btn">Bioavailability Enhancers</div>
+                        <div class="layer-btn active" data-layer="vitamin">Vitamin Complex</div>
+                        <div class="layer-btn" data-layer="mineral">Mineral Matrix</div>
+                        <div class="layer-btn" data-layer="bioavailability">Bioavailability Enhancers</div>
                     </div>
                 </div>
                 <div class="featured-details">
-                    <h3>LikeoQ® Multivitamin Syrup</h3>
-                    <span class="subtitle">Complete Nutritional Support for All Ages</span>
-                    <p>LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.</p>
+                    <h3 id="featured-title">LikeoQ® Multivitamin Syrup</h3>
+                    <span class="subtitle" id="featured-subtitle">Complete Nutritional Support for All Ages</span>
+                    <p id="featured-description">LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.</p>
                     
-                    <div class="benefits-grid">
+                    <div class="benefits-grid" id="featured-benefits">
                         <div class="benefit-item">
                             <i class="fas fa-brain"></i>
                             <div>
@@ -1482,24 +1540,58 @@
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"Queens Care Laboratories' products have significantly improved my overall health. The quality is unmatched!"</p>
                     <div class="testimonial-author">
+                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Dr.P" alt="Dr. Priya Sharma">
                         Dr. Priya Sharma
                         <span>General Physician</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"I've been using LikeoQ® Multivitamin Syrup for my children, and I've noticed a remarkable improvement in their energy levels and immunity."</p>
                     <div class="testimonial-author">
+                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Mrs.A" alt="Mrs. Anjali Singh">
                         Mrs. Anjali Singh
                         <span>Parent & Homemaker</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"The research pipeline at Queens Care is truly impressive. They are at the forefront of pharmaceutical innovation."</p>
                     <div class="testimonial-author">
+                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Prof.R" alt="Prof. Rahul Kumar">
                         Prof. Rahul Kumar
                         <span>Pharmacology Researcher</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"As a fitness enthusiast, finding supplements that genuinely work is hard. Queens Care's products have become a staple in my routine!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Mr.V" alt="Mr. Vikramjeet Singh">
+                        Mr. Vikramjeet Singh
+                        <span>Fitness Coach</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"I highly recommend Queens Care for their commitment to quality and efficacy. Their products are a game-changer for daily health."</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Ms.S" alt="Ms. Sneha Reddy">
+                        Ms. Sneha Reddy
+                        <span>Nutritionist</span>
                     </div>
                 </div>
             </div>
@@ -1710,7 +1802,7 @@
                         <div>
                             <h4>WhatsApp Us</h4>
                             <p>Connect instantly for quick queries.</p>
-                            <a href="https://wa.me/9760006841" target="_blank">+91 97600 06841</a>
+                            <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank">+91 97600 06841</a>
                         </div>
                     </div>
                     <div class="contact-details-item">
@@ -1786,6 +1878,10 @@
             © 2025 Queens Care Laboratories. All rights reserved.
         </div>
     </footer>
+
+    <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Three.js DNA Helix Animation
@@ -2017,6 +2113,140 @@
                         icon.style.transform = 'rotate(180deg)';
                     } else {
                         icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // Featured Product Layer Buttons Functionality
+            const layerButtons = document.querySelectorAll('.nutrient-layers .layer-btn');
+            const featuredTitle = document.getElementById('featured-title');
+            const featuredSubtitle = document.getElementById('featured-subtitle');
+            const featuredDescription = document.getElementById('featured-description');
+            const featuredBenefits = document.getElementById('featured-benefits');
+
+            const layerContent = {
+                vitamin: {
+                    title: "LikeoQ® Multivitamin Syrup",
+                    subtitle: "Complete Nutritional Support for All Ages",
+                    description: "LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.",
+                    benefits: `
+                        <div class="benefit-item">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h4>Cognitive Support</h4>
+                                <p>B vitamins for mental clarity</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Cardiovascular Health</h4>
+                                <p>CoQ10 for heart function</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Immune Defense</h4>
+                                <p>Vitamins C, D, Zinc & Selenium</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bone"></i>
+                            <div>
+                                <h4>Bone Health</h4>
+                                <p>Calcium & Vitamin K2</p>
+                            </div>
+                        </div>
+                    `
+                },
+                mineral: {
+                    title: "Advanced Mineral Matrix",
+                    subtitle: "Essential Minerals for Bone & Enzyme Function",
+                    description: "Our Mineral Matrix ensures optimal absorption of vital minerals like Calcium, Magnesium, Zinc, and Selenium, crucial for bone density, enzyme activity, and cellular health.",
+                    benefits: `
+                        <div class="benefit-item">
+                            <i class="fas fa-bone"></i>
+                            <div>
+                                <h4>Strong Bones & Teeth</h4>
+                                <p>Calcium, Magnesium, Phosphorus</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-microscope"></i>
+                            <div>
+                                <h4>Enzyme & Hormone Support</h4>
+                                <p>Zinc, Selenium, Copper</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <div>
+                                <h4>Electrolyte Balance</h4>
+                                <p>Potassium, Sodium, Chloride</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <h4>Fluid Regulation</h4>
+                                <p>Essential for hydration & nerve function</p>
+                            </div>
+                        </div>
+                    `
+                },
+                bioavailability: {
+                    title: "Bioavailability Enhancers Complex",
+                    subtitle: "Maximize Nutrient Absorption & Efficacy",
+                    description: "This unique complex includes Piperine, Liposomal technology, and Co-factors to significantly enhance the absorption and utilization of all nutrients, ensuring maximum benefit from every dose.",
+                    benefits: `
+                        <div class="benefit-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Enhanced Absorption</h4>
+                                <p>Optimized uptake with Piperine</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-flask"></i>
+                            <div>
+                                <h4>Cellular Delivery</h4>
+                                <p>Liposomal technology for direct cell entry</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-hand-holding-medical"></i>
+                            <div>
+                                <h4>Synergistic Action</h4>
+                                <p>Co-factors for complete utilization</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Increased Efficacy</h4>
+                                <p>Ensures nutrients work at their best</p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+
+            layerButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    layerButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to the clicked button
+                    button.classList.add('active');
+
+                    const layerKey = button.dataset.layer;
+                    const content = layerContent[layerKey];
+
+                    if (content) {
+                        featuredTitle.textContent = content.title;
+                        featuredSubtitle.textContent = content.subtitle;
+                        featuredDescription.textContent = content.description;
+                        featuredBenefits.innerHTML = content.benefits;
                     }
                 });
             });
