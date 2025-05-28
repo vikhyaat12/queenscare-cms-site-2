@@ -6,81 +6,14 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "pages"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      roles: ["admin", "editor"]
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
-
   - name: "products"
     label: "Products"
-    folder: "products"
+    folder: "content/products"
     create: true
     slug: "{{slug}}"
-    editor:
-      roles: ["admin", "editor", "product-manager"]
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Price", name: "price", widget: "number" }
-      - { label: "Product Image", name: "image", widget: "image" }
-
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "testimonials"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      roles: ["admin", "editor", "testimonial-manager"]
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Testimonial", name: "testimonial", widget: "text" }
-      - { label: "Photo", name: "photo", widget: "image", required: false }
-
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-      roles: ["admin", "editor", "blogger"]
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Cover Image", name: "cover", widget: "image", required: false }
-
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - label: "General"
-        name: "general"
-        file: "data/settings/general.yml"
-        editor:
-          roles: ["admin"]
-        fields:
-          - { label: "Site Name", name: "site_name", widget: "string" }
-          - { label: "Logo", name: "logo", widget: "image" }
-          - { label: "Brand Primary Color", name: "primary_color", widget: "color" }
-          - { label: "Brand Secondary Color", name: "secondary_color", widget: "color", required: false }
-          - { label: "Background Color", name: "background_color", widget: "color", required: false }
-          - { label: "Font Family", name: "font_family", widget: "string", required: false }
-          - { label: "Favicon", name: "favicon", widget: "image", required: false }
-          - { label: "Social Links", name: "social", widget: "list", fields: [
-                { label: "Label", name: "label", widget: "string" },
-                { label: "URL", name: "url", widget: "string" }
-              ] }
-
-      - label: "Custom CSS"
-        name: "css"
-        file: "data/settings/custom_css.md"
-        editor:
-          roles: ["admin", "developer"]
-        fields:
-          - { label: "Custom CSS", name: "body", widget: "code", default_language: "css" }
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
