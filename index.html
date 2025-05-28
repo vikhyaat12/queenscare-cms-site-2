@@ -2052,13 +2052,13 @@
             requestAnimationFrame(animateMolecule);
         }
 
-        // Initialize Three.js animations on window load
-        window.onload = function() {
+        // Initialize Three.js animations on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
             initDNAHelix();
             animateDNAHelix();
             initMolecule();
             animateMolecule();
-        };
+        });
 
         // Product search functionality
         document.addEventListener('DOMContentLoaded', () => {
