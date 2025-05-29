@@ -1,21 +1,88 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # or master if you're using master branch
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+# These lines are crucial for media uploads
+media_folder: "public/images/uploads" # Where uploaded files are stored in your repo
+public_folder: "/images/uploads" # The public path to access uploaded files
 
-media_library:
-  name: uploadcare
-  config:
-    publicKey: demo
+# This will enable the live preview in the CMS (optional, but recommended)
+publish_mode: editorial_workflow
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  # Products Collection
+  - name: "products"
+    label: "🛍️ Products"
+    folder: "content/products" # Where product content files will be stored
+    create: true # Allow users to create new products
+    slug: "{{slug}}" # Auto-generate slugs from the title
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Description", name: "description", widget: "markdown", required: true}
+      - {label: "Price", name: "price", widget: "number", value_type: "float", required: true}
+      - {label: "Image", name: "image", widget: "image", required: false, hint: "Upload an image for the product"}
+      - {label: "Category", name: "category", widget: "string", required: false, hint: "e.g., Electronics, Apparel, Books"}
+      - {label: "SKU", name: "sku", widget: "string", required: false, hint: "Stock Keeping Unit"}
+      - {label: "In Stock", name: "in_stock", widget: "boolean", default: true}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Mark as a featured product on the homepage"}
+
+  # Settings Collection (Single File)
+  - name: "settings"
+    label: "⚙️ Site Settings"
     files:
-      - label: "Home"
-        name: "home"
-        file: "index.html"
+      - label: "General Settings"
+        name: "general"
+        file: "content/settings/general.json" # Path to the single settings file
         fields:
-          - { label: "Title", name: "title", widget: "string" }
+          - {label: "Site Title", name: "site_title", widget: "string", required: true}
+          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload your site's logo"}
+          - label: "Colors"
+            name: "colors"
+            widget: "object"
+            fields:
+              - {label: "Primary Color", name: "primary", widget: "color", default: "#007bff", hint: "Main brand color"}
+              - {label: "Secondary Color", name: "secondary", widget: "color", default: "#6c757d", hint: "Secondary brand color"}
+              - {label: "Accent Color", name: "accent", widget: "color", default: "#fd7e14", hint: "Highlight color"}
+              - {label: "Text Color", name: "text", widget: "color", default: "#343a40", hint: "Default text color"}
+              - {label: "Background Color", name: "background", widget: "color", default: "#f8f9fa", hint: "Overall page background"}
+          - {label: "Contact Email", name: "contact_email", widget: "string", required: false, pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$", hint: "Valid email address for contact"}
+          - {label: "Phone Number", name: "phone_number", widget: "string", required: false}
+          - {label: "Address", name: "address", widget: "text", required: false}
+          - label: "Social Media Links"
+            name: "social_media"
+            widget: "list"
+            summary: "{{fields.platform}}"
+            fields:
+              - {label: "Platform", name: "platform", widget: "string", hint: "e.g., Facebook, Twitter, Instagram"}
+              - {label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile"}
+          - {label: "Footer Text", name: "footer_text", widget: "markdown", required: false, hint: "Content for the site footer"}
+          - {label: "Google Analytics ID", name: "google_analytics_id", widget: "string", required: false, hint: "UA-XXXXXXXXX-X or G-XXXXXXXXX"}
+
+  # Blog Posts Collection
+  - name: "blog"
+    label: "📝 Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Generates filename like 2024-05-30-my-post.md
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true, format: "YYYY-MM-DDTHH:mm:ssZ", time_format: true}
+      - {label: "Author", name: "author", widget: "string", required: true}
+      - {label: "Featured Image", name: "image", widget: "image", required: false, hint: "Optional image for the blog post header"}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      - {label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, hint: "Keywords for categorization"}
+      - {label: "Categories", name: "categories", widget: "list", default: [], allow_add: true, hint: "Broader categories for the post"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false, hint: "Set to true to hide from public site"}
+
+  # Pages Collection (for static pages like About, Contact, etc.)
+  - name: "pages"
+    label: "📄 Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Slug", name: "slug", widget: "string", required: true, hint: "URL path for the page (e.g., about-us)"}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      - {label: "Template", name: "template", widget: "select", options: ["default", "contact", "about"], default: "default", required: false, hint: "Optional: specify a layout template"}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
