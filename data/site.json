@@ -1,0 +1,351 @@
+{
+  "title": "Queens Care Laboratories",
+  "colors": {
+    "primary": "#0056b3",
+    "secondary": "#0d8a72",
+    "accent": "#d4af37",
+    "header_gradient_end": "#003a75"
+  },
+  "hero": {
+    "heading": "Enhancing Health & Life Naturally",
+    "paragraph": "At Queens Care Laboratories, we blend cutting-edge pharmaceutical research with premium quality formulations to deliver therapeutic solutions that enhance lives across all age groups.",
+    "button1_text": "Explore Products",
+    "button2_text": "Contact Us",
+    "background_image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  "about": {
+    "title": "About Queens Care Laboratories",
+    "subtitle": "Our journey towards health innovation and excellence.",
+    "story_heading": "Our Story & Mission",
+    "story_paragraph1": "Founded in 2010, Queens Care Laboratories embarked on a mission to revolutionize healthcare through scientifically-backed, high-quality pharmaceutical solutions. We believe in harnessing the power of nature and science to create products that genuinely improve well-being.",
+    "story_paragraph2": "Our commitment extends beyond product development; we are dedicated to ethical practices, sustainable sourcing, and fostering a healthier community. We are renowned for our **premium packaging** that ensures product integrity and our continuous drive for **innovation** in therapeutic formulations.",
+    "story_paragraph3": "We strive to be a trusted partner in health for families worldwide, providing safe, effective, and accessible medicines and supplements.",
+    "image_url": "https://placehold.co/400x300/0056b3/ffffff?text=Our+Lab",
+    "image_alt": "Queens Care Laboratories Lab",
+    "values": [
+      {
+        "icon": "fas fa-lightbulb",
+        "heading": "Innovation",
+        "description": "Constantly pushing boundaries in pharmaceutical research."
+      },
+      {
+        "icon": "fas fa-award",
+        "heading": "Quality",
+        "description": "Adhering to the highest global manufacturing standards."
+      },
+      {
+        "icon": "fas fa-heartbeat",
+        "heading": "Integrity",
+        "description": "Ethical practices and transparency in all operations."
+      },
+      {
+        "icon": "fas fa-users",
+        "heading": "Patient-Centricity",
+        "description": "Dedicated to improving lives through effective solutions."
+      }
+    ]
+  },
+  "therapeutic_areas": {
+    "title": "Therapeutic Excellence",
+    "subtitle": "Precision-formulated solutions targeting key health areas with scientifically validated ingredients and pharmaceutical-grade quality.",
+    "areas": [
+      {
+        "icon": "fas fa-apple-alt",
+        "heading": "Multivitamin & Nutritional Support",
+        "description": "Comprehensive nutritional solutions for all life stages, providing essential vitamins and minerals for daily wellness.",
+        "list_items": [
+          "LikeoQ® Multivitamin Syrup",
+          "Pediatric formulations",
+          "Geriatric nutrition support",
+          "Sports nutrition"
+        ]
+      },
+      {
+        "icon": "fas fa-shield-virus",
+        "heading": "Immune Health",
+        "description": "Advanced formulations designed to support and enhance the body's natural defense mechanisms.",
+        "list_items": [
+          "Herbal immunomodulators",
+          "Antioxidant complexes",
+          "Probiotic formulations",
+          "Seasonal immunity boosters"
+        ]
+      },
+      {
+        "icon": "fas fa-child",
+        "heading": "Growth & Development",
+        "description": "Specialized pediatric formulation for pediatric development supporting physical growth and cognitive function.",
+        "list_items": [
+          "Growth tonics",
+          "Cognitive development formulas",
+          "Bone health supplements",
+          "Appetite stimulants"
+        ]
+      }
+    ]
+  },
+  "products_section": {
+    "title": "Our Pharmaceutical Products",
+    "subtitle": "Discover our range of scientifically formulated medicines and supplements",
+    "search_placeholder": "Search for medicines..."
+  },
+  "why_choose_us": {
+    "title": "Why Choose Queens Care?",
+    "subtitle": "Our distinct advantages that make us your preferred health partner.",
+    "items": [
+      {
+        "icon": "fas fa-user-md",
+        "heading": "Doctor Recommended",
+        "description": "Trusted by healthcare professionals for proven efficacy and safety."
+      },
+      {
+        "icon": "fas fa-gem",
+        "heading": "Premium Quality",
+        "description": "Only the finest pharmaceutical-grade ingredients in every product."
+      },
+      {
+        "icon": "fas fa-box-open",
+        "heading": "Attractive Packaging",
+        "description": "Thoughtfully designed packaging ensuring product integrity and appeal."
+      },
+      {
+        "icon": "fas fa-smile-beam",
+        "heading": "Customer Satisfaction",
+        "description": "Dedicated to exceeding expectations with exceptional products and service."
+      }
+    ]
+  },
+  "featured_product": {
+    "title": "Featured Product",
+    "subtitle": "Our flagship formulation combining scientific innovation with premium ingredients",
+    "learn_more_button": "Learn More",
+    "layers": [
+      {
+        "id": "vitamin",
+        "name": "Vitamin Complex",
+        "title": "LikeoQ® Multivitamin Syrup",
+        "subtitle": "Complete Nutritional Support for All Ages",
+        "description": "LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.",
+        "benefits": [
+          { "icon": "fas fa-brain", "heading": "Cognitive Support", "description": "B vitamins for mental clarity" },
+          { "icon": "fas fa-heart", "heading": "Cardiovascular Health", "description": "CoQ10 for heart function" },
+          { "icon": "fas fa-shield-alt", "heading": "Immune Defense", "description": "Vitamins C, D, Zinc & Selenium" },
+          { "icon": "fas fa-bone", "heading": "Bone Health", "description": "Calcium & Vitamin K2" }
+        ]
+      },
+      {
+        "id": "mineral",
+        "name": "Mineral Matrix",
+        "title": "Advanced Mineral Matrix",
+        "subtitle": "Essential Minerals for Bone & Enzyme Function",
+        "description": "Our Mineral Matrix ensures optimal absorption of vital minerals like Calcium, Magnesium, Zinc, and Selenium, crucial for bone density, enzyme activity, and cellular health.",
+        "benefits": [
+          { "icon": "fas fa-bone", "heading": "Strong Bones & Teeth", "description": "Calcium, Magnesium, Phosphorus" },
+          { "icon": "fas fa-microscope", "heading": "Enzyme & Hormone Support", "description": "Zinc, Selenium, Copper" },
+          { "icon": "fas fa-balance-scale", "heading": "Electrolyte Balance", "description": "Potassium, Sodium, Chloride" },
+          { "icon": "fas fa-tint", "heading": "Fluid Regulation", "description": "Essential for hydration & nerve function" }
+        ]
+      },
+      {
+        "id": "bioavailability",
+        "name": "Bioavailability Enhancers",
+        "title": "Bioavailability Enhancers Complex",
+        "subtitle": "Maximize Nutrient Absorption & Efficacy",
+        "description": "This unique complex includes Piperine, Liposomal technology, and Co-factors to significantly enhance the absorption and utilization of all nutrients, ensuring maximum benefit from every dose.",
+        "benefits": [
+          { "icon": "fas fa-leaf", "heading": "Enhanced Absorption", "description": "Optimized uptake with Piperine" },
+          { "icon": "fas fa-flask", "heading": "Cellular Delivery", "description": "Liposomal technology for direct cell entry" },
+          { "icon": "fas fa-hand-holding-medical", "heading": "Synergistic Action", "description": "Co-factors for complete utilization" },
+          { "icon": "fas fa-chart-line", "heading": "Increased Efficacy", "description": "Ensures nutrients work at their best" }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Hear from those who have experienced the Queens Care difference.",
+    "items": [
+      {
+        "stars": 5,
+        "quote": "Queens Care Laboratories' products have significantly improved my overall health. The quality is unmatched!",
+        "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Dr.P",
+        "author_name": "Dr. Priya Sharma",
+        "author_title": "General Physician"
+      },
+      {
+        "stars": 5,
+        "quote": "I've been using LikeoQ® Multivitamin Syrup for my children, and I've noticed a remarkable improvement in their energy levels and immunity.",
+        "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Mrs.A",
+        "author_name": "Mrs. Anjali Singh",
+        "author_title": "Parent & Homemaker"
+      },
+      {
+        "stars": 5,
+        "quote": "The research pipeline at Queens Care is truly impressive. They are at the forefront of pharmaceutical innovation.",
+        "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Prof.R",
+        "author_name": "Prof. Rahul Kumar",
+        "author_title": "Pharmacology Researcher"
+      },
+      {
+        "stars": 5,
+        "quote": "As a fitness enthusiast, finding supplements that genuinely work is hard. Queens Care's products have become a staple in my routine!",
+        "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Mr.V",
+        "author_name": "Mr. Vikramjeet Singh",
+        "author_title": "Fitness Coach"
+      },
+      {
+        "stars": 5,
+        "quote": "I highly recommend Queens Care for their commitment to quality and efficacy. Their products are a game-changer for daily health.",
+        "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Ms.S",
+        "author_name": "Ms. Sneha Reddy",
+        "author_title": "Nutritionist"
+      }
+    ]
+  },
+  "faqs_section": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common queries about our products and services."
+  },
+  "pipeline": {
+    "title": "Our Research Pipeline",
+    "subtitle": "Innovating for tomorrow's health challenges with a robust pipeline of new formulations.",
+    "items": [
+      {
+        "icon": "fas fa-microscope",
+        "heading": "Advanced Oncology Drug",
+        "phase_class": "phase-2",
+        "phase_text": "Phase II Clinical Trials",
+        "description": "Targeted therapy for specific cancer types, showing promising results in early trials."
+      },
+      {
+        "icon": "fas fa-virus",
+        "heading": "Next-Gen Antiviral Agent",
+        "phase_class": "phase-1",
+        "phase_text": "Pre-Clinical Research",
+        "description": "Novel broad-spectrum antiviral with potential against emerging viral threats."
+      },
+      {
+        "icon": "fas fa-dna",
+        "heading": "Gene Therapy for Rare Diseases",
+        "phase_class": "phase-3",
+        "phase_text": "Phase III Clinical Trials",
+        "description": "Groundbreaking gene therapy aiming to correct genetic defects in rare conditions."
+      },
+      {
+        "icon": "fas fa-brain",
+        "heading": "Neurodegenerative Disorder Treatment",
+        "phase_class": "phase-1",
+        "phase_text": "Discovery Phase",
+        "description": "Exploring new pathways for treating Alzheimer's and Parkinson's diseases."
+      }
+    ]
+  },
+  "scientific_differentiation": {
+    "title": "Our Scientific Edge",
+    "subtitle": "What sets Queens Care Laboratories apart: innovation, quality, and proven efficacy.",
+    "table_rows": [
+      {
+        "feature": "Research & Development Investment",
+        "queens_care_value": "15% of Revenue",
+        "industry_standard_value": "5-8% of Revenue"
+      },
+      {
+        "feature": "Quality Control Protocols",
+        "queens_care_value": "Triple-Layered QA",
+        "industry_standard_value": "Standard QA"
+      },
+      {
+        "feature": "Bioavailability Enhancement",
+        "queens_care_value": "Proprietary Liposomal Delivery",
+        "industry_standard_value": "Conventional Absorption"
+      },
+      {
+        "feature": "Clinical Trial Success Rate",
+        "queens_care_value": "75%",
+        "industry_standard_value": "40-50%"
+      }
+    ]
+  },
+  "advisory": {
+    "title": "Our Commitment to Excellence",
+    "subtitle": "Adhering to the highest standards of safety, quality, and ethical practices.",
+    "quote": "At Queens Care Laboratories, every formulation undergoes rigorous testing and adheres to international pharmaceutical standards. Our commitment to patient safety and product efficacy is paramount.",
+    "certifications": [
+      { "icon": "fas fa-certificate", "name": "GMP Certified" },
+      { "icon": "fas fa-flask", "name": "ISO 9001:2015" },
+      { "icon": "fas fa-leaf", "name": "Organic Sourcing" },
+      { "icon": "fas fa-shield-alt", "name": "FDA Compliant" }
+    ]
+  },
+  "contact_us": {
+    "title": "Get In Touch",
+    "subtitle": "We'd love to hear from you. Reach out to us for any inquiries or support.",
+    "form_heading": "Send Us a Message",
+    "form_button": "Send Message",
+    "details": [
+      {
+        "icon": "fas fa-envelope",
+        "heading": "Email Us",
+        "description": "For general inquiries and support.",
+        "link": "mailto:info@queenscarelabs.com",
+        "link_text": "info@queenscarelabs.com"
+      },
+      {
+        "icon": "fab fa-whatsapp",
+        "heading": "WhatsApp Us",
+        "description": "Connect instantly for quick queries.",
+        "link": "https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products.",
+        "link_text": "+91 97600 06841",
+        "link_target": "_blank"
+      },
+      {
+        "icon": "fas fa-map-marker-alt",
+        "heading": "Our Location",
+        "description": "Visit our headquarters.",
+        "link": "",
+        "link_text": "123 Pharma Lane, Science City, IN 12345"
+      }
+    ],
+    "map_iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.50201267866!2d77.216667!3d28.613939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b00000001%3A0x123456789abcdef0!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin"
+  },
+  "footer": {
+    "company_name": "Queens Care Laboratories",
+    "company_description": "Pioneering health innovations through scientific excellence and premium quality.",
+    "social_links": [
+      { "icon": "fab fa-facebook-f", "url": "#" },
+      { "icon": "fab fa-twitter", "url": "#" },
+      { "icon": "fab fa-linkedin-in", "url": "#" },
+      { "icon": "fab fa-instagram", "url": "#" }
+    ],
+    "quick_links_heading": "Quick Links",
+    "quick_links": [
+      { "text": "Home", "url": "#hero" },
+      { "text": "About Us", "url": "#about" },
+      { "text": "Therapeutic Areas", "url": "#therapeutic" },
+      { "text": "Products", "url": "#products" },
+      { "text": "Why Choose Us", "url": "#why-choose-us" },
+      { "text": "Featured Product", "url": "#featured" },
+      { "text": "Testimonials", "url": "#testimonials" },
+      { "text": "FAQs", "url": "#faqs" },
+      { "text": "Research Pipeline", "url": "#pipeline" },
+      { "text": "Contact Us", "url": "#contact-us-section" }
+    ],
+    "legal_heading": "Legal",
+    "legal_links": [
+      { "text": "Privacy Policy", "url": "#" },
+      { "text": "Terms & Conditions", "url": "#" },
+      { "text": "Disclaimer", "url": "#" }
+    ],
+    "contact_info_heading": "Contact Info",
+    "contact_info_items": [
+      { "icon": "fas fa-map-marker-alt", "text": "123 Pharma Lane, Science City, IN 12345" },
+      { "icon": "fas fa-phone-alt", "text": "+91 98765 43210" },
+      { "icon": "fas fa-envelope", "text": "info@queenscarelabs.com" }
+    ],
+    "copyright_year": 2025
+  },
+  "whatsapp_float": {
+    "url": "https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products.",
+    "icon": "fab fa-whatsapp"
+  }
+}
