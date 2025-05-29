@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queens Care Laboratories | Pharmaceutical Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Queens Care Laboratories</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -110,10 +109,9 @@
             position: relative;
             margin-top: 70px;
             overflow: hidden;
-            text-align: center; /* Center content for hero */
+            text-align: center; 
         }
         
-        /* Re-adding #dna-helix styling */
         #dna-helix {
             position: absolute;
             top: 0;
@@ -124,26 +122,26 @@
         }
         
         .hero-content {
-            max-width: 800px; /* Increased max-width for better headline display */
+            max-width: 800px; 
             z-index: 10;
             position: relative;
-            margin: 0 auto; /* Center hero content */
+            margin: 0 auto; 
         }
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem; /* Increased font size */
+            font-size: 4.5rem; 
             margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Added text shadow for visibility */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); 
         }
         
         .hero p {
-            font-size: 1.4rem; /* Increased font size */
+            font-size: 1.4rem; 
             margin-bottom: 30px;
             max-width: 700px;
-            margin-left: auto; /* Center paragraph */
-            margin-right: auto; /* Center paragraph */
+            margin-left: auto; 
+            margin-right: auto; 
         }
         
         .btn {
@@ -158,13 +156,13 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Added shadow for buttons */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
         }
         
         .btn:hover {
             background-color: #0a6b58;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .btn-outline {
@@ -172,13 +170,13 @@
             border: 2px solid var(--accent);
             color: var(--accent);
             margin-left: 15px;
-            box-shadow: none; /* No shadow by default for outline */
+            box-shadow: none; 
         }
         
         .btn-outline:hover {
             background-color: var(--accent);
             color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
         }
         
         .section-title {
@@ -457,6 +455,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; 
+            gap: 10px; 
         }
         
         .price {
@@ -465,7 +465,7 @@
             font-size: 1.2rem;
         }
         
-        .view-btn {
+        .view-btn, .generate-info-btn { 
             padding: 8px 20px;
             background: var(--secondary);
             color: white;
@@ -474,10 +474,90 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            white-space: nowrap; 
         }
         
-        .view-btn:hover {
+        .view-btn:hover, .generate-info-btn:hover {
             background: #0a6b58;
+        }
+
+        /* Product Information Pop-up/Modal Styles */
+        .product-modal {
+            display: none; 
+            position: fixed;
+            z-index: 1001; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); 
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .product-modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .product-modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .product-modal-content p {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .product-modal-content .loading-indicator {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: var(--gray);
+        }
+        .product-modal-content .disclaimer {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            font-style: italic;
         }
         
         .featured-product {
@@ -500,12 +580,10 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #e8f4ff, #d1e7fe); /* Added background for consistency */
-            /* Removed flex properties and font styles as #molecule-container will handle content */
-            display: block; /* Ensure it behaves as a block to contain canvas */
+            background: linear-gradient(135deg, #e8f4ff, #d1e7fe); 
+            display: block; 
         }
         
-        /* Re-adding #molecule-container styling */
         #molecule-container {
             width: 100%;
             height: 100%;
@@ -552,12 +630,12 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
-            position: absolute; /* Position over the image */
+            position: absolute; 
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 10px;
             border-radius: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -571,7 +649,7 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            white-space: nowrap; /* Prevent wrapping */
+            white-space: nowrap; 
             font-weight: 500;
         }
         
@@ -781,23 +859,23 @@
 
         .testimonial-slider {
             display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap to slides */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            -webkit-overflow-scrolling: touch; 
             gap: 30px;
-            padding-bottom: 20px; /* Space for scrollbar */
+            padding-bottom: 20px; 
         }
 
         .testimonial-card {
-            flex: 0 0 100%; /* Each card takes full width of its parent */
-            max-width: 600px; /* Limit card width */
-            scroll-snap-align: center; /* Snap to center */
+            flex: 0 0 100%; 
+            max-width: 600px; 
+            scroll-snap-align: center; 
             background-color: #f8f9fa;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
-            margin: 0 auto; /* Center the card in the viewport */
+            margin: 0 auto; 
         }
 
         .testimonial-card p {
@@ -895,8 +973,295 @@
         }
 
         .faq-answer.open {
-            max-height: 200px; /* Adjust as needed based on content */
+            max-height: 200px; 
             padding-top: 10px;
+        }
+
+        /* AI Generator for FAQ Styles */
+        .faq-ai-generator {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .faq-ai-generator h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .faq-ai-generator textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            min-height: 80px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+
+        .faq-ai-generator .btn {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .faq-ai-generator .ai-response {
+            background-color: #f0f5fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 20px;
+            border: 1px solid #e0e5ea;
+            position: relative;
+        }
+
+        .faq-ai-generator .ai-response p {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0;
+        }
+
+        .faq-ai-generator .loading-indicator {
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 10px;
+        }
+        .faq-ai-generator .disclaimer {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Health Insights Section */
+        .health-insights {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .health-insights-generator {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .health-insights-generator h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .health-insights-generator textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            min-height: 120px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+
+        .health-insights-generator .btn {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .health-insights-generator .ai-response {
+            background-color: #f0f5fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 20px;
+            border: 1px solid #e0e5ea;
+            position: relative;
+            white-space: pre-wrap; 
+        }
+
+        .health-insights-generator .ai-response p {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0;
+        }
+
+        .health-insights-generator .loading-indicator {
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 10px;
+        }
+        .health-insights-generator .disclaimer {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .future-products {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pipeline-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .pipeline-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pipeline-item i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 15px 0;
+        }
+        
+        .phase-1 {
+            background-color: #e6f7ff;
+            color: #1890ff;
+        }
+        
+        .phase-2 {
+            background-color: #fff7e6;
+            color: #fa8c16;
+        }
+        
+        .phase-3 {
+            background-color: #f6ffed;
+            color: #52c41a;
+        }
+        
+        .scientific-differentiation {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), #003a75);
+            color: white; 
+        }
+        
+        .scientific-differentiation .section-title h2,
+        .scientific-differentiation .section-title p {
+            color: white; 
+        }
+
+        .differentiation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+        }
+        
+        .differentiation-table th, 
+        .differentiation-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white; 
+        }
+        
+        .differentiation-table th {
+            background-color: rgba(0, 0, 0, 0.3); 
+            font-weight: 600;
+        }
+        
+        .differentiation-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .differentiation-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+        
+        .stat-highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .advisory {
+            padding: 100px 0;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .advisory-statement {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #f0f9f7, #e8f4ff);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .advisory-statement:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            opacity: 0.2;
+        }
+        
+        .advisory-statement p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--dark);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .cert-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 120px;
+        }
+        
+        .cert-badge i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
         }
 
         /* Contact Us Section */
@@ -1007,7 +1372,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-top: 30px; /* Space from contact details */
+            margin-top: 30px; 
         }
 
         .google-map iframe {
@@ -1064,7 +1429,7 @@
             padding-left: 5px;
         }
         
-        .contact-info { /* This is for the footer contact info, distinct from main contact section */
+        .contact-info { 
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -1118,7 +1483,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366; /* WhatsApp green */
+            background-color: #25d366; 
             color: white;
             width: 60px;
             height: 60px;
@@ -1140,15 +1505,15 @@
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.8rem; /* Adjusted for smaller screens */
+                font-size: 2.8rem; 
             }
             
             .hero p {
-                font-size: 1.1rem; /* Adjusted for smaller screens */
+                font-size: 1.1rem; 
             }
             
             nav ul {
-                display: none; /* Hide nav on small screens, consider a hamburger menu if needed */
+                display: none; 
             }
             
             .benefits-grid {
@@ -1168,7 +1533,7 @@
             }
 
             .about-text, .about-image {
-                min-width: unset; /* Remove min-width for mobile */
+                min-width: unset; 
                 width: 100%;
             }
 
@@ -1177,12 +1542,12 @@
             }
 
             .testimonial-slider {
-                flex-direction: column; /* Stack testimonials on small screens */
-                scroll-snap-type: none; /* Disable snapping if stacked */
+                flex-direction: column; 
+                scroll-snap-type: none; 
             }
 
             .testimonial-card {
-                max-width: 100%; /* Full width on mobile */
+                max-width: 100%; 
             }
 
             .contact-content {
@@ -1218,6 +1583,7 @@
                     <li><a href="#why-choose-us">Why Choose Us</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#health-insights">Health Insights</a></li> 
                     <li><a href="#pipeline">Pipeline</a></li>
                     <li><a href="#contact-us-section">Contact</a></li>
                 </ul>
@@ -1362,6 +1728,7 @@
                         <div class="product-actions">
                             <div class="price">₹299</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="LikeoQ® Multivitamin Syrup" data-product-description="Comprehensive blend of 15 essential vitamins and 10 minerals for daily wellness and immune support.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
@@ -1377,6 +1744,7 @@
                         <div class="product-actions">
                             <div class="price">₹499</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="ImmunoShield Capsules" data-product-description="Advanced herbal formulation with Echinacea, Zinc, and Vitamin C to boost immune function.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
@@ -1392,6 +1760,7 @@
                         <div class="product-actions">
                             <div class="price">₹349</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="PediGrowth Tonic" data-product-description="Specialized pediatric formula with essential nutrients for physical and cognitive development.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
@@ -1406,6 +1775,7 @@
                         <div class="product-actions">
                             <div class="price">₹249</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="DailyVita Tablets" data-product-description="Complete daily multivitamin for adults with antioxidant protection and energy support.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
@@ -1421,6 +1791,7 @@
                         <div class="product-actions">
                             <div class="price">₹549</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="CardioCare Capsules" data-product-description="Omega-3 fatty acids and CoQ10 for cardiovascular support and cholesterol management.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
@@ -1436,12 +1807,24 @@
                         <div class="product-actions">
                             <div class="price">₹399</div>
                             <button class="view-btn">View Details</button>
+                            <button class="generate-info-btn" data-product-title="NeuroMind Syrup" data-product-description="Brain health formula with Ginkgo Biloba and Bacopa Monnieri for memory and focus.">Get More Info ✨</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="productInfoModal" class="product-modal">
+        <div class="product-modal-content">
+            <span class="close-button">×</span>
+            <h2 id="modalProductTitle"></h2>
+            <div id="modalProductInfo" class="ai-response">
+                <div class="loading-indicator">Generating information...</div>
+            </div>
+            <p class="disclaimer">This information is AI-generated and should not be taken as medical advice. Always consult a qualified healthcare professional for any health concerns.</p>
+        </div>
+    </div>
 
     <section class="why-choose-us" id="why-choose-us">
         <div class="container">
@@ -1650,6 +2033,34 @@
                     </div>
                 </div>
             </div>
+
+            <div class="faq-ai-generator">
+                <h3>AI-Powered Answers for Your Health Queries ✨</h3>
+                <textarea id="faqQuestionInput" placeholder="Type your question here, e.g., 'Why are multivitamins important?'"></textarea>
+                <button class="btn" id="askGeminiBtn">Ask Gemini ✨</button>
+                <div id="faqResponse" class="ai-response" style="display:none;">
+                    <div class="loading-indicator">Generating answer...</div>
+                </div>
+                <p class="disclaimer">This information is AI-generated and should not be taken as medical advice. Always consult a qualified healthcare professional for any health concerns.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="health-insights" id="health-insights">
+        <div class="container">
+            <div class="section-title">
+                <h2>Health Insights</h2>
+                <p>Get AI-generated articles on health topics.</p>
+            </div>
+            <div class="health-insights-generator">
+                <h3>Generate Article on a Health Topic ✨</h3>
+                <textarea id="healthTopicInput" placeholder="Type a health topic, e.g., 'Benefits of a healthy diet' or 'How to boost immunity?'"></textarea>
+                <button class="btn" id="generateArticleBtn">Generate Article ✨</button>
+                <div id="healthArticleResponse" class="ai-response" style="display:none;">
+                    <div class="loading-indicator">Generating article...</div>
+                </div>
+                <p class="disclaimer">This information is AI-generated and should not be taken as medical advice. Always consult a qualified healthcare professional for any health concerns.</p>
+            </div>
         </div>
     </section>
 
@@ -1843,6 +2254,7 @@
                     <li><a href="#featured">Featured Product</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#health-insights">Health Insights</a></li> 
                     <li><a href="#pipeline">Research Pipeline</a></li>
                     <li><a href="#contact-us-section">Contact Us</a></li>
                 </ul>
@@ -1888,7 +2300,7 @@
 
         function initDNAHelix() {
             const container = document.getElementById('dna-helix');
-            if (!container) return; // Exit if container not found
+            if (!container) return; 
 
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -1896,7 +2308,7 @@
             renderer.setSize(container.clientWidth, container.clientHeight);
             container.appendChild(renderer.domElement);
 
-            // Responsive canvas resize
+            // Resize canvas responsively
             window.addEventListener('resize', () => {
                 camera.aspect = container.clientWidth / container.clientHeight;
                 camera.updateProjectionMatrix();
@@ -1926,7 +2338,7 @@
             // Add complementary strand (offset)
             const points2 = [];
             for (let i = 0; i <= segments; i++) {
-                const t = (i / segments) * Math.PI * 2 * turns + Math.PI; // Offset by PI for complementary strand
+                const t = (i / segments) * Math.PI * 2 * turns + Math.PI; 
                 const x = radius * Math.cos(t);
                 const y = radius * Math.sin(t);
                 const z = (i / segments) * height - height / 2;
@@ -1938,7 +2350,7 @@
             scene.add(helix2);
 
             // Add "rungs" (bases)
-            for (let i = 0; i < segments; i += 5) { // Add rungs every few segments
+            for (let i = 0; i < segments; i += 5) { 
                 const p1 = points[i];
                 const p2 = points2[i];
                 const rungGeometry = new THREE.CylinderGeometry(0.01, 0.01, p1.distanceTo(p2), 8);
@@ -1947,11 +2359,11 @@
 
                 rung.position.set((p1.x + p2.x) / 2, (p1.y + p2.y) / 2, (p1.z + p2.z) / 2);
                 rung.lookAt(p2);
-                rung.rotateX(Math.PI / 2); // Align cylinder with the rung direction
+                rung.rotateX(Math.PI / 2); 
                 scene.add(rung);
             }
 
-            // Lights
+            // Lighting
             const ambientLight = new THREE.AmbientLight(0x404040);
             scene.add(ambientLight);
             const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -2006,7 +2418,7 @@
                 const angle = (i / numSurrounding) * Math.PI * 2;
                 const x = bondLength * Math.cos(angle);
                 const y = bondLength * Math.sin(angle);
-                const z = 0; // For a flat molecule
+                const z = 0; 
 
                 // Surrounding atom
                 const surroundingAtom = new THREE.Mesh(centralAtomGeometry.clone(), surroundingAtomMaterial);
@@ -2018,7 +2430,7 @@
                 const bond = new THREE.Mesh(bondGeometry, bondMaterial);
                 bond.position.set(x / 2, y / 2, z / 2);
                 bond.lookAt(centralAtom.position);
-                bond.rotateX(Math.PI / 2); // Align cylinder with the bond direction
+                bond.rotateX(Math.PI / 2); 
                 sceneMolecule.add(bond);
             }
 
@@ -2026,14 +2438,14 @@
             molecule.add(centralAtom);
             // Add surrounding atoms and bonds to the molecule group
             sceneMolecule.children.forEach(child => {
-                // Check if the child is already the centralAtom before adding to the group
+                // Check if the child is already the centralAtom before adding it to the group
                 if (child !== centralAtom && child instanceof THREE.Mesh) {
                     molecule.add(child);
                 }
             });
-            sceneMolecule.add(molecule); // Add the group to the scene
+            sceneMolecule.add(molecule); 
 
-            // Lights
+            // Lighting
             const ambientLight = new THREE.AmbientLight(0x404040);
             sceneMolecule.add(ambientLight);
             const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -2058,10 +2470,8 @@
             animateDNAHelix();
             initMolecule();
             animateMolecule();
-        });
 
-        // Product search functionality
-        document.addEventListener('DOMContentLoaded', () => {
+            // Product search functionality
             const searchInput = document.querySelector('.search-input');
             const searchBtn = document.querySelector('.search-btn');
             const productCards = document.querySelectorAll('.product-card');
@@ -2074,9 +2484,9 @@
                     const description = card.querySelector('.product-description').textContent.toLowerCase();
 
                     if (title.includes(searchTerm) || category.includes(searchTerm) || description.includes(searchTerm)) {
-                        card.style.display = 'flex'; // Show the card
+                        card.style.display = 'flex'; 
                     } else {
-                        card.style.display = 'none'; // Hide the card
+                        card.style.display = 'none'; 
                     }
                 });
             };
@@ -2088,7 +2498,7 @@
                 }
             });
 
-            // FAQ Accordion functionality
+            // FAQ accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
 
             faqQuestions.forEach(question => {
@@ -2116,7 +2526,7 @@
                 });
             });
 
-            // Featured Product Layer Buttons Functionality
+            // Featured Product layer buttons functionality
             const layerButtons = document.querySelectorAll('.nutrient-layers .layer-btn');
             const featuredTitle = document.getElementById('featured-title');
             const featuredSubtitle = document.getElementById('featured-subtitle');
@@ -2248,6 +2658,160 @@
                         featuredBenefits.innerHTML = content.benefits;
                     }
                 });
+            });
+
+            // --- Gemini API Integration ---
+
+            // Product Information Generator
+            const productInfoModal = document.getElementById('productInfoModal');
+            const modalProductTitle = document.getElementById('modalProductTitle');
+            const modalProductInfo = document.getElementById('modalProductInfo');
+            const closeButton = document.querySelector('.close-button');
+            const generateInfoButtons = document.querySelectorAll('.generate-info-btn');
+
+            generateInfoButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    const productTitle = button.dataset.productTitle;
+                    const productDescription = button.dataset.productDescription;
+
+                    modalProductTitle.textContent = productTitle;
+                    modalProductInfo.innerHTML = '<div class="loading-indicator">Generating information...</div>';
+                    productInfoModal.style.display = 'flex'; 
+
+                    try {
+                        const prompt = `Give me detailed information about "${productTitle}" based on this description: "${productDescription}". Include its benefits, scientific basis, and method of use. Please write it in a professional and informative manner suitable for a pharmaceutical company's website.`;
+                        
+                        let chatHistory = [];
+                        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                        const payload = { contents: chatHistory };
+                        const apiKey = ""; 
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            modalProductInfo.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
+                        } else {
+                            modalProductInfo.innerHTML = '<p style="color: red;">Failed to generate information. Please try again.</p>';
+                            console.error('Unexpected response structure from Gemini API:', result);
+                        }
+                    } catch (error) {
+                        modalProductInfo.innerHTML = '<p style="color: red;">An error occurred while generating information.</p>';
+                        console.error('Error in Gemini API call:', error);
+                    }
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                productInfoModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == productInfoModal) {
+                    productInfoModal.style.display = 'none';
+                }
+            });
+
+            // FAQ Answer Generator
+            const faqQuestionInput = document.getElementById('faqQuestionInput');
+            const askGeminiBtn = document.getElementById('askGeminiBtn');
+            const faqResponse = document.getElementById('faqResponse');
+
+            askGeminiBtn.addEventListener('click', async () => {
+                const question = faqQuestionInput.value.trim();
+                if (!question) {
+                    faqResponse.style.display = 'block';
+                    faqResponse.innerHTML = '<p style="color: orange;">Please enter a question.</p>';
+                    return;
+                }
+
+                faqResponse.style.display = 'block';
+                faqResponse.innerHTML = '<div class="loading-indicator">Generating answer...</div>';
+
+                try {
+                    const prompt = `Answer my question: "${question}". Please write it in a concise and informative manner suitable for a pharmaceutical company's website. If the question relates to medical advice, please clearly state that this is AI-generated information and not medical advice.`;
+                    
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        faqResponse.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
+                    } else {
+                        faqResponse.innerHTML = '<p style="color: red;">Failed to generate answer. Please try again.</p>';
+                        console.error('Unexpected response structure from Gemini API:', result);
+                    }
+                } catch (error) {
+                    faqResponse.innerHTML = '<p style="color: red;">An error occurred while generating the answer.</p>';
+                    console.error('Error in Gemini API call:', error);
+                }
+            });
+
+            // Health Insights Generator
+            const healthTopicInput = document.getElementById('healthTopicInput');
+            const generateArticleBtn = document.getElementById('generateArticleBtn');
+            const healthArticleResponse = document.getElementById('healthArticleResponse');
+
+            generateArticleBtn.addEventListener('click', async () => {
+                const topic = healthTopicInput.value.trim();
+                if (!topic) {
+                    healthArticleResponse.style.display = 'block';
+                    healthArticleResponse.innerHTML = '<p style="color: orange;">Please enter a health topic.</p>';
+                    return;
+                }
+
+                healthArticleResponse.style.display = 'block';
+                healthArticleResponse.innerHTML = '<div class="loading-indicator">Generating article...</div>';
+
+                try {
+                    const prompt = `Generate a concise (approx. 200-300 words) and informative article on the health topic: "${topic}". The article should be suitable for a pharmaceutical company's website, professional in tone, and easy to understand for a general audience. Include relevant benefits or facts. Conclude with a strong disclaimer that this is AI-generated information and not medical advice, and users should consult a healthcare professional.`;
+                    
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        healthArticleResponse.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
+                    } else {
+                        healthArticleResponse.innerHTML = '<p style="color: red;">Failed to generate article. Please try again.</p>';
+                        console.error('Unexpected response structure from Gemini API:', result);
+                    }
+                } catch (error) {
+                    healthArticleResponse.innerHTML = '<p style="color: red;">An error occurred while generating the article.</p>';
+                    console.error('Error in Gemini API call:', error);
+                }
             });
         });
     </script>
