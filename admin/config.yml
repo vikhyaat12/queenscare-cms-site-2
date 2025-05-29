@@ -1,34 +1,95 @@
 backend:
   name: git-gateway
-  branch: main # or master if you're using master branch
+  branch: main
 
-# These lines are crucial
-media_folder: "public/images/uploads"
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
+media_library:
+  name: uploadcare
+  config: {}
+
+site_url: https://queenscare.co.in
 
 collections:
   - name: "products"
     label: "Products"
-    folder: "content/products"
+    folder: "data/products"
     create: true
+    slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Price", name: "price", widget: "number"}
-      - {label: "Image", name: "image", widget: "image"}
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - label: "About Us"
+        name: "about"
+        file: "about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Contact Page"
+        name: "contact"
+        file: "contact.md"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Testimonial", name: "message", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+
+  - name: "faqs"
+    label: "FAQs"
+    folder: "data/faqs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Answer", name: "answer", widget: "text" }
 
   - name: "settings"
-    label: "Settings"
+    label: "Site Settings"
     files:
-      - label: "General Settings"
+      - label: "General"
         name: "general"
-        file: "content/settings/general.json"
+        file: "data/settings/general.json"
         fields:
-          - {label: "Site Title", name: "site_title", widget: "string"}
-          - {label: "Logo", name: "logo", widget: "image"}
-          - label: "Colors"
-            name: "colors"
-            widget: "object"
-            fields:
-              - {label: "Primary Color", name: "primary", widget: "string"}
-              - {label: "Secondary Color", name: "secondary", widget: "string"}
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Theme Color", name: "themeColor", widget: "color" }
+          - { label: "Background Image", name: "bgImage", widget: "image", required: false }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: false }
+          - { label: "Show Newsletter?", name: "newsletter", widget: "boolean", default: true }
+
+  - name: "hero"
+    label: "Hero Section"
+    file: "data/settings/hero.json"
+    fields:
+      - { label: "Main Heading", name: "heading", widget: "string" }
+      - { label: "Subheading", name: "subheading", widget: "text" }
+      - { label: "Hero Button Text", name: "button", widget: "string" }
+      - { label: "Hero Image", name: "heroImage", widget: "image" }
+
+  - name: "theme"
+    label: "Theme Options"
+    file: "data/settings/theme.json"
+    fields:
+      - { label: "Primary Color", name: "primaryColor", widget: "color" }
+      - { label: "Secondary Color", name: "secondaryColor", widget: "color" }
+      - { label: "Font", name: "fontFamily", widget: "select", options: ["Poppins", "Roboto", "Lato", "Arial", "Open Sans"], default: "Poppins" }
+
