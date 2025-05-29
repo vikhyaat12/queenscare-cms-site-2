@@ -822,386 +822,6 @@
             margin-bottom: 10px;
         }
 
-        /* Why Choose Us Section */
-        .why-choose-us {
-            padding: 100px 0;
-            background-color: #e8f4ff;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .why-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .why-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .why-item i {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .why-item h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .testimonial-slider {
-            display: flex;
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory; 
-            -webkit-overflow-scrolling: touch; 
-            gap: 30px;
-            padding-bottom: 20px; 
-        }
-
-        .testimonial-card {
-            flex: 0 0 100%; 
-            max-width: 600px; 
-            scroll-snap-align: center; 
-            background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            margin: 0 auto; 
-        }
-
-        .testimonial-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
-            color: var(--dark);
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary);
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .testimonial-author img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid var(--secondary);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .testimonial-author span {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--gray);
-            font-weight: 400;
-        }
-
-        .stars {
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-        .stars i {
-            font-size: 1.1rem;
-            margin: 0 2px;
-        }
-
-        /* FAQs Section */
-        .faqs {
-            padding: 100px 0;
-            background-color: #e8f4ff;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background-color: #f0f5fa;
-        }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 25px 20px;
-            color: var(--dark);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-        }
-
-        .faq-answer.open {
-            max-height: 200px; 
-            padding-top: 10px;
-        }
-
-        /* AI Generator for FAQ Styles */
-        .faq-ai-generator {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .faq-ai-generator h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .faq-ai-generator textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            min-height: 80px;
-            margin-bottom: 15px;
-            resize: vertical;
-        }
-
-        .faq-ai-generator .btn {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .faq-ai-generator .ai-response {
-            background-color: #f0f5fa;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 20px;
-            border: 1px solid #e0e5ea;
-            position: relative;
-        }
-
-        .faq-ai-generator .ai-response p {
-            font-size: 1rem;
-            color: var(--dark);
-            margin-bottom: 0;
-        }
-
-        .faq-ai-generator .loading-indicator {
-            font-style: italic;
-            color: var(--gray);
-            margin-top: 10px;
-        }
-        .faq-ai-generator .disclaimer {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        
-        .future-products {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .pipeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .pipeline-item {
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 10px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-        }
-        
-        .pipeline-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
-        
-        .pipeline-item i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .phase-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin: 15px 0;
-        }
-        
-        .phase-1 {
-            background-color: #e6f7ff;
-            color: #1890ff;
-        }
-        
-        .phase-2 {
-            background-color: #fff7e6;
-            color: #fa8c16;
-        }
-        
-        .phase-3 {
-            background-color: #f6ffed;
-            color: #52c41a;
-        }
-        
-        .scientific-differentiation {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary), #003a75);
-            color: white; 
-        }
-        
-        .scientific-differentiation .section-title h2,
-        .scientific-differentiation .section-title p {
-            color: white; 
-        }
-
-        .differentiation-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 50px;
-        }
-        
-        .differentiation-table th, 
-        .differentiation-table td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: white; 
-        }
-        
-        .differentiation-table th {
-            background-color: rgba(0, 0, 0, 0.3); 
-            font-weight: 600;
-        }
-        
-        .differentiation-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .differentiation-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.1); 
-        }
-        
-        .stat-highlight {
-            color: var(--accent);
-            font-weight: 700;
-        }
-        
-        .advisory {
-            padding: 100px 0;
-            text-align: center;
-            background-color: white;
-        }
-        
-        .advisory-statement {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background: linear-gradient(135deg, #f0f9f7, #e8f4ff);
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-        
-        .advisory-statement:before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 6rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--accent);
-            opacity: 0.2;
-        }
-        
-        .advisory-statement p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--dark);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .certifications {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .cert-badge {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 120px;
-        }
-        
-        .cert-badge i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
         /* Contact Us Section */
         .contact-us {
             padding: 100px 0;
@@ -2617,6 +2237,14 @@
                             body: JSON.stringify(payload)
                         });
 
+                        // Check if the HTTP response itself was successful
+                        if (!response.ok) {
+                            const errorData = await response.json().catch(() => ({ message: 'Unknown API error', status: response.status }));
+                            modalProductInfo.innerHTML = `<p style="color: red;">API Error: ${errorData.message || `Status ${response.status}`}. Please try again.</p>`;
+                            console.error('Gemini API HTTP Error:', response.status, errorData);
+                            return; // Stop execution here
+                        }
+
                         const result = await response.json();
                         if (result.candidates && result.candidates.length > 0 &&
                             result.candidates[0].content && result.candidates[0].content.parts &&
@@ -2624,11 +2252,12 @@
                             const text = result.candidates[0].content.parts[0].text;
                             modalProductInfo.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
                         } else {
-                            modalProductInfo.innerHTML = '<p style="color: red;">Failed to generate information. Please try again.</p>';
-                            console.error('Unexpected response structure from Gemini API:', result);
+                            // This block is hit if response.ok is true, but candidates are missing or empty.
+                            modalProductInfo.innerHTML = '<p style="color: red;">Failed to generate information. The AI could not produce a response. Please try a different product or question.</p>';
+                            console.warn('Gemini API returned no candidates or unexpected structure:', result);
                         }
                     } catch (error) {
-                        modalProductInfo.innerHTML = '<p style="color: red;">An error occurred while generating information.</p>';
+                        modalProductInfo.innerHTML = '<p style="color: red;">An error occurred while generating information. Please check your network connection.</p>';
                         console.error('Error in Gemini API call:', error);
                     }
                 });
@@ -2675,6 +2304,14 @@
                         body: JSON.stringify(payload)
                     });
 
+                    // Check if the HTTP response itself was successful
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({ message: 'Unknown API error', status: response.status }));
+                        faqResponse.innerHTML = `<p style="color: red;">API Error: ${errorData.message || `Status ${response.status}`}. Please try again.</p>`;
+                        console.error('Gemini API HTTP Error:', response.status, errorData);
+                        return; // Stop execution here
+                    }
+
                     const result = await response.json();
                     if (result.candidates && result.candidates.length > 0 &&
                         result.candidates[0].content && result.candidates[0].content.parts &&
@@ -2682,11 +2319,12 @@
                         const text = result.candidates[0].content.parts[0].text;
                         faqResponse.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
                     } else {
-                        faqResponse.innerHTML = '<p style="color: red;">Failed to generate answer. Please try again.</p>';
-                        console.error('Unexpected response structure from Gemini API:', result);
+                        // This block is hit if response.ok is true, but candidates are missing or empty.
+                        faqResponse.innerHTML = '<p style="color: red;">Failed to generate answer. The AI could not produce a response. Please try a different question.</p>';
+                        console.warn('Gemini API returned no candidates or unexpected structure:', result);
                     }
                 } catch (error) {
-                    faqResponse.innerHTML = '<p style="color: red;">An error occurred while generating the answer.</p>';
+                    faqResponse.innerHTML = '<p style="color: red;">An error occurred while generating the answer. Please check your network connection.</p>';
                     console.error('Error in Gemini API call:', error);
                 }
             });
