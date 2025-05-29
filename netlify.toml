@@ -1,3 +1,13 @@
 [build]
-  publish = "_site"
-  command = "npx @11ty/eleventy"
+  command = "npm run build" # Eleventy build command
+  publish = "_site"         # Directory to publish
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 200
