@@ -26,3 +26,8 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("assets");
+};
