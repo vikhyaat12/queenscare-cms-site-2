@@ -1,4 +1,9 @@
-site_name: Queens Care
-logo: /images/uploads/1000389916-removebg.png
-primary_color: "#000000"
-secondary_color: "#23163f"
+{
+  "siteTitle": "Queens Care Laboratories",
+  "logo": "/images/uploads/logo-qcl.png",
+  "themeColor": "#6A1B9A",
+  "socialLinks": [
+    "https://facebook.com/queenscare",
+    "https://instagram.com/queenscare"
+  ]
+}
