@@ -2,41 +2,20 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
 media_library:
   name: uploadcare
+  config:
+    publicKey: demo
 
 collections:
-  - name: "products"
-    label: "Products"
-    folder: "data/products"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Product Name", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Price", name: "price", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-
   - name: "pages"
     label: "Pages"
     files:
-      - label: "About Us"
-        name: "about"
-        file: "about.md"
+      - label: "Home"
+        name: "home"
+        file: "index.html"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - label: "General Settings"
-        name: "general"
-        file: "data/settings/general.json"
-        fields:
-          - { label: "Site Title", name: "siteTitle", widget: "string" }
-          - { label: "Logo", name: "logo", widget: "image" }
-          - { label: "Theme Color", name: "themeColor", widget: "color" }
