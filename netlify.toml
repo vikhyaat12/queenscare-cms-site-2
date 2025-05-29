@@ -1,14 +1,8 @@
-    [build]
-      command = "eleventy" # Or "npx @11ty/eleventy" if Eleventy is a local dependency
-      publish = "_site"
+[build]
+  command = "npx @11ty/eleventy"
+  publish = "_site"
 
-    [[redirects]]
-      from = "/*"
-      to = "/index.html"
-      status = 200
-
-    [[redirects]]
-      from = "/admin"
-      to = "/admin/"
-      status = 200
-    
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
