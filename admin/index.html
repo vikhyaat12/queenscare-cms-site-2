@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Queens Care CMS</title>
+    <meta charset="UTF-8" />
+    <title>Queens Care Admin</title>
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <div id="nc-root"></div> <!-- यही जरूरी जगह है जहां admin दिखेगा -->
+    <!-- Mount point for Netlify CMS -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script>
+      NetlifyCmsApp.init({
+        config: '/admin/config.yml'
+      });
+    </script>
   </body>
 </html>
