@@ -1,14 +1,21 @@
 {
   "name": "queens-care-laboratories",
   "version": "1.0.0",
-  "description": "Queens Care Laboratories website with Netlify CMS",
+  "description": "Queens Care Laboratories website built with Eleventy and Netlify CMS for full content management.",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
-  "keywords": [],
-  "author": "Gemini",
+  "keywords": [
+    "eleventy",
+    "netlify",
+    "cms",
+    "static-site",
+    "pharmaceutical",
+    "healthcare"
+  ],
+  "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
