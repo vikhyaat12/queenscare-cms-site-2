@@ -1,27 +1,20 @@
-const { DateTime } = require("luxon");
-
 module.exports = function(eleventyConfig) {
-  // Netlify CMS के लिए admin folder और अन्य assets copy करें
-  eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("_redirects");
-  eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy("assets");
+    // Copy static assets to the output directory
+    eleventyConfig.addPassthroughCopy("css");
+    eleventyConfig.addPassthroughCopy("js");
+    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("admin"); // Copy Netlify CMS files
 
-  // Date filter for Nunjucks templates
-  eleventyConfig.addFilter("date", (dateObj, format = "yyyy-LL-dd") => {
-    if (!dateObj) return "";
-    let jsDate = typeof dateObj === "string" || typeof dateObj === "number"
-      ? new Date(dateObj)
-      : dateObj;
-    return DateTime.fromJSDate(jsDate, { zone: "utc" }).toFormat(format);
-  });
-
-  return {
-    dir: {
-      input: ".",
-      includes: "_includes",
-      data: "_data",
-      output: "_site"
-    }
-  };
+    return {
+        dir: {
+            input: "./",          // Process files from the root directory
+            includes: "_includes", // Look for layouts/partials in _includes
+            data: "_data",        // Look for global data in _data
+            output: "_site"       // Output to _site
+        },
+        templateFormats: ["html", "md", "liquid", "njk"], // Supported template formats
+        markdownTemplateEngine: "liquid", // Use Liquid for Markdown files
+        htmlTemplateEngine: "liquid",     // Use Liquid for HTML files
+        dataTemplateEngine: "njk"         // Use Nunjucks for data files (optional, but good practice)
+    };
 };
