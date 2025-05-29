@@ -102,7 +102,8 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            /* Increased darkness of overlay for better text contrast */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -126,6 +127,11 @@
             z-index: 10;
             position: relative;
             margin: 0 auto; 
+            /* Added a subtle background to the content for better text visibility */
+            background-color: rgba(0, 0, 0, 0.3); 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
         
         .hero h1 {
@@ -133,7 +139,8 @@
             font-size: 4.5rem; 
             margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); 
+            /* Enhanced text shadow for better visibility */
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8); 
         }
         
         .hero p {
@@ -142,6 +149,8 @@
             max-width: 700px;
             margin-left: auto; 
             margin-right: auto; 
+            /* Enhanced text shadow for better visibility */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
         }
         
         .btn {
@@ -1038,77 +1047,6 @@
             margin-top: 10px;
             font-style: italic;
         }
-
-        /* Health Insights Section */
-        .health-insights {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-
-        .health-insights-generator {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-top: 40px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .health-insights-generator h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .health-insights-generator textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            min-height: 120px;
-            margin-bottom: 15px;
-            resize: vertical;
-        }
-
-        .health-insights-generator .btn {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .health-insights-generator .ai-response {
-            background-color: #f0f5fa;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 20px;
-            border: 1px solid #e0e5ea;
-            position: relative;
-            white-space: pre-wrap; 
-        }
-
-        .health-insights-generator .ai-response p {
-            font-size: 1rem;
-            color: var(--dark);
-            margin-bottom: 0;
-        }
-
-        .health-insights-generator .loading-indicator {
-            font-style: italic;
-            color: var(--gray);
-            margin-top: 10px;
-        }
-        .health-insights-generator .disclaimer {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 10px;
-            font-style: italic;
-        }
         
         .future-products {
             padding: 100px 0;
@@ -1583,7 +1521,7 @@
                     <li><a href="#why-choose-us">Why Choose Us</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#health-insights">Health Insights</a></li> 
+                    
                     <li><a href="#pipeline">Pipeline</a></li>
                     <li><a href="#contact-us-section">Contact</a></li>
                 </ul>
@@ -2046,23 +1984,7 @@
         </div>
     </section>
 
-    <section class="health-insights" id="health-insights">
-        <div class="container">
-            <div class="section-title">
-                <h2>Health Insights</h2>
-                <p>Get AI-generated articles on health topics.</p>
-            </div>
-            <div class="health-insights-generator">
-                <h3>Generate Article on a Health Topic ✨</h3>
-                <textarea id="healthTopicInput" placeholder="Type a health topic, e.g., 'Benefits of a healthy diet' or 'How to boost immunity?'"></textarea>
-                <button class="btn" id="generateArticleBtn">Generate Article ✨</button>
-                <div id="healthArticleResponse" class="ai-response" style="display:none;">
-                    <div class="loading-indicator">Generating article...</div>
-                </div>
-                <p class="disclaimer">This information is AI-generated and should not be taken as medical advice. Always consult a qualified healthcare professional for any health concerns.</p>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="future-products" id="pipeline">
         <div class="container">
@@ -2254,7 +2176,7 @@
                     <li><a href="#featured">Featured Product</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#health-insights">Health Insights</a></li> 
+                    
                     <li><a href="#pipeline">Research Pipeline</a></li>
                     <li><a href="#contact-us-section">Contact Us</a></li>
                 </ul>
@@ -2331,7 +2253,8 @@
             }
 
             const geometry = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), segments, 0.02, 8, false);
-            const material = new THREE.MeshPhongMaterial({ color: 0x00aaff, emissive: 0x0077cc, shininess: 100 });
+            // Changed DNA helix colors to be less vibrant and more subtle
+            const material = new THREE.MeshPhongMaterial({ color: 0x6699ff, emissive: 0x3366cc, shininess: 80 });
             helix = new THREE.Mesh(geometry, material);
             scene.add(helix);
 
@@ -2345,7 +2268,8 @@
                 points2.push(new THREE.Vector3(x, y, z));
             }
             const geometry2 = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points2), segments, 0.02, 8, false);
-            const material2 = new THREE.MeshPhongMaterial({ color: 0xff00aa, emissive: 0xcc0077, shininess: 100 });
+            // Changed complementary strand color to be less vibrant
+            const material2 = new THREE.MeshPhongMaterial({ color: 0xff6699, emissive: 0xcc3366, shininess: 80 });
             const helix2 = new THREE.Mesh(geometry2, material2);
             scene.add(helix2);
 
@@ -2354,7 +2278,7 @@
                 const p1 = points[i];
                 const p2 = points2[i];
                 const rungGeometry = new THREE.CylinderGeometry(0.01, 0.01, p1.distanceTo(p2), 8);
-                const rungMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00, emissive: 0x00cc00, shininess: 100 });
+                const rungMaterial = new THREE.MeshPhongMaterial({ color: 0x99ff99, emissive: 0x66cc66, shininess: 80 });
                 const rung = new THREE.Mesh(rungGeometry, rungMaterial);
 
                 rung.position.set((p1.x + p2.x) / 2, (p1.y + p2.y) / 2, (p1.z + p2.z) / 2);
@@ -2763,53 +2687,6 @@
                     }
                 } catch (error) {
                     faqResponse.innerHTML = '<p style="color: red;">An error occurred while generating the answer.</p>';
-                    console.error('Error in Gemini API call:', error);
-                }
-            });
-
-            // Health Insights Generator
-            const healthTopicInput = document.getElementById('healthTopicInput');
-            const generateArticleBtn = document.getElementById('generateArticleBtn');
-            const healthArticleResponse = document.getElementById('healthArticleResponse');
-
-            generateArticleBtn.addEventListener('click', async () => {
-                const topic = healthTopicInput.value.trim();
-                if (!topic) {
-                    healthArticleResponse.style.display = 'block';
-                    healthArticleResponse.innerHTML = '<p style="color: orange;">Please enter a health topic.</p>';
-                    return;
-                }
-
-                healthArticleResponse.style.display = 'block';
-                healthArticleResponse.innerHTML = '<div class="loading-indicator">Generating article...</div>';
-
-                try {
-                    const prompt = `Generate a concise (approx. 200-300 words) and informative article on the health topic: "${topic}". The article should be suitable for a pharmaceutical company's website, professional in tone, and easy to understand for a general audience. Include relevant benefits or facts. Conclude with a strong disclaimer that this is AI-generated information and not medical advice, and users should consult a healthcare professional.`;
-                    
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; 
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    const result = await response.json();
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        healthArticleResponse.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; 
-                    } else {
-                        healthArticleResponse.innerHTML = '<p style="color: red;">Failed to generate article. Please try again.</p>';
-                        console.error('Unexpected response structure from Gemini API:', result);
-                    }
-                } catch (error) {
-                    healthArticleResponse.innerHTML = '<p style="color: red;">An error occurred while generating the article.</p>';
                     console.error('Error in Gemini API call:', error);
                 }
             });
