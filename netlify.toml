@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build" # Eleventy build command
-  publish = "_site"         # Directory to publish
+  command = "eleventy" # Or "npx @11ty/eleventy" if Eleventy is a local dependency
+  publish = "_site"
 
 [[redirects]]
   from = "/*"
