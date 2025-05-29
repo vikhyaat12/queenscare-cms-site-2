@@ -1,19 +1,18 @@
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-  // Netlify CMS के लिए admin folder को output (_site/admin) में copy करेगा
+  // Netlify CMS के लिए admin folder और अन्य assets copy करें
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("assets");
 
   // Date filter for Nunjucks templates
   eleventyConfig.addFilter("date", (dateObj, format = "yyyy-LL-dd") => {
-    // dateObj को JS Date में safely बदलो
-    let jsDate;
     if (!dateObj) return "";
-    if (typeof dateObj === "string" || typeof dateObj === "number") {
-      jsDate = new Date(dateObj);
-    } else {
-      jsDate = dateObj;
-    }
+    let jsDate = typeof dateObj === "string" || typeof dateObj === "number"
+      ? new Date(dateObj)
+      : dateObj;
     return DateTime.fromJSDate(jsDate, { zone: "utc" }).toFormat(format);
   });
 
@@ -25,9 +24,4 @@ module.exports = function(eleventyConfig) {
       output: "_site"
     }
   };
-};
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("_redirects");
-  eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy("assets");
 };
