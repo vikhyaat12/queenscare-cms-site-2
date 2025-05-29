@@ -32,7 +32,7 @@ collections:
           - { label: "Site Title", name: "siteTitle", widget: "string" }
           - { label: "Logo", name: "logo", widget: "image" }
           - { label: "Theme Color", name: "themeColor", widget: "color" }
-          - { label: "Social Links", name: "socialLinks", widget: "list", field: {label: Link, name: link, widget: string}}
+          - { label: "Social Links", name: "socialLinks", widget: "list", field: { label: "Link", name: "link", widget: "string" } }
 
   - name: "pages"
     label: "Pages"
