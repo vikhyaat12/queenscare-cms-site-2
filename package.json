@@ -1,17 +1,16 @@
 {
-  "name": "queenscare-cms-site-2",
+  "name": "queens-care-laboratories",
   "version": "1.0.0",
-  "description": "",
-  "main": ".eleventy.js",
+  "description": "Queens Care Laboratories website with Netlify CMS",
+  "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "luxon": "^3.4.4",
+  "author": "Gemini",
+  "license": "MIT",
+  "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
   }
 }
