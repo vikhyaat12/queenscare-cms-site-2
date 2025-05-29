@@ -1,88 +1,88 @@
 backend:
   name: git-gateway
-  branch: main # or master if you're using master branch
+  branch: main # या master यदि आप master ब्रांच का उपयोग कर रहे हैं
 
-# These lines are crucial for media uploads
-media_folder: "public/images/uploads" # Where uploaded files are stored in your repo
-public_folder: "/images/uploads" # The public path to access uploaded files
+# मीडिया अपलोड के लिए ये लाइनें महत्वपूर्ण हैं
+media_folder: "public/images/uploads" # अपलोड की गई फ़ाइलें आपके रेपो में कहाँ संग्रहीत हैं
+public_folder: "/images/uploads" # अपलोड की गई फ़ाइलों तक पहुँचने के लिए सार्वजनिक पथ
 
-# This will enable the live preview in the CMS (optional, but recommended)
+# यह CMS में लाइव प्रीव्यू को सक्षम करेगा (वैकल्पिक, लेकिन अनुशंसित)
 publish_mode: editorial_workflow
 
 collections:
-  # Products Collection
+  # उत्पाद संग्रह
   - name: "products"
-    label: "🛍️ Products"
-    folder: "content/products" # Where product content files will be stored
-    create: true # Allow users to create new products
-    slug: "{{slug}}" # Auto-generate slugs from the title
+    label: "🛍️ उत्पाद"
+    folder: "content/products" # उत्पाद सामग्री फ़ाइलें कहाँ संग्रहीत होंगी
+    create: true # उपयोगकर्ताओं को नए उत्पाद बनाने की अनुमति दें
+    slug: "{{slug}}" # शीर्षक से स्वचालित रूप से स्लॉग उत्पन्न करें
     fields:
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Description", name: "description", widget: "markdown", required: true}
-      - {label: "Price", name: "price", widget: "number", value_type: "float", required: true}
-      - {label: "Image", name: "image", widget: "image", required: false, hint: "Upload an image for the product"}
-      - {label: "Category", name: "category", widget: "string", required: false, hint: "e.g., Electronics, Apparel, Books"}
-      - {label: "SKU", name: "sku", widget: "string", required: false, hint: "Stock Keeping Unit"}
-      - {label: "In Stock", name: "in_stock", widget: "boolean", default: true}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Mark as a featured product on the homepage"}
+      - {label: "शीर्षक", name: "title", widget: "string", required: true}
+      - {label: "विवरण", name: "description", widget: "markdown", required: true}
+      - {label: "मूल्य", name: "price", widget: "number", value_type: "float", required: true}
+      - {label: "छवि", name: "image", widget: "image", required: false, hint: "उत्पाद के लिए एक छवि अपलोड करें"}
+      - {label: "श्रेणी", name: "category", widget: "string", required: false, hint: "जैसे, इलेक्ट्रॉनिक्स, परिधान, किताबें"}
+      - {label: "SKU", name: "sku", widget: "string", required: false, hint: "स्टॉक कीपिंग यूनिट"}
+      - {label: "स्टॉक में", name: "in_stock", widget: "boolean", default: true}
+      - {label: "विशेष रुप से प्रदर्शित", name: "featured", widget: "boolean", default: false, hint: "होमपेज पर एक विशेष उत्पाद के रूप में चिह्नित करें"}
 
-  # Settings Collection (Single File)
+  # सेटिंग्स संग्रह (एकल फ़ाइल)
   - name: "settings"
-    label: "⚙️ Site Settings"
+    label: "⚙️ साइट सेटिंग्स"
     files:
-      - label: "General Settings"
+      - label: "सामान्य सेटिंग्स"
         name: "general"
-        file: "content/settings/general.json" # Path to the single settings file
+        file: "content/settings/general.json" # एकल सेटिंग्स फ़ाइल का पथ
         fields:
-          - {label: "Site Title", name: "site_title", widget: "string", required: true}
-          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload your site's logo"}
-          - label: "Colors"
+          - {label: "साइट शीर्षक", name: "site_title", widget: "string", required: true}
+          - {label: "लोगो", name: "logo", widget: "image", required: false, hint: "अपनी साइट का लोगो अपलोड करें"}
+          - label: "रंग"
             name: "colors"
             widget: "object"
             fields:
-              - {label: "Primary Color", name: "primary", widget: "color", default: "#007bff", hint: "Main brand color"}
-              - {label: "Secondary Color", name: "secondary", widget: "color", default: "#6c757d", hint: "Secondary brand color"}
-              - {label: "Accent Color", name: "accent", widget: "color", default: "#fd7e14", hint: "Highlight color"}
-              - {label: "Text Color", name: "text", widget: "color", default: "#343a40", hint: "Default text color"}
-              - {label: "Background Color", name: "background", widget: "color", default: "#f8f9fa", hint: "Overall page background"}
-          - {label: "Contact Email", name: "contact_email", widget: "string", required: false, pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$", hint: "Valid email address for contact"}
-          - {label: "Phone Number", name: "phone_number", widget: "string", required: false}
-          - {label: "Address", name: "address", widget: "text", required: false}
-          - label: "Social Media Links"
+              - {label: "प्राथमिक रंग", name: "primary", widget: "color", default: "#007bff", hint: "मुख्य ब्रांड रंग"}
+              - {label: "द्वितीयक रंग", name: "secondary", widget: "color", default: "#6c757d", hint: "द्वितीयक ब्रांड रंग"}
+              - {label: "उच्चारण रंग", name: "accent", widget: "color", default: "#fd7e14", hint: "हाइलाइट रंग"}
+              - {label: "पाठ रंग", name: "text", widget: "color", default: "#343a40", hint: "डिफ़ॉल्ट पाठ रंग"}
+              - {label: "पृष्ठभूमि रंग", name: "background", widget: "color", default: "#f8f9fa", hint: "समग्र पृष्ठ पृष्ठभूमि"}
+          - {label: "संपर्क ईमेल", name: "contact_email", widget: "string", required: false, pattern: ["^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"], hint: "संपर्क के लिए वैध ईमेल पता"} # <--- यहाँ परिवर्तन किया गया है
+          - {label: "फ़ोन नंबर", name: "phone_number", widget: "string", required: false}
+          - {label: "पता", name: "address", widget: "text", required: false}
+          - label: "सोशल मीडिया लिंक"
             name: "social_media"
             widget: "list"
             summary: "{{fields.platform}}"
             fields:
-              - {label: "Platform", name: "platform", widget: "string", hint: "e.g., Facebook, Twitter, Instagram"}
-              - {label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile"}
-          - {label: "Footer Text", name: "footer_text", widget: "markdown", required: false, hint: "Content for the site footer"}
-          - {label: "Google Analytics ID", name: "google_analytics_id", widget: "string", required: false, hint: "UA-XXXXXXXXX-X or G-XXXXXXXXX"}
+              - {label: "प्लेटफ़ॉर्म", name: "platform", widget: "string", hint: "जैसे, फेसबुक, ट्विटर, इंस्टाग्राम"}
+              - {label: "URL", name: "url", widget: "string", hint: "आपके सोशल मीडिया प्रोफ़ाइल का पूर्ण URL"}
+          - {label: "फुटर टेक्स्ट", name: "footer_text", widget: "markdown", required: false, hint: "साइट फुटर के लिए सामग्री"}
+          - {label: "Google Analytics ID", name: "google_analytics_id", widget: "string", required: false, hint: "UA-XXXXXXXXX-X या G-XXXXXXXXX"}
 
-  # Blog Posts Collection
+  # ब्लॉग पोस्ट संग्रह
   - name: "blog"
-    label: "📝 Blog Posts"
+    label: "📝 ब्लॉग पोस्ट"
     folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Generates filename like 2024-05-30-my-post.md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # फ़ाइल नाम उत्पन्न करता है जैसे 2024-05-30-my-post.md
     fields:
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Publish Date", name: "date", widget: "datetime", required: true, format: "YYYY-MM-DDTHH:mm:ssZ", time_format: true}
-      - {label: "Author", name: "author", widget: "string", required: true}
-      - {label: "Featured Image", name: "image", widget: "image", required: false, hint: "Optional image for the blog post header"}
-      - {label: "Body", name: "body", widget: "markdown", required: true}
-      - {label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, hint: "Keywords for categorization"}
-      - {label: "Categories", name: "categories", widget: "list", default: [], allow_add: true, hint: "Broader categories for the post"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: false, hint: "Set to true to hide from public site"}
+      - {label: "शीर्षक", name: "title", widget: "string", required: true}
+      - {label: "प्रकाशन तिथि", name: "date", widget: "datetime", required: true, format: "YYYY-MM-DDTHH:mm:ssZ", time_format: true}
+      - {label: "लेखक", name: "author", widget: "string", required: true}
+      - {label: "विशेष रुप से प्रदर्शित छवि", name: "image", widget: "image", required: false, hint: "ब्लॉग पोस्ट हेडर के लिए वैकल्पिक छवि"}
+      - {label: "मुख्य भाग", name: "body", widget: "markdown", required: true}
+      - {label: "टैग", name: "tags", widget: "list", default: [], allow_add: true, hint: "वर्गीकरण के लिए कीवर्ड"}
+      - {label: "श्रेणियाँ", name: "categories", widget: "list", default: [], allow_add: true, hint: "पोस्ट के लिए व्यापक श्रेणियाँ"}
+      - {label: "ड्राफ्ट", name: "draft", widget: "boolean", default: false, hint: "सार्वजनिक साइट से छिपाने के लिए सही पर सेट करें"}
 
-  # Pages Collection (for static pages like About, Contact, etc.)
+  # पेज संग्रह (स्थिर पृष्ठों जैसे हमारे बारे में, संपर्क, आदि के लिए)
   - name: "pages"
-    label: "📄 Pages"
+    label: "📄 पेज"
     folder: "content/pages"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Slug", name: "slug", widget: "string", required: true, hint: "URL path for the page (e.g., about-us)"}
-      - {label: "Body", name: "body", widget: "markdown", required: true}
-      - {label: "Template", name: "template", widget: "select", options: ["default", "contact", "about"], default: "default", required: false, hint: "Optional: specify a layout template"}
-      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - {label: "शीर्षक", name: "title", widget: "string", required: true}
+      - {label: "स्लग", name: "slug", widget: "string", required: true, hint: "पृष्ठ के लिए URL पथ (जैसे, about-us)"}
+      - {label: "मुख्य भाग", name: "body", widget: "markdown", required: true}
+      - {label: "टेम्पलेट", name: "template", widget: "select", options: ["default", "contact", "about"], default: "default", required: false, hint: "वैकल्पिक: एक लेआउट टेम्पलेट निर्दिष्ट करें"}
+      - {label: "प्रकाशित", name: "published", widget: "boolean", default: true}
