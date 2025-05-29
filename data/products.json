@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "fas fa-pills",
+    "title": "LikeoQ® Multivitamin Syrup",
+    "category": "Multivitamin & Nutritional Support",
+    "description": "Comprehensive blend of 15 essential vitamins and 10 minerals for daily wellness and immune support.",
+    "price": "299"
+  },
+  {
+    "icon": "fas fa-capsules",
+    "title": "ImmunoShield Capsules",
+    "category": "Immune Health",
+    "description": "Advanced herbal formulation with Echinacea, Zinc, and Vitamin C to boost immune function.",
+    "price": "499"
+  },
+  {
+    "icon": "fas fa-prescription-bottle",
+    "title": "PediGrowth Tonic",
+    "category": "Growth & Development",
+    "description": "Specialized pediatric formula with essential nutrients for physical and cognitive development.",
+    "price": "349"
+  },
+  {
+    "icon": "fas fa-tablets",
+    "title": "DailyVita Tablets",
+    "category": "General Wellness",
+    "description": "Complete daily multivitamin for adults with antioxidant protection and energy support.",
+    "price": "249"
+  },
+  {
+    "icon": "fas fa-heartbeat",
+    "title": "CardioCare Capsules",
+    "category": "Cardiac Health",
+    "description": "Omega-3 fatty acids and CoQ10 for cardiovascular support and cholesterol management.",
+    "price": "549"
+  },
+  {
+    "icon": "fas fa-brain",
+    "title": "NeuroMind Syrup",
+    "category": "Cognitive Health",
+    "description": "Brain health formula with Ginkgo Biloba and Bacopa Monnieri for memory and focus.",
+    "price": "399"
+  }
+]
