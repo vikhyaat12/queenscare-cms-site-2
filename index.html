@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queens Care Laboratories</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Queens Care Laboratories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables for Theme Colors */
         :root {
             --primary: #0056b3;
             --secondary: #0d8a72;
@@ -16,10 +18,11 @@
             --gray: #6c757d;
         }
         
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border;
+            box-sizing: border-box; /* Corrected from 'border' to 'border-box' */
         }
         
         body {
@@ -36,6 +39,7 @@
             padding: 0 20px;
         }
         
+        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary), #003a75);
             color: white;
@@ -98,11 +102,11 @@
             width: 100%;
         }
         
+        /* Hero Section Styles */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            /* Increased darkness of overlay for better text contrast */
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
@@ -110,7 +114,7 @@
             position: relative;
             margin-top: 70px;
             overflow: hidden;
-            text-align: center; 
+            text-align: center;
         }
         
         #dna-helix {
@@ -123,12 +127,11 @@
         }
         
         .hero-content {
-            max-width: 800px; 
+            max-width: 800px;
             z-index: 10;
             position: relative;
-            margin: 0 auto; 
-            /* Added a subtle background to the content for better text visibility */
-            background-color: rgba(0, 0, 0, 0.3); 
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.3);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
@@ -136,20 +139,18 @@
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem; 
+            font-size: 4.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            /* Enhanced text shadow for better visibility */
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.8); 
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
         
         .hero p {
-            font-size: 1.4rem; 
+            font-size: 1.4rem;
             margin-bottom: 30px;
             max-width: 700px;
-            margin-left: auto; 
-            margin-right: auto; 
-            /* Enhanced text shadow for better visibility */
+            margin-left: auto;
+            margin-right: auto;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
         }
         
@@ -165,7 +166,7 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
         .btn:hover {
@@ -179,15 +180,16 @@
             border: 2px solid var(--accent);
             color: var(--accent);
             margin-left: 15px;
-            box-shadow: none; 
+            box-shadow: none;
         }
         
         .btn-outline:hover {
             background-color: var(--accent);
             color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
+        /* Section Title Styles */
         .section-title {
             text-align: center;
             margin-bottom: 60px;
@@ -220,7 +222,7 @@
             font-size: 1.1rem;
         }
         
-        /* About Us Section */
+        /* About Us Section Styles */
         .about-us {
             padding: 100px 0;
             background-color: #f8f9fa;
@@ -295,6 +297,7 @@
             margin-bottom: 10px;
         }
         
+        /* Therapeutic Areas Section Styles */
         .therapeutic-areas {
             padding: 100px 0;
             background-color: white;
@@ -362,6 +365,7 @@
             margin-top: 5px;
         }
         
+        /* Products Section Styles */
         .products-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #e8f4ff, #f0f9f7);
@@ -464,8 +468,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; 
-            gap: 10px; 
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .price {
@@ -474,7 +478,7 @@
             font-size: 1.2rem;
         }
         
-        .view-btn { 
+        .view-btn {
             padding: 8px 20px;
             background: var(--secondary);
             color: white;
@@ -483,16 +487,56 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            white-space: nowrap; 
+            white-space: nowrap;
         }
         
         .view-btn:hover {
             background: #0a6b58;
         }
 
-        /* Product Information Pop-up/Modal Styles - Removed as AI functionality is removed */
-        /* .product-modal { ... } */
+        /* Why Choose Us Section Styles */
+        .why-choose-us {
+            padding: 100px 0;
+            background-color: white;
+        }
 
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .why-item {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .why-item i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .why-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .why-item p {
+            color: var(--dark);
+        }
+        
+        /* Featured Product Section Styles */
         .featured-product {
             padding: 100px 0;
             background-color: white;
@@ -513,8 +557,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #e8f4ff, #d1e7fe); 
-            display: block; 
+            background: linear-gradient(135deg, #e8f4ff, #d1e7fe);
+            display: block;
         }
         
         #molecule-container {
@@ -563,12 +607,12 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
-            position: absolute; 
+            position: absolute;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            background-color: rgba(255, 255, 255, 0.8); 
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             border-radius: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -582,7 +626,7 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            white-space: nowrap; 
+            white-space: nowrap;
             font-weight: 500;
         }
         
@@ -592,6 +636,148 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
+        /* Testimonials Section Styles */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), #003a75);
+            color: white;
+            text-align: center;
+        }
+
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: white;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to cards */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            gap: 30px;
+            padding-bottom: 20px; /* Space for scrollbar */
+            margin-top: 50px;
+            justify-content: flex-start; /* Align items to the start for better scrolling */
+            padding-left: 20px; /* Add padding to the left for the first card */
+            padding-right: 20px; /* Add padding to the right for the last card */
+        }
+        
+        .testimonial-card {
+            flex: 0 0 auto; /* Prevent cards from shrinking */
+            width: 350px; /* Fixed width for cards */
+            max-width: 90%; /* Max width for smaller screens */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            scroll-snap-align: start; /* Align cards to start of scroll area */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .testimonial-card .stars {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Allow paragraph to take available space */
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+        
+        .testimonial-author span {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        /* FAQs Section Styles */
+        .faqs {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e8f4ff;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* FIX: Ensure FAQ answer text is clearly visible */
+        .faq-answer {
+            max-height: 0; /* Initial state: hidden */
+            overflow: hidden;
+            transition: max-height 0.5s ease-out; /* Only transition max-height */
+            background-color: #f0f4f8; /* Light background for answer */
+            border-radius: 0 0 10px 10px;
+            color: var(--dark);
+            padding: 0 20px; /* Initial horizontal padding */
+        }
+
+        .faq-answer.active { /* Use a class for active state */
+            max-height: 500px; /* Use a generous fixed max-height */
+            padding: 15px 20px 20px 20px; /* Apply padding when active */
+        }
+        /* END FIX */
+
+        .faq-answer p {
+            margin-bottom: 0; /* Remove default paragraph margin */
+        }
+
+        /* Future Products (Pipeline) Section Styles */
         .future-products {
             padding: 100px 0;
             background-color: white;
@@ -647,15 +833,16 @@
             color: #52c41a;
         }
         
+        /* Scientific Differentiation Section Styles */
         .scientific-differentiation {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary), #003a75);
-            color: white; 
+            color: white;
         }
         
         .scientific-differentiation .section-title h2,
         .scientific-differentiation .section-title p {
-            color: white; 
+            color: white;
         }
 
         .differentiation-table {
@@ -664,16 +851,16 @@
             margin-top: 50px;
         }
         
-        .differentiation-table th, 
+        .differentiation-table th,
         .differentiation-table td {
             padding: 20px;
             text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: white; 
+            color: white;
         }
         
         .differentiation-table th {
-            background-color: rgba(0, 0, 0, 0.3); 
+            background-color: rgba(0, 0, 0, 0.3);
             font-weight: 600;
         }
         
@@ -682,7 +869,7 @@
         }
         
         .differentiation-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.1); 
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
         .stat-highlight {
@@ -690,20 +877,11 @@
             font-weight: 700;
         }
         
+        /* Advisory Section Styles */
         .advisory {
             padding: 100px 0;
             text-align: center;
             background-color: white;
-        }
-        
-        .advisory-statement {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background: linear-gradient(135deg, #f0f9f7, #e8f4ff);
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
         .advisory-statement:before {
@@ -746,7 +924,7 @@
             margin-bottom: 10px;
         }
 
-        /* Contact Us Section */
+        /* Contact Us Section Styles */
         .contact-us {
             padding: 100px 0;
             background-color: white;
@@ -854,7 +1032,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-top: 30px; 
+            margin-top: 30px;
         }
 
         .google-map iframe {
@@ -863,6 +1041,7 @@
             border: 0;
         }
         
+        /* Footer Styles */
         footer {
             background-color: var(--dark);
             color: white;
@@ -911,7 +1090,7 @@
             padding-left: 5px;
         }
         
-        .contact-info { 
+        .contact-info {
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -965,7 +1144,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366; 
+            background-color: #25d366;
             color: white;
             width: 60px;
             height: 60px;
@@ -984,64 +1163,133 @@
             transform: translateY(-5px);
             background-color: #1DA851;
         }
-        
-        /* FAQ specific styles for accordion */
-        .faq-item {
+
+        /* Gemini AI Chat Section Styles */
+        .gemini-ai-chat {
+            padding: 100px 0;
+            background-color: #f0f4f8;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden; /* Ensures content is clipped when max-height is 0 */
-        }
-
-        .faq-question {
-            padding: 20px;
-            font-weight: 600;
-            color: var(--primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background-color: #e8f4ff;
-        }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0; /* Initial state: hidden */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition */
-            padding: 0 20px; /* Initial horizontal padding, vertical padding will be added by JS */
-            background-color: #f0f4f8; /* Light background for answer */
-            border-radius: 0 0 10px 10px;
+            display: flex;
+            flex-direction: column;
+            height: 300px; /* Further reduced height for chat window */
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), #003a75);
+            color: white;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f8f9fa;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .ai-message {
+            background-color: #e2e8f0;
             color: var(--dark);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
         }
 
-        .faq-answer p {
-            margin-bottom: 0; /* Remove default paragraph margin */
+        .chat-input-area {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            gap: 10px;
         }
 
+        .chat-input-area textarea {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            resize: none;
+            height: 50px; /* Fixed height for input */
+            transition: border-color 0.3s ease;
+        }
+
+        .chat-input-area textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .chat-send-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-send-btn:hover {
+            background-color: #0a6b58;
+            transform: translateY(-2px);
+        }
+
+        .chat-send-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 10px;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.8rem; 
+                font-size: 2.8rem;
             }
             
             .hero p {
-                font-size: 1.1rem; 
+                font-size: 1.1rem;
             }
             
             nav ul {
-                display: none; 
+                display: none; /* Hide navigation on small screens */
             }
             
             .benefits-grid {
@@ -1061,21 +1309,60 @@
             }
 
             .about-text, .about-image {
-                min-width: unset; 
-                width: 100%;
+                min-width: unset; /* Remove min-width for smaller screens */
+                width: 100%; /* Make them take full width */
             }
 
-            .why-grid, .areas-container, .products-grid, .pipeline, .footer-container {
-                grid-template-columns: 1fr;
+            .about-values {
+                grid-template-columns: 1fr; /* Stack values vertically */
+            }
+
+            .areas-container, .products-grid, .why-grid, .pipeline, .footer-container {
+                grid-template-columns: 1fr; /* Stack all grids vertically */
             }
 
             .testimonial-slider {
-                flex-direction: column; 
-                scroll-snap-type: none; 
+                padding-left: 10px; /* Adjust padding for smaller screens */
+                padding-right: 10px;
             }
 
             .testimonial-card {
-                max-width: 100%; 
+                width: 95%; /* Make cards almost full width */
+                margin: 0 auto; /* Center cards */
+            }
+
+            .products-filter {
+                flex-direction: column; /* Stack search input and button */
+                border-radius: 15px; /* Adjust border-radius */
+            }
+
+            .search-input {
+                border-radius: 15px 15px 0 0; /* Rounded top corners */
+                padding: 15px;
+            }
+
+            .search-btn {
+                border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+                padding: 15px;
+            }
+
+            .advisory-statement {
+                padding: 30px;
+            }
+
+            .advisory-statement:before {
+                font-size: 4rem; /* Adjust quote size */
+                top: 10px;
+                left: 20px;
+            }
+
+            .advisory-statement p {
+                font-size: 1.1rem;
+            }
+
+            .certifications {
+                flex-direction: column; /* Stack certifications vertically */
+                gap: 20px;
             }
 
             .contact-content {
@@ -1087,12 +1374,75 @@
                 width: 100%;
             }
 
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 10px; /* Add margin for stacked buttons */
+            }
+
+            .hero-content .btn {
+                width: 100%; /* Make buttons full width in hero */
+                margin-bottom: 10px;
+            }
+
+            .chat-container {
+                height: 350px; /* Adjusted height for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-content {
+                padding: 20px;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .section-title p {
+                font-size: 0.9rem;
+            }
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
                 font-size: 1.8rem;
                 bottom: 20px;
                 right: 20px;
+            }
+            .footer-column h4 {
+                font-size: 1.1rem;
+            }
+            .footer-column ul li a {
+                font-size: 0.9rem;
+            }
+            .copyright {
+                font-size: 0.8rem;
+            }
+            .chat-input-area textarea {
+                height: 40px; /* Smaller input height */
+            }
+            .chat-send-btn {
+                padding: 8px 15px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -1101,33 +1451,27 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                Queens Care Laboratories
+                <i class="fas fa-microscope"></i>
+                <span>Queens Care Laboratories</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#therapeutic-areas">Therapeutic Areas</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#why-choose-us">Why Choose Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                    
-                    <li><a href="#pipeline">Pipeline</a></li>
-                    <li><a href="#contact-us-section">Contact</a></li>
+                    <li><a href="#gemini-ai-chat">Ask AI</a></li> <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="hero">
-        <div id="dna-helix"></div> 
-        <div class="container">
-            <div class="hero-content">
-                <h1>Enhancing Health & Life Naturally</h1>
-                <p>At Queens Care Laboratories, we blend cutting-edge pharmaceutical research with premium quality formulations to deliver therapeutic solutions that enhance lives across all age groups.</p>
-                <a href="#products" class="btn">Explore Products</a>
-                <a href="#contact-us-section" class="btn btn-outline">Contact Us</a>
-            </div>
+    <section class="hero" id="home">
+        <div id="dna-helix"></div> <div class="container hero-content">
+            <h1>Advancing Health Through Innovation</h1>
+            <p>Pioneering scientific breakthroughs in pharmaceuticals and healthcare solutions for a healthier tomorrow.</p>
+            <a href="#products" class="btn">Explore Products</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
     </section>
 
@@ -1135,96 +1479,107 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Queens Care Laboratories</h2>
-                <p>Our journey towards health innovation and excellence.</p>
+                <p>Dedicated to excellence in research, development, and delivery of high-quality pharmaceutical products.</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Our Story & Mission</h3>
-                    <p>Founded in 2010, Queens Care Laboratories embarked on a mission to revolutionize healthcare through scientifically-backed, high-quality pharmaceutical solutions. We believe in harnessing the power of nature and science to create products that genuinely improve well-being.</p>
-                    <p>Our commitment extends beyond product development; we are dedicated to ethical practices, sustainable sourcing, and fostering a healthier community. We are renowned for our **premium packaging** that ensures product integrity and our continuous drive for **innovation** in therapeutic formulations.</p>
-                    <p>We strive to be a trusted partner in health for families worldwide, providing safe, effective, and accessible medicines and supplements.</p>
+                    <h3>Our Mission & Vision</h3>
+                    <p>At Queens Care Laboratories, our mission is to improve global health by discovering, developing, and delivering innovative pharmaceutical solutions. We envision a future where advanced medical science is accessible to all, fostering healthier communities worldwide.</p>
+                    <p>With state-of-the-art facilities and a team of world-class scientists, we are committed to rigorous research, ethical practices, and sustainable growth. Our focus extends beyond just treatments; we aim to empower individuals with better health and a higher quality of life.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-flask"></i>
+                            <h4>Innovation</h4>
+                            <p>Driving scientific discovery forward.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Patient-Centric</h4>
+                            <p>Prioritizing patient well-being in every step.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Integrity</h4>
+                            <p>Upholding the highest ethical standards.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>Global Impact</h4>
+                            <p>Contributing to health worldwide.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://placehold.co/400x300/0056b3/ffffff?text=Our+Lab" alt="Queens Care Laboratories Lab">
-                </div>
-            </div>
-            <div class="about-values">
-                <div class="value-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Innovation</h4>
-                    <p>Constantly pushing boundaries in pharmaceutical research.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-award"></i>
-                    <h4>Quality</h4>
-                    <p>Adhering to the highest global manufacturing standards.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <h4>Integrity</h4>
-                    <p>Ethical practices and transparency in all operations.</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-users"></i>
-                    <h4>Patient-Centricity</h4>
-                    <p>Dedicated to improving lives through effective solutions.</p>
+                    <img src="https://placehold.co/500x500/0056b3/ffffff?text=Our+Team" alt="Laboratory Team">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="therapeutic-areas" id="therapeutic">
+    <section class="therapeutic-areas" id="therapeutic-areas">
         <div class="container">
             <div class="section-title">
-                <h2>Therapeutic Excellence</h2>
-                <p>Precision-formulated solutions targeting key health areas with scientifically validated ingredients and pharmaceutical-grade quality.</p>
+                <h2>Our Therapeutic Areas</h2>
+                <p>Specializing in critical health sectors to address diverse medical needs with targeted solutions.</p>
             </div>
-            
             <div class="areas-container">
                 <div class="area-card">
                     <div class="card-header">
-                        <i class="fas fa-apple-alt"></i>
-                        <h3>Multivitamin & Nutritional Support</h3>
+                        <i class="fas fa-brain"></i>
+                        <h3>Neurology</h3>
                     </div>
                     <div class="card-body">
-                        <p>Comprehensive nutritional solutions for all life stages, providing essential vitamins and minerals for daily wellness.</p>
+                        <p>Dedicated to understanding and treating complex neurological disorders.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> LikeoQ® Multivitamin Syrup</li>
-                            <li><i class="fas fa-check-circle"></i> Pediatric formulations</li>
-                            <li><i class="fas fa-check-circle"></i> Geriatric nutrition support</li>
-                            <li><i class="fas fa-check-circle"></i> Sports nutrition</li>
+                            <li><i class="fas fa-check-circle"></i> Alzheimer's Disease Research</li>
+                            <li><i class="fas fa-check-circle"></i> Parkinson's Disease Therapies</li>
+                            <li><i class="fas fa-check-circle"></i> Migraine Management</li>
+                            <li><i class="fas fa-check-circle"></i> Epilepsy Treatments</li>
                         </ul>
                     </div>
                 </div>
-                
                 <div class="area-card">
                     <div class="card-header">
-                        <i class="fas fa-shield-virus"></i>
-                        <h3>Immune Health</h3>
+                        <i class="fas fa-lungs"></i>
+                        <h3>Respiratory</h3>
                     </div>
                     <div class="card-body">
-                        <p>Advanced formulations designed to support and enhance the body's natural defense mechanisms.</p>
+                        <p>Developing advanced solutions for respiratory conditions and lung health.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Herbal immunomodulators</li>
-                            <li><i class="fas fa-check-circle"></i> Antioxidant complexes</li>
-                            <li><i class="fas fa-check-circle"></i> Probiotic formulations</li>
-                            <li><i class="fas fa-check-circle"></i> Seasonal immunity boosters</li>
+                            <li><i class="fas fa-check-circle"></i> Asthma Inhalers</li>
+                            <li><i class="fas fa-check-circle"></i> COPD Management</li>
+                            <li><i class="fas fa-check-circle"></i> Cystic Fibrosis Therapies</li>
+                            <li><i class="fas fa-check-circle"></i> Pulmonary Hypertension Drugs</li>
                         </ul>
                     </div>
                 </div>
-                
                 <div class="area-card">
                     <div class="card-header">
-                        <i class="fas fa-child"></i>
-                        <h3>Growth & Development</h3>
+                        <i class="fas fa-cancer"></i>
+                        <h3>Oncology</h3>
                     </div>
                     <div class="card-body">
-                        <p>Specialized pediatric formulation for pediatric development supporting physical growth and cognitive function.</p>
+                        <p>Pioneering cancer research and innovative oncology treatments.</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Growth tonics</li>
-                            <li><i class="fas fa-check-circle"></i> Cognitive development formulas</li>
-                            <li><i class="fas fa-check-circle"></i> Bone health supplements</li>
-                            <li><i class="fas fa-check-circle"></i> Appetite stimulants</li>
+                            <li><i class="fas fa-check-circle"></i> Immunotherapy Development</li>
+                            <li><i class="fas fa-check-circle"></i> Targeted Cancer Therapies</li>
+                            <li><i class="fas fa-check-circle"></i> Chemotherapy Enhancements</li>
+                            <li><i class="fas fa-check-circle"></i> Supportive Care for Cancer Patients</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="area-card">
+                    <div class="card-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Cardiovascular</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Committed to improving heart health and managing cardiovascular diseases.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Hypertension Medications</li>
+                            <li><i class="fas fa-check-circle"></i> Cholesterol Management</li>
+                            <li><i class="fas fa-check-circle"></i> Heart Failure Treatments</li>
+                            <li><i class="fas fa-check-circle"></i> Anti-coagulant Therapies</li>
                         </ul>
                     </div>
                 </div>
@@ -1235,100 +1590,94 @@
     <section class="products-section" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Pharmaceutical Products</h2>
-                <p>Discover our range of scientifically formulated medicines and supplements</p>
+                <h2>Our Products</h2>
+                <p>A diverse portfolio of high-quality pharmaceutical products addressing various health needs.</p>
             </div>
-            
             <div class="products-filter">
-                <input type="text" class="search-input" placeholder="Search for medicines...">
+                <input type="text" id="productSearch" class="search-input" placeholder="Search products by name or category...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <div class="product-details">
-                        <h3>LikeoQ® Multivitamin Syrup</h3>
-                        <span class="product-category">Multivitamin & Nutritional Support</span>
-                        <p class="product-description">Comprehensive blend of 15 essential vitamins and 10 minerals for daily wellness and immune support.</p>
-                        <div class="product-actions">
-                            <div class="price">₹299</div>
-                            <button class="view-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-capsules"></i>
-                    </div>
-                    <div class="product-details">
-                        <h3>ImmunoShield Capsules</h3>
-                        <span class="product-category">Immune Health</span>
-                        <p class="product-description">Advanced herbal formulation with Echinacea, Zinc, and Vitamin C to boost immune function.</p>
-                        <div class="product-actions">
-                            <div class="price">₹499</div>
-                            <button class="view-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-prescription-bottle"></i>
-                    </div>
-                    <div class="product-details">
-                        <h3>PediGrowth Tonic</h3>
-                        <span class="product-category">Growth & Development</span>
-                        <p class="product-description">Specialized pediatric formula with essential nutrients for physical and cognitive development.</p>
-                        <div class="product-actions">
-                            <div class="price">₹349</div>
-                            <button class="view-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-tablets"></i>
-                    </div>
-                    <div class="product-details">
-                        <h3>DailyVita Tablets</h3>
-                        <span class="product-category">General Wellness</span>
-                        <p class="product-description">Complete daily multivitamin for adults with antioxidant protection and energy support.</p>
-                        <div class="product-actions">
-                            <div class="price">₹249</div>
-                            <button class="view-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="product-details">
-                        <h3>CardioCare Capsules</h3>
-                        <span class="product-category">Cardiac Health</span>
-                        <p class="product-description">Omega-3 fatty acids and CoQ10 for cardiovascular support and cholesterol management.</p>
-                        <div class="product-actions">
-                            <div class="price">₹549</div>
-                            <button class="view-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-category="neurology" data-name="neuroflex">
                     <div class="product-image">
                         <i class="fas fa-brain"></i>
                     </div>
                     <div class="product-details">
-                        <h3>NeuroMind Syrup</h3>
-                        <span class="product-category">Cognitive Health</span>
-                        <p class="product-description">Brain health formula with Ginkgo Biloba and Bacopa Monnieri for memory and focus.</p>
+                        <h3>NeuroFlex Max</h3>
+                        <span class="product-category">Neurology</span>
+                        <p class="product-description">An advanced nootropic designed to support cognitive function and memory retention.</p>
                         <div class="product-actions">
-                            <div class="price">₹399</div>
+                            <span class="price">$59.99</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="respiratory" data-name="breatheclear">
+                    <div class="product-image">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="product-details">
+                        <h3>BreatheClear Inhaler</h3>
+                        <span class="product-category">Respiratory</span>
+                        <p class="product-description">Fast-acting relief for asthma and other respiratory discomforts.</p>
+                        <div class="product-actions">
+                            <span class="price">$34.50</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="oncology" data-name="oncostop">
+                    <div class="product-image">
+                        <i class="fas fa-cancer"></i>
+                    </div>
+                    <div class="product-details">
+                        <h3>OncoStop Forte</h3>
+                        <span class="product-category">Oncology</span>
+                        <p class="product-description">Targeted therapy supporting cancer treatment and recovery.</p>
+                        <div class="product-actions">
+                            <span class="price">$120.00</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="cardiovascular" data-name="cardiocare">
+                    <div class="product-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="product-details">
+                        <h3>CardioCare Plus</h3>
+                        <span class="product-category">Cardiovascular</span>
+                        <p class="product-description">Comprehensive support for maintaining healthy heart function.</p>
+                        <div class="product-actions">
+                            <span class="price">$45.75</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="pain-management" data-name="relievemax">
+                    <div class="product-image">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="product-details">
+                        <h3>RelieveMax</h3>
+                        <span class="product-category">Pain Management</span>
+                        <p class="product-description">Effective and rapid relief from acute and chronic pain.</p>
+                        <div class="product-actions">
+                            <span class="price">$22.99</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="dermatology" data-name="dermacalm">
+                    <div class="product-image">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <div class="product-details">
+                        <h3>DermaCalm Cream</h3>
+                        <span class="product-category">Dermatology</span>
+                        <p class="product-description">Soothing cream for various skin conditions, promoting healthy skin.</p>
+                        <div class="product-actions">
+                            <span class="price">$18.50</span>
                             <button class="view-btn">View Details</button>
                         </div>
                     </div>
@@ -1337,86 +1686,67 @@
         </div>
     </section>
 
-    <section class="why-choose-us" id="why-choose-us">
+    <section class="why-choose-us">
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose Queens Care?</h2>
-                <p>Our distinct advantages that make us your preferred health partner.</p>
+                <p>Our commitment to quality, innovation, and patient well-being sets us apart.</p>
             </div>
             <div class="why-grid">
                 <div class="why-item">
-                    <i class="fas fa-user-md"></i>
-                    <h3>Doctor Recommended</h3>
-                    <p>Trusted by healthcare professionals for proven efficacy and safety.</p>
+                    <i class="fas fa-award"></i>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Adhering to the highest international standards in manufacturing and research.</p>
                 </div>
                 <div class="why-item">
-                    <i class="fas fa-gem"></i>
-                    <h3>Premium Quality</h3>
-                    <p>Only the finest pharmaceutical-grade ingredients in every product.</p>
+                    <i class="fas fa-users-medical"></i>
+                    <h3>Expert Team</h3>
+                    <p>A dedicated group of scientists, researchers, and medical professionals.</p>
                 </div>
                 <div class="why-item">
-                    <i class="fas fa-box-open"></i>
-                    <h3>Attractive Packaging</h3>
-                    <p>Thoughtfully designed packaging ensuring product integrity and appeal.</p>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovative Research</h3>
+                    <p>Continuously exploring new frontiers in medical science and technology.</p>
                 </div>
                 <div class="why-item">
-                    <i class="fas fa-smile-beam"></i>
-                    <h3>Customer Satisfaction</h3>
-                    <p>Dedicated to exceeding expectations with exceptional products and service.</p>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Patient Safety</h3>
+                    <p>Ensuring the safety and efficacy of all our pharmaceutical products.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="featured-product" id="featured">
+    <section class="featured-product">
         <div class="container">
             <div class="section-title">
-                <h2>Featured Product</h2>
-                <p>Our flagship formulation combining scientific innovation with premium ingredients</p>
+                <h2>Featured Product: VitaBoost Complex</h2>
+                <p>A revolutionary multi-nutrient supplement designed for optimal daily health.</p>
             </div>
-            
             <div class="featured-container">
                 <div class="featured-image">
-                    <div id="molecule-container"></div> 
-                    <div class="nutrient-layers">
-                        <div class="layer-btn active" data-layer="vitamin">Vitamin Complex</div>
-                        <div class="layer-btn" data-layer="mineral">Mineral Matrix</div>
-                        <div class="layer-btn" data-layer="bioavailability">Bioavailability Enhancers</div>
+                    <div id="molecule-container"></div> <div class="nutrient-layers">
+                        <button class="layer-btn active" data-layer="vitamin">Vitamins</button>
+                        <button class="layer-btn" data-layer="mineral">Minerals</button>
+                        <button class="layer-btn" data-layer="antioxidant">Antioxidants</button>
                     </div>
                 </div>
                 <div class="featured-details">
-                    <h3 id="featured-title">LikeoQ® Multivitamin Syrup</h3>
-                    <span class="subtitle" id="featured-subtitle">Complete Nutritional Support for All Ages</span>
-                    <p id="featured-description">LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.</p>
-                    
-                    <div class="benefits-grid" id="featured-benefits">
+                    <h3>VitaBoost Complex: Your Daily Wellness Partner</h3>
+                    <span class="subtitle">Advanced Multi-Nutrient Formula</span>
+                    <p>VitaBoost Complex is meticulously formulated with a synergistic blend of essential vitamins, minerals, and potent antioxidants to support overall health, energy, and immunity. Experience the difference of balanced nutrition.</p>
+                    <div class="benefits-grid">
                         <div class="benefit-item">
-                            <i class="fas fa-brain"></i>
-                            <div>
-                                <h4>Cognitive Support</h4>
-                                <p>B vitamins for mental clarity</p>
-                            </div>
+                            <i class="fas fa-check-circle"></i> Supports Immune System
                         </div>
                         <div class="benefit-item">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Cardiovascular Health</h4>
-                                <p>CoQ10 for heart function</p>
-                            </div>
+                            <i class="fas fa-check-circle"></i> Boosts Energy Levels
                         </div>
                         <div class="benefit-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Immune Defense</h4>
-                                <p>Vitamins C, D, Zinc & Selenium</p>
-                            </div>
+                            <i class="fas fa-check-circle"></i> Enhances Cognitive Function
                         </div>
                         <div class="benefit-item">
-                            <i class="fas fa-bone"></i>
-                            <div>
-                                <h4>Bone Health</h4>
-                                <p>Calcium & Vitamin K2</p>
-                            </div>
+                            <i class="fas fa-check-circle"></i> Promotes Healthy Skin & Hair
                         </div>
                     </div>
                     <a href="#" class="btn">Learn More</a>
@@ -1425,159 +1755,146 @@
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Customers Say</h2>
-                <p>Hear from those who have experienced the Queens Care difference.</p>
+                <h2>What Our Patients Say</h2>
+                <p>Hear from individuals whose lives have been positively impacted by Queens Care products.</p>
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Queens Care Laboratories' products have significantly improved my overall health. The quality is unmatched!"</p>
+                    <p>"Queens Care's respiratory medication changed my life. I can breathe easier and live more freely. Truly grateful for their dedication to patient health."</p>
                     <div class="testimonial-author">
-                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Dr.P" alt="Dr. Priya Sharma">
-                        Dr. Priya Sharma
-                        <span>General Physician</span>
+                        <img src="https://placehold.co/50x50/d4af37/ffffff?text=JD" alt="Patient Avatar">
+                        <div>
+                            John D.
+                            <span>Asthma Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"The pain management solutions from Queens Care are incredibly effective. I finally found relief after years of searching. Highly recommend their products."</p>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/50x50/0056b3/ffffff?text=AM" alt="Patient Avatar">
+                        <div>
+                            Anna M.
+                            <span>Chronic Pain Sufferer</span>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"I've been using LikeoQ® Multivitamin Syrup for my children, and I've noticed a remarkable improvement in their energy levels and immunity."</p>
+                    <p>"Their commitment to quality is evident. My doctor recommended Queens Care, and I've felt a significant improvement in my overall well-being."</p>
                     <div class="testimonial-author">
-                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Mrs.A" alt="Mrs. Anjali Singh">
-                        Mrs. Anjali Singh
-                        <span>Parent & Homemaker</span>
+                        <img src="https://placehold.co/50x50/0d8a72/ffffff?text=SK" alt="Patient Avatar">
+                        <div>
+                            Sarah K.
+                            <span>General Wellness</span>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"The research pipeline at Queens Care is truly impressive. They are at the forefront of pharmaceutical innovation."</p>
+                    <p>"As a healthcare professional, I trust Queens Care Laboratories. Their research is cutting-edge, and their products deliver consistent, reliable results."</p>
                     <div class="testimonial-author">
-                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Prof.R" alt="Prof. Rahul Kumar">
-                        Prof. Rahul Kumar
-                        <span>Pharmacology Researcher</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"As a fitness enthusiast, finding supplements that genuinely work is hard. Queens Care's products have become a staple in my routine!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Mr.V" alt="Mr. Vikramjeet Singh">
-                        Mr. Vikramjeet Singh
-                        <span>Fitness Coach</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"I highly recommend Queens Care for their commitment to quality and efficacy. Their products are a game-changer for daily health."</p>
-                    <div class="testimonial-author">
-                        <img src="https://placehold.co/80x80/0d8a72/ffffff?text=Ms.S" alt="Ms. Sneha Reddy">
-                        Ms. Sneha Reddy
-                        <span>Nutritionist</span>
+                        <img src="https://placehold.co/50x50/6c757d/ffffff?text=DR" alt="Patient Avatar">
+                        <div>
+                            Dr. Robert L.
+                            <span>Medical Practitioner</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faqs" id="faqs">
+    <section class="faqs">
         <div class="container">
             <div class="section-title">
                 <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common queries about our products and services.</p>
+                <p>Find answers to common questions about our products and services.</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        What makes Queens Care Laboratories' products unique?
+                        What makes Queens Care Laboratories unique?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Our products are distinguished by our commitment to scientific excellence, premium-grade ingredients, stringent quality control, and innovative formulations designed for maximum bioavailability and efficacy.</p>
+                        <p>Queens Care Laboratories stands out due to our unwavering commitment to scientific rigor, patient-centric approach, and continuous innovation. We invest heavily in R&D to bring groundbreaking therapies to market, ensuring the highest standards of quality and safety.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Are your products safe for all age groups?
+                        Are your products FDA approved?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we offer a diverse range of products, including specialized pediatric and geriatric formulations, all developed with safety and efficacy across different age groups in mind. Always consult a healthcare professional for personalized advice.</p>
+                        <p>Yes, all our pharmaceutical products undergo stringent testing and comply with all relevant regulatory body guidelines, including FDA (or equivalent international bodies) approvals, before being released to the market. Patient safety and product efficacy are our top priorities.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Where can I purchase Queens Care Laboratories products?
+                        How can I purchase your products?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Our products are available through authorized pharmacies, leading online health retailers, and selected healthcare clinics. Please visit our 'Contact Us' section for more details on distributors.</p>
+                        <p>Our products are primarily available through licensed pharmacies and healthcare providers. For specific product availability or to find a distributor near you, please contact our customer service team or consult with your healthcare professional.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do you conduct clinical trials for your new drugs?
+                        Do you offer international shipping?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. All our new drug candidates undergo rigorous pre-clinical and multi-phase clinical trials to ensure their safety, efficacy, and compliance with international regulatory standards before they are brought to market.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How can I get in touch for business inquiries or partnerships?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>For all business inquiries, partnerships, or media relations, please use the contact form on this page or reach out to us directly via email or WhatsApp as provided in the 'Contact Us' section. We look forward to hearing from you.</p>
+                        <p>Queens Care Laboratories operates globally through a network of authorized distributors. Please check with your local distributor or contact us directly to inquire about product availability and shipping options in your region.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="future-products" id="pipeline">
+    <section class="future-products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Research Pipeline</h2>
-                <p>Innovating for tomorrow's health challenges with a robust pipeline of new formulations.</p>
+                <h2>Our Pipeline: Future Innovations</h2>
+                <p>A glimpse into the groundbreaking therapies and solutions currently under development.</p>
             </div>
-            
             <div class="pipeline">
-                <div class="pipeline-item">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Advanced Oncology Drug</h3>
-                    <span class="phase-badge phase-2">Phase II Clinical Trials</span>
-                    <p>Targeted therapy for specific cancer types, showing promising results in early trials.</p>
-                </div>
-                <div class="pipeline-item">
-                    <i class="fas fa-virus"></i>
-                    <h3>Next-Gen Antiviral Agent</h3>
-                    <span class="phase-badge phase-1">Pre-Clinical Research</span>
-                    <p>Novel broad-spectrum antiviral with potential against emerging viral threats.</p>
-                </div>
                 <div class="pipeline-item">
                     <i class="fas fa-dna"></i>
                     <h3>Gene Therapy for Rare Diseases</h3>
-                    <span class="phase-badge phase-3">Phase III Clinical Trials</span>
-                    <p>Groundbreaking gene therapy aiming to correct genetic defects in rare conditions.</p>
+                    <span class="phase-badge phase-2">Phase II Clinical Trials</span>
+                    <p>Developing targeted gene therapies to address the root causes of rare genetic disorders, offering new hope for patients.</p>
                 </div>
                 <div class="pipeline-item">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurodegenerative Disorder Treatment</h3>
-                    <span class="phase-badge phase-1">Discovery Phase</span>
-                    <p>Exploring new pathways for treating Alzheimer's and Parkinson's diseases.</p>
+                    <i class="fas fa-microscope"></i>
+                    <h3>Next-Gen Antibiotics</h3>
+                    <span class="phase-badge phase-1">Pre-clinical Research</span>
+                    <p>Innovating new classes of antibiotics to combat multi-drug resistant bacteria, a critical global health challenge.</p>
+                </div>
+                <div class="pipeline-item">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Personalized Cancer Vaccines</h3>
+                    <span class="phase-badge phase-3">Phase III Clinical Trials</span>
+                    <p>Creating highly personalized vaccines tailored to individual patient's cancer profiles for more effective treatment.</p>
+                </div>
+                <div class="pipeline-item">
+                    <i class="fas fa-user-md"></i>
+                    <h3>AI-Powered Diagnostics</h3>
+                    <span class="phase-badge phase-1">Concept & Development</span>
+                    <p>Leveraging artificial intelligence to enhance early disease detection and improve diagnostic accuracy.</p>
                 </div>
             </div>
         </div>
@@ -1586,38 +1903,48 @@
     <section class="scientific-differentiation">
         <div class="container">
             <div class="section-title">
-                <h2>Our Scientific Edge</h2>
-                <p>What sets Queens Care Laboratories apart: innovation, quality, and proven efficacy.</p>
+                <h2>Scientific Differentiation</h2>
+                <p>What sets our research and development apart from the competition.</p>
             </div>
-            
             <table class="differentiation-table">
                 <thead>
                     <tr>
                         <th>Feature</th>
                         <th>Queens Care Laboratories</th>
-                        <th>Industry Standard</th>
+                        <th>Competitor A</th>
+                        <th>Competitor B</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Research & Development Investment</td>
-                        <td><span class="stat-highlight">15% of Revenue</span></td>
-                        <td>5-8% of Revenue</td>
+                        <td>R&D Investment (Annual)</td>
+                        <td><span class="stat-highlight">$$$ (High)</span></td>
+                        <td>$$ (Medium)</td>
+                        <td>$ (Low)</td>
                     </tr>
                     <tr>
-                        <td>Quality Control Protocols</td>
-                        <td><span class="stat-highlight">Triple-Layered QA</span></td>
-                        <td>Standard QA</td>
-                    </tr>
-                    <tr>
-                        <td>Bioavailability Enhancement</td>
-                        <td><span class="stat-highlight">Proprietary Liposomal Delivery</span></td>
-                        <td>Conventional Absorption</td>
+                        <td>Proprietary Technology</td>
+                        <td><i class="fas fa-check-circle"></i> Yes (Multiple Patents)</td>
+                        <td><i class="fas fa-times-circle"></i> Limited</td>
+                        <td><i class="fas fa-times-circle"></i> No</td>
                     </tr>
                     <tr>
                         <td>Clinical Trial Success Rate</td>
-                        <td><span class="stat-highlight">75%</span></td>
-                        <td>40-50%</td>
+                        <td><span class="stat-highlight">>85%</span></td>
+                        <td>~70%</td>
+                        <td>~60%</td>
+                    </tr>
+                    <tr>
+                        <td>Patient Outcome Focus</td>
+                        <td><i class="fas fa-check-circle"></i> Excellent</td>
+                        <td><i class="fas fa-check-circle"></i> Good</td>
+                        <td><i class="fas fa-times-circle"></i> Moderate</td>
+                    </tr>
+                    <tr>
+                        <td>Global Collaborations</td>
+                        <td><i class="fas fa-check-circle"></i> Extensive</td>
+                        <td><i class="fas fa-times-circle"></i> Limited</td>
+                        <td><i class="fas fa-times-circle"></i> None</td>
                     </tr>
                 </tbody>
             </table>
@@ -1627,40 +1954,62 @@
     <section class="advisory">
         <div class="container">
             <div class="section-title">
-                <h2>Our Commitment to Excellence</h2>
-                <p>Adhering to the highest standards of safety, quality, and ethical practices.</p>
+                <h2>Important Advisory</h2>
+                <p>Ensuring transparency and adherence to medical guidelines.</p>
             </div>
-            
             <div class="advisory-statement">
-                <p>“At Queens Care Laboratories, every formulation undergoes rigorous testing and adheres to international pharmaceutical standards. Our commitment to patient safety and product efficacy is paramount.”</p>
+                <p>The information provided on this website is for general informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare professional for diagnosis and treatment of any medical condition. Our products are intended for use under medical supervision.</p>
             </div>
-            
             <div class="certifications">
                 <div class="cert-badge">
-                    <i class="fas fa-certificate"></i>
+                    <i class="fas fa-shield-alt"></i>
                     <span>GMP Certified</span>
                 </div>
                 <div class="cert-badge">
-                    <i class="fas fa-flask"></i>
+                    <i class="fas fa-leaf"></i>
                     <span>ISO 9001:2015</span>
                 </div>
                 <div class="cert-badge">
-                    <i class="fas fa-leaf"></i>
-                    <span>Organic Sourcing</span>
+                    <i class="fas fa-certificate"></i>
+                    <span>FDA Compliant</span>
                 </div>
                 <div class="cert-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>FDA Compliant</span>
+                    <i class="fas fa-microscope"></i>
+                    <span>Research Driven</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-us" id="contact-us-section">
+    <section class="gemini-ai-chat" id="gemini-ai-chat">
         <div class="container">
             <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>We'd love to hear from you. Reach out to us for any inquiries or support.</p>
+                <h2>Ask Queens Care AI</h2>
+                <p>Get instant answers to your health-related questions from our AI assistant. Please remember this is for informational purposes only and not a substitute for professional medical advice.</p>
+            </div>
+            <div class="chat-container">
+                <div class="chat-header">
+                    AI Health Assistant
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="ai-message message-bubble">Hello! I'm your AI Health Assistant. How can I help you today?</div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="chatInput" placeholder="Type your health question here..."></textarea>
+                    <button id="sendChatBtn" class="chat-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="loading-indicator" id="loadingIndicator" style="display: none;">AI is thinking...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Reach out to us for inquiries, partnerships, or support.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
@@ -1668,26 +2017,37 @@
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject of your inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
                 <div class="contact-info-block">
                     <div class="contact-details-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Email Us</h4>
-                            <p>For general inquiries and support.</p>
-                            <a href="mailto:info@queenscarelabs.com">info@queenscarelabs.com</a>
+                            <h4>Our Headquarters</h4>
+                            <p>123 Pharma Avenue, Science City,<br> Healthland, HL 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-details-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                            <p><a href="tel:+1987654321">+1 (987) 654-321</a></p>
                         </div>
                     </div>
                     <div class="contact-details-item">
@@ -1699,55 +2059,53 @@
                         </div>
                     </div>
                     <div class="contact-details-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Our Location</h4>
-                            <p>Visit our headquarters.</p>
-                            <p>123 Pharma Lane, Science City, IN 12345</p>
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:info@queenscarelabs.com">info@queenscarelabs.com</a></p>
+                            <p><a href="mailto:support@queenscarelabs.com">support@queenscarelabs.com</a></p>
                         </div>
                     </div>
                     <div class="google-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.50201267866!2d77.216667!3d28.613939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b00000001%3A0x123456789abcdef0!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.780676102029!2d-93.2669865844877!3d44.9777529790924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b332961e0f0c0f%3A0x86b0f3f2d2b2d2b2!2sScience%20Museum%20of%20Minnesota!5e0!3m2!1sen!2sus!4v1678234567890!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="footer">
+    <footer>
         <div class="container footer-container">
             <div class="footer-column">
-                <h4>Queens Care Laboratories</h4>
-                <p>Pioneering health innovations through scientific excellence and premium quality.</p>
+                <h4>Queens Care Labs</h4>
+                <p>Pioneering pharmaceutical innovation for a healthier world. Committed to research, quality, and patient well-being.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#therapeutic">Therapeutic Areas</a></li>
+                    <li><a href="#therapeutic-areas">Therapeutic Areas</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#why-choose-us">Why Choose Us</a></li>
-                    <li><a href="#featured">Featured Product</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#future-products">Pipeline</a></li>
                     <li><a href="#faqs">FAQs</a></li>
-                    
-                    <li><a href="#pipeline">Research Pipeline</a></li>
-                    <li><a href="#contact-us-section">Contact Us</a></li>
-                </ul>
+                    <li><a href="#gemini-ai-chat">Ask AI</a></li> </ul>
             </div>
             <div class="footer-column">
-                <h4>Legal</h4>
+                <h4>Support</h4>
                 <ul>
+                    <li><a href="#contact">Contact Support</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -1755,11 +2113,11 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Pharma Lane, Science City, IN 12345</span>
+                        <span>123 Pharma Ave, Science City, Healthland</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <span>+91 98765 43210</span>
+                        <span>+1 (234) 567-890</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -1773,17 +2131,17 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="whatsapp-float" target="_blank" aria-label="WhatsApp Us">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Three.js DNA Helix Animation
-        let scene, camera, renderer, helix;
+        // Three.js DNA Helix Animation for Hero Section
+        let scene, camera, renderer, dnaGroup;
 
         function initDNAHelix() {
             const container = document.getElementById('dna-helix');
-            if (!container) return; 
+            if (!container) return; // Exit if container is not found
 
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -1791,369 +2149,332 @@
             renderer.setSize(container.clientWidth, container.clientHeight);
             container.appendChild(renderer.domElement);
 
-            // Resize canvas responsively
+            // Responsive camera and renderer
             window.addEventListener('resize', () => {
                 camera.aspect = container.clientWidth / container.clientHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(container.clientWidth, container.clientHeight);
             });
 
-            // DNA Helix geometry
-            const radius = 0.5;
-            const height = 5;
-            const segments = 100;
-            const turns = 5;
+            // DNA Helix Group
+            dnaGroup = new THREE.Group();
+            scene.add(dnaGroup);
 
-            const points = [];
-            for (let i = 0; i <= segments; i++) {
-                const t = (i / segments) * Math.PI * 2 * turns;
-                const x = radius * Math.cos(t);
-                const y = radius * Math.sin(t);
-                const z = (i / segments) * height - height / 2;
-                points.push(new THREE.Vector3(x, y, z));
+            // Create DNA structure
+            const strandMaterial = new THREE.MeshBasicMaterial({ color: 0x00aaff }); // Blue for strands
+            const baseMaterial = new THREE.MeshBasicMaterial({ color: 0xffd700 }); // Gold for bases
+
+            const numSegments = 50;
+            const radius = 2;
+            const height = 10;
+            const segmentHeight = height / numSegments;
+
+            for (let i = 0; i < numSegments; i++) {
+                const angle = i * Math.PI * 0.4; // Twist factor
+
+                // Create two points for the backbone
+                const x1 = radius * Math.cos(angle);
+                const y1 = radius * Math.sin(angle);
+                const z1 = i * segmentHeight - height / 2;
+
+                const x2 = radius * Math.cos(angle + Math.PI); // Opposite side
+                const y2 = radius * Math.sin(angle + Math.PI);
+                const z2 = i * segmentHeight - height / 2;
+
+                // Create backbone segments (cylinders)
+                const cylinderGeometry = new THREE.CylinderGeometry(0.05, 0.05, segmentHeight, 8);
+                const cylinder1 = new THREE.Mesh(cylinderGeometry, strandMaterial);
+                cylinder1.position.set(x1, y1, z1 + segmentHeight / 2);
+                cylinder1.rotation.z = Math.PI / 2; // Adjust rotation if needed
+                dnaGroup.add(cylinder1);
+
+                const cylinder2 = new THREE.Mesh(cylinderGeometry, strandMaterial);
+                cylinder2.position.set(x2, y2, z2 + segmentHeight / 2);
+                cylinder2.rotation.z = Math.PI / 2;
+                dnaGroup.add(cylinder2);
+
+                // Create connecting bases (cylinders)
+                const baseCylinderGeometry = new THREE.CylinderGeometry(0.08, 0.08, radius * 2, 8);
+                const baseCylinder = new THREE.Mesh(baseCylinderGeometry, baseMaterial);
+                baseCylinder.position.set(0, 0, z1 + segmentHeight / 2);
+                baseCylinder.rotation.z = angle + Math.PI / 2; // Rotate to connect points
+                dnaGroup.add(baseCylinder);
             }
 
-            const geometry = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), segments, 0.02, 8, false);
-            // Changed DNA helix colors to be less vibrant and more subtle
-            const material = new THREE.MeshPhongMaterial({ color: 0x6699ff, emissive: 0x3366cc, shininess: 80 });
-            helix = new THREE.Mesh(geometry, material);
-            scene.add(helix);
-
-            // Add complementary strand (offset)
-            const points2 = [];
-            for (let i = 0; i <= segments; i++) {
-                const t = (i / segments) * Math.PI * 2 * turns + Math.PI; 
-                const x = radius * Math.cos(t);
-                const y = radius * Math.sin(t);
-                const z = (i / segments) * height - height / 2;
-                points2.push(new THREE.Vector3(x, y, z));
-            }
-            const geometry2 = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points2), segments, 0.02, 8, false);
-            // Changed complementary strand color to be less vibrant
-            const material2 = new THREE.MeshPhongMaterial({ color: 0xff6699, emissive: 0xcc3366, shininess: 80 });
-            const helix2 = new THREE.Mesh(geometry2, material2);
-            scene.add(helix2);
-
-            // Add "rungs" (bases)
-            for (let i = 0; i < segments; i += 5) { 
-                const p1 = points[i];
-                const p2 = points2[i];
-                const rungGeometry = new THREE.CylinderGeometry(0.01, 0.01, p1.distanceTo(p2), 8);
-                const rungMaterial = new THREE.MeshPhongMaterial({ color: 0x99ff99, emissive: 0x66cc66, shininess: 80 });
-                const rung = new THREE.Mesh(rungGeometry, rungMaterial);
-
-                rung.position.set((p1.x + p2.x) / 2, (p1.y + p2.y) / 2, (p1.z + p2.z) / 2);
-                rung.lookAt(p2);
-                rung.rotateX(Math.PI / 2); 
-                scene.add(rung);
-            }
-
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0x404040);
-            scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-            directionalLight.position.set(1, 1, 1).normalize();
-            scene.add(directionalLight);
-
-            camera.position.z = 3;
+            camera.position.z = 10;
+            dnaGroup.rotation.y = Math.PI / 4; // Initial rotation
         }
 
         function animateDNAHelix() {
-            if (helix) {
-                helix.rotation.y += 0.005;
-                helix.rotation.x += 0.002;
-            }
-            renderer.render(scene, camera);
+            if (!dnaGroup) return; // Ensure dnaGroup is initialized
             requestAnimationFrame(animateDNAHelix);
+            dnaGroup.rotation.y += 0.005; // Rotate slowly
+            dnaGroup.rotation.x += 0.002;
+            renderer.render(scene, camera);
         }
 
-        // Three.js Molecule Animation
-        let sceneMolecule, cameraMolecule, rendererMolecule, molecule;
+        // Three.js Molecule Animation for Featured Product Section
+        let moleculeScene, moleculeCamera, moleculeRenderer, moleculeGroup;
+        let atoms = [];
+        const atomMaterials = {
+            'vitamin': new THREE.MeshBasicMaterial({ color: 0xff6347 }), // Tomato
+            'mineral': new THREE.MeshBasicMaterial({ color: 0x6a5acd }), // SlateBlue
+            'antioxidant': new THREE.MeshBasicMaterial({ color: 0x3cb371 }) // MediumSeaGreen
+        };
 
         function initMolecule() {
             const container = document.getElementById('molecule-container');
             if (!container) return;
 
-            sceneMolecule = new THREE.Scene();
-            cameraMolecule = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-            rendererMolecule = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            rendererMolecule.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(rendererMolecule.domElement);
+            moleculeScene = new THREE.Scene();
+            moleculeCamera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 100);
+            moleculeRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            moleculeRenderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(moleculeRenderer.domElement);
 
+            // Responsive camera and renderer
             window.addEventListener('resize', () => {
-                cameraMolecule.aspect = container.clientWidth / container.clientHeight;
-                cameraMolecule.updateProjectionMatrix();
-                rendererMolecule.setSize(container.clientWidth, container.clientHeight);
+                moleculeCamera.aspect = container.clientWidth / container.clientHeight;
+                moleculeCamera.updateProjectionMatrix();
+                moleculeRenderer.setSize(container.clientWidth, container.clientHeight);
             });
 
-            // Create a simple molecule (e.g., a central atom with surrounding atoms)
-            const centralAtomGeometry = new THREE.SphereGeometry(0.3, 32, 32);
-            const centralAtomMaterial = new THREE.MeshPhongMaterial({ color: 0xff0000, emissive: 0xcc0000 });
-            const centralAtom = new THREE.Mesh(centralAtomGeometry, centralAtomMaterial);
-            sceneMolecule.add(centralAtom);
+            moleculeGroup = new THREE.Group();
+            moleculeScene.add(moleculeGroup);
 
-            const bondMaterial = new THREE.MeshPhongMaterial({ color: 0xcccccc, emissive: 0x999999 });
+            moleculeCamera.position.z = 5;
 
-            // Surrounding atoms and bonds
-            const numSurrounding = 4;
-            const bondLength = 0.8;
-            const surroundingAtomMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00, emissive: 0x00cc00 });
+            createMolecule('vitamin'); // Initial molecule
+        }
 
-            for (let i = 0; i < numSurrounding; i++) {
-                const angle = (i / numSurrounding) * Math.PI * 2;
-                const x = bondLength * Math.cos(angle);
-                const y = bondLength * Math.sin(angle);
-                const z = 0; 
+        function createMolecule(type) {
+            // Clear existing atoms
+            atoms.forEach(atom => moleculeGroup.remove(atom));
+            atoms = [];
 
-                // Surrounding atom
-                const surroundingAtom = new THREE.Mesh(centralAtomGeometry.clone(), surroundingAtomMaterial);
-                surroundingAtom.position.set(x, y, z);
-                sceneMolecule.add(surroundingAtom);
+            const atomGeometry = new THREE.SphereGeometry(0.3, 32, 32);
+            const bondGeometry = new THREE.CylinderGeometry(0.08, 0.08, 1, 8);
 
-                // Bond
-                const bondGeometry = new THREE.CylinderGeometry(0.05, 0.05, bondLength, 8);
-                const bond = new THREE.Mesh(bondGeometry, bondMaterial);
-                bond.position.set(x / 2, y / 2, z / 2);
-                bond.lookAt(centralAtom.position);
-                bond.rotateX(Math.PI / 2); 
-                sceneMolecule.add(bond);
+            let positions = [];
+            let connections = [];
+
+            if (type === 'vitamin') {
+                // Simple ring-like structure (e.g., part of a vitamin B)
+                positions = [
+                    new THREE.Vector3(0, 0, 0),
+                    new THREE.Vector3(1, 0, 0),
+                    new THREE.Vector3(0.5, 0.866, 0),
+                    new THREE.Vector3(-0.5, 0.866, 0),
+                    new THREE.Vector3(-1, 0, 0),
+                    new THREE.Vector3(-0.5, -0.866, 0),
+                    new THREE.Vector3(0.5, -0.866, 0)
+                ];
+                connections = [
+                    [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6],
+                    [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 1]
+                ];
+            } else if (type === 'mineral') {
+                // More linear/chain-like structure
+                positions = [
+                    new THREE.Vector3(-1.5, 0, 0),
+                    new THREE.Vector3(-0.5, 0, 0),
+                    new THREE.Vector3(0.5, 0, 0),
+                    new THREE.Vector3(1.5, 0, 0),
+                    new THREE.Vector3(0, 1, 0),
+                    new THREE.Vector3(0, -1, 0)
+                ];
+                connections = [
+                    [0, 1], [1, 2], [2, 3], [1, 4], [2, 5]
+                ];
+            } else if (type === 'antioxidant') {
+                // Branching structure
+                positions = [
+                    new THREE.Vector3(0, 0, 0),
+                    new THREE.Vector3(1, 0, 0),
+                    new THREE.Vector3(-1, 0, 0),
+                    new THREE.Vector3(0, 1, 0),
+                    new THREE.Vector3(0, -1, 0),
+                    new THREE.Vector3(1.5, 0.5, 0),
+                    new THREE.Vector3(-1.5, -0.5, 0)
+                ];
+                connections = [
+                    [0, 1], [0, 2], [0, 3], [0, 4],
+                    [1, 5], [2, 6]
+                ];
             }
 
-            molecule = new THREE.Group();
-            molecule.add(centralAtom);
-            // Add surrounding atoms and bonds to the molecule group
-            sceneMolecule.children.forEach(child => {
-                // Check if the child is already the centralAtom before adding it to the group
-                if (child !== centralAtom && child instanceof THREE.Mesh) {
-                    molecule.add(child);
-                }
+            // Create atoms
+            positions.forEach(pos => {
+                const atom = new THREE.Mesh(atomGeometry, atomMaterials[type]);
+                atom.position.copy(pos);
+                moleculeGroup.add(atom);
+                atoms.push(atom);
             });
-            sceneMolecule.add(molecule); 
 
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0x404040);
-            sceneMolecule.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-            directionalLight.position.set(1, 1, 1).normalize();
-            sceneMolecule.add(directionalLight);
+            // Create bonds
+            connections.forEach(conn => {
+                const start = positions[conn[0]];
+                const end = positions[conn[1]];
 
-            cameraMolecule.position.z = 2;
+                const bond = new THREE.Mesh(bondGeometry, atomMaterials[type]);
+                bond.position.lerpVectors(start, end, 0.5);
+                bond.lookAt(end);
+                bond.scale.y = start.distanceTo(end);
+                moleculeGroup.add(bond);
+            });
+
+            // Center the molecule
+            const bbox = new THREE.Box3().setFromObject(moleculeGroup);
+            const center = bbox.getCenter(new THREE.Vector3());
+            moleculeGroup.position.sub(center);
         }
 
         function animateMolecule() {
-            if (molecule) {
-                molecule.rotation.x += 0.005;
-                molecule.rotation.y += 0.005;
-            }
-            rendererMolecule.render(sceneMolecule, cameraMolecule);
+            if (!moleculeGroup) return;
             requestAnimationFrame(animateMolecule);
+            moleculeGroup.rotation.x += 0.005;
+            moleculeGroup.rotation.y += 0.008;
+            moleculeRenderer.render(moleculeScene, moleculeCamera);
         }
 
-        // Initialize Three.js animations on DOMContentLoaded
+        // Product Search Functionality
         document.addEventListener('DOMContentLoaded', () => {
-            initDNAHelix();
-            animateDNAHelix();
-            initMolecule();
-            animateMolecule();
+            const searchInput = document.getElementById('productSearch');
+            const productsGrid = document.getElementById('productsGrid');
+            const productCards = productsGrid.querySelectorAll('.product-card');
 
-            // Product search functionality
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            const productCards = document.querySelectorAll('.product-card');
+            searchInput.addEventListener('keyup', (event) => {
+                const searchTerm = event.target.value.toLowerCase();
 
-            const filterProducts = () => {
-                const searchTerm = searchInput.value.toLowerCase();
                 productCards.forEach(card => {
-                    const title = card.querySelector('h3').textContent.toLowerCase();
-                    const category = card.querySelector('.product-category').textContent.toLowerCase();
-                    const description = card.querySelector('.product-description').textContent.toLowerCase();
+                    const productName = card.dataset.name.toLowerCase();
+                    const productCategory = card.dataset.category.toLowerCase();
+                    const productDescription = card.querySelector('.product-description').textContent.toLowerCase();
 
-                    if (title.includes(searchTerm) || category.includes(searchTerm) || description.includes(searchTerm)) {
-                        card.style.display = 'flex'; 
+                    if (productName.includes(searchTerm) || productCategory.includes(searchTerm) || productDescription.includes(searchTerm)) {
+                        card.style.display = 'flex'; // Show the card
                     } else {
-                        card.style.display = 'none'; 
+                        card.style.display = 'none'; // Hide the card
                     }
                 });
-            };
-
-            searchBtn.addEventListener('click', filterProducts);
-            searchInput.addEventListener('keyup', (event) => {
-                if (event.key === 'Enter') {
-                    filterProducts();
-                }
             });
 
-            // FAQ accordion functionality
+            // FAQ Accordion
             const faqQuestions = document.querySelectorAll('.faq-question');
-
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
-                    const icon = question.querySelector('i');
+                    const isActive = question.classList.contains('active');
 
-                    // Close other open answers
-                    faqQuestions.forEach(otherQuestion => {
-                        const otherAnswer = otherQuestion.nextElementSibling;
-                        const otherIcon = otherQuestion.querySelector('i');
-
-                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
-                            otherQuestion.classList.remove('active');
-                            otherAnswer.style.maxHeight = '0'; // Explicitly set to 0
-                            otherAnswer.style.paddingTop = '0'; // Reset top padding
-                            otherAnswer.style.paddingBottom = '0'; // Reset bottom padding
-                            otherIcon.style.transform = 'rotate(0deg)';
+                    // Close all other open FAQs
+                    faqQuestions.forEach(q => {
+                        if (q !== question && q.classList.contains('active')) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.style.maxHeight = '0';
+                            q.nextElementSibling.style.paddingTop = '0'; // Explicitly set padding to 0
+                            q.nextElementSibling.style.paddingBottom = '0'; // Explicitly set padding to 0
                         }
                     });
 
-                    // Toggle current answer
-                    question.classList.toggle('active');
-                    if (question.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + 'px'; // Set to actual scrollHeight
-                        answer.style.paddingTop = '20px'; // Apply padding when open
-                        answer.style.paddingBottom = '20px'; // Apply padding when open
-                        icon.style.transform = 'rotate(180deg)';
+                    // Toggle current FAQ
+                    if (isActive) {
+                        question.classList.remove('active');
+                        answer.style.maxHeight = '0';
+                        answer.style.paddingTop = '0'; // Explicitly set padding to 0
+                        answer.style.paddingBottom = '0'; // Explicitly set padding to 0
                     } else {
-                        answer.style.maxHeight = '0'; // Set to 0 when closed
-                        answer.style.paddingTop = '0'; // Remove padding when closed
-                        answer.style.paddingBottom = '0'; // Remove padding when closed
-                        icon.style.transform = 'rotate(0deg)';
+                        question.classList.add('active');
+                        // Set a very large max-height to ensure all content is visible
+                        answer.style.maxHeight = '9999px';
+                        answer.style.paddingTop = '15px'; // Add vertical padding when open
+                        answer.style.paddingBottom = '20px';
                     }
                 });
             });
 
-            // Featured Product layer buttons functionality
-            const layerButtons = document.querySelectorAll('.nutrient-layers .layer-btn');
-            const featuredTitle = document.getElementById('featured-title');
-            const featuredSubtitle = document.getElementById('featured-subtitle');
-            const featuredDescription = document.getElementById('featured-description');
-            const featuredBenefits = document.getElementById('featured-benefits');
-
-            const layerContent = {
-                vitamin: {
-                    title: "LikeoQ® Multivitamin Syrup",
-                    subtitle: "Complete Nutritional Support for All Ages",
-                    description: "LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.",
-                    benefits: `
-                        <div class="benefit-item">
-                            <i class="fas fa-brain"></i>
-                            <div>
-                                <h4>Cognitive Support</h4>
-                                <p>B vitamins for mental clarity</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-heart"></i>
-                            <div>
-                                <h4>Cardiovascular Health</h4>
-                                <p>CoQ10 for heart function</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Immune Defense</h4>
-                                <p>Vitamins C, D, Zinc & Selenium</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-bone"></i>
-                            <div>
-                                <h4>Bone Health</h4>
-                                <p>Calcium & Vitamin K2</p>
-                            </div>
-                        </div>
-                    `
-                },
-                mineral: {
-                    title: "Advanced Mineral Matrix",
-                    subtitle: "Essential Minerals for Bone & Enzyme Function",
-                    description: "Our Mineral Matrix ensures optimal absorption of vital minerals like Calcium, Magnesium, Zinc, and Selenium, crucial for bone density, enzyme activity, and cellular health.",
-                    benefits: `
-                        <div class="benefit-item">
-                            <i class="fas fa-bone"></i>
-                            <div>
-                                <h4>Strong Bones & Teeth</h4>
-                                <p>Calcium, Magnesium, Phosphorus</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-microscope"></i>
-                            <div>
-                                <h4>Enzyme & Hormone Support</h4>
-                                <p>Zinc, Selenium, Copper</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-balance-scale"></i>
-                            <div>
-                                <h4>Electrolyte Balance</h4>
-                                <p>Potassium, Sodium, Chloride</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-tint"></i>
-                            <div>
-                                <h4>Fluid Regulation</h4>
-                                <p>Essential for hydration & nerve function</p>
-                            </div>
-                        </div>
-                    `
-                },
-                bioavailability: {
-                    title: "Bioavailability Enhancers Complex",
-                    subtitle: "Maximize Nutrient Absorption & Efficacy",
-                    description: "This unique complex includes Piperine, Liposomal technology, and Co-factors to significantly enhance the absorption and utilization of all nutrients, ensuring maximum benefit from every dose.",
-                    benefits: `
-                        <div class="benefit-item">
-                            <i class="fas fa-leaf"></i>
-                            <div>
-                                <h4>Enhanced Absorption</h4>
-                                <p>Optimized uptake with Piperine</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-flask"></i>
-                            <div>
-                                <h4>Cellular Delivery</h4>
-                                <p>Liposomal technology for direct cell entry</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-hand-holding-medical"></i>
-                            <div>
-                                <h4>Synergistic Action</h4>
-                                <p>Co-factors for complete utilization</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Increased Efficacy</h4>
-                                <p>Ensures nutrients work at their best</p>
-                            </div>
-                        </div>
-                    `
-                }
-            };
-
+            // Featured Product Layer Buttons
+            const layerButtons = document.querySelectorAll('.layer-btn');
             layerButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active class from all buttons
                     layerButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to the clicked button
                     button.classList.add('active');
-
-                    const layerKey = button.dataset.layer;
-                    const content = layerContent[layerKey];
-
-                    if (content) {
-                        featuredTitle.textContent = content.title;
-                        featuredSubtitle.textContent = content.subtitle;
-                        featuredDescription.textContent = content.description;
-                        featuredBenefits.innerHTML = content.benefits;
-                    }
+                    createMolecule(button.dataset.layer);
                 });
             });
+
+            // Gemini AI Chat Functionality
+            const chatInput = document.getElementById('chatInput');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const chatMessages = document.getElementById('chatMessages');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+
+            // Function to add a message to the chat display
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message-bubble');
+                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+            }
+
+            // Event listener for sending a message
+            sendChatBtn.addEventListener('click', async () => {
+                const prompt = chatInput.value.trim();
+                if (prompt === '') return;
+
+                addMessage(prompt, 'user');
+                chatInput.value = ''; // Clear input field
+                sendChatBtn.disabled = true; // Disable button while AI is thinking
+                loadingIndicator.style.display = 'block'; // Show loading indicator
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = "AIzaSyCg7n4vhXOu4d_djR6BTv45lCd7iJfHoBg"; // Provided API Key
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const aiResponseText = result.candidates[0].content.parts[0].text;
+                        addMessage(aiResponseText, 'ai');
+                    } else {
+                        addMessage("Sorry, I couldn't get a response from the AI. Please try again.", 'ai');
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    addMessage("An error occurred while connecting to the AI. Please try again later.", 'ai');
+                } finally {
+                    sendChatBtn.disabled = false; // Re-enable button
+                    loadingIndicator.style.display = 'none'; // Hide loading indicator
+                }
+            });
+
+            // Allow sending message with Enter key
+            chatInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault(); // Prevent new line
+                    sendChatBtn.click();
+                }
+            });
+
+
+            // Initialize Three.js animations after DOM is ready and window is loaded
+            window.onload = function() {
+                initDNAHelix();
+                animateDNAHelix();
+                initMolecule();
+                animateMolecule();
+            };
         });
     </script>
 </body>
