@@ -1,0 +1,39 @@
+{
+  "title": "Therapeutic Excellence",
+  "subtitle": "Precision-formulated solutions targeting key health areas with scientifically validated ingredients and pharmaceutical-grade quality.",
+  "areas": [
+    {
+      "icon": "fas fa-apple-alt",
+      "heading": "Multivitamin & Nutritional Support",
+      "description": "Comprehensive nutritional solutions for all life stages, providing essential vitamins and minerals for daily wellness.",
+      "list_items": [
+        "LikeoQ® Multivitamin Syrup",
+        "Pediatric formulations",
+        "Geriatric nutrition support",
+        "Sports nutrition"
+      ]
+    },
+    {
+      "icon": "fas fa-shield-virus",
+      "heading": "Immune Health",
+      "description": "Advanced formulations designed to support and enhance the body's natural defense mechanisms.",
+      "list_items": [
+        "Herbal immunomodulators",
+        "Antioxidant complexes",
+        "Probiotic formulations",
+        "Seasonal immunity boosters"
+      ]
+    },
+    {
+      "icon": "fas fa-child",
+      "heading": "Growth & Development",
+      "description": "Specialized pediatric formulation for pediatric development supporting physical growth and cognitive function.",
+      "list_items": [
+        "Growth tonics",
+        "Cognitive development formulas",
+        "Bone health supplements",
+        "Appetite stimulants"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "About Queens Care Laboratories",
+  "subtitle": "Our journey towards health innovation and excellence.",
+  "story_heading": "Our Story & Mission",
+  "story_paragraph1": "Founded in 2010, Queens Care Laboratories embarked on a mission to revolutionize healthcare through scientifically-backed, high-quality pharmaceutical solutions. We believe in harnessing the power of nature and science to create products that genuinely improve well-being.",
+  "story_paragraph2": "Our commitment extends beyond product development; we are dedicated to ethical practices, sustainable sourcing, and fostering a healthier community. We are renowned for our **premium packaging** that ensures product integrity and our continuous drive for **innovation** in therapeutic formulations.",
+  "story_paragraph3": "We strive to be a trusted partner in health for families worldwide, providing safe, effective, and accessible medicines and supplements.",
+  "image_url": "https://placehold.co/400x300/0056b3/ffffff?text=Our+Lab",
+  "image_alt": "Queens Care Laboratories Lab",
+  "values": [
+    {
+      "icon": "fas fa-lightbulb",
+      "heading": "Innovation",
+      "description": "Constantly pushing boundaries in pharmaceutical research."
+    },
+    {
+      "icon": "fas fa-award",
+      "heading": "Quality",
+      "description": "Adhering to the highest global manufacturing standards."
+    },
+    {
+      "icon": "fas fa-heartbeat",
+      "heading": "Integrity",
+      "description": "Ethical practices and transparency in all operations."
+    },
+    {
+      "icon": "fas fa-users",
+      "heading": "Patient-Centricity",
+      "description": "Dedicated to improving lives through effective solutions."
+    }
+  ]
+}

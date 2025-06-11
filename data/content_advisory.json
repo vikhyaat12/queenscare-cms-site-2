@@ -1,0 +1,11 @@
+{
+  "title": "Our Commitment to Excellence",
+  "subtitle": "Adhering to the highest standards of safety, quality, and ethical practices.",
+  "quote": "At Queens Care Laboratories, every formulation undergoes rigorous testing and adheres to international pharmaceutical standards. Our commitment to patient safety and product efficacy is paramount.",
+  "certifications": [
+    { "icon": "fas fa-certificate", "name": "GMP Certified" },
+    { "icon": "fas fa-flask", "name": "ISO 9001:2015" },
+    { "icon": "fas fa-leaf", "name": "Organic Sourcing" },
+    { "icon": "fas fa-shield-alt", "name": "FDA Compliant" }
+  ]
+}

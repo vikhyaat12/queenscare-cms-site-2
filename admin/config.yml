@@ -3,7 +3,7 @@ backend:
   branch: main # या master यदि आप master ब्रांच का उपयोग कर रहे हैं
 
 # मीडिया अपलोड के लिए ये लाइनें महत्वपूर्ण हैं
-media_folder: "public/images/uploads" # अपलोड की गई फ़ाइलें आपके रेपो में कहाँ संग्रहीत हैं
+media_folder: "static/images/uploads" # अपलोड की गई फ़ाइलें आपके रेपो में कहाँ संग्रहीत हैं
 public_folder: "/images/uploads" # अपलोड की गई फ़ाइलों तक पहुँचने के लिए सार्वजनिक पथ
 
 # यह CMS में लाइव प्रीव्यू को सक्षम करेगा (वैकल्पिक, लेकिन अनुशंसित)
@@ -12,19 +12,15 @@ publish_mode: editorial_workflow
 collections:
   # उत्पाद संग्रह
   - name: "products"
-    label: "🛍️ उत्पाद"
-    folder: "content/products" # उत्पाद सामग्री फ़ाइलें कहाँ संग्रहीत होंगी
-    create: true # उपयोगकर्ताओं को नए उत्पाद बनाने की अनुमति दें
-    slug: "{{slug}}" # शीर्षक से स्वचालित रूप से स्लॉग उत्पन्न करें
+    label: "🛍️ Products"
+    file: "data/products.json" # उत्पाद डेटा फ़ाइल कहाँ संग्रहीत होगी
+    widget: "list"
     fields:
-      - {label: "शीर्षक", name: "title", widget: "string", required: true}
-      - {label: "विवरण", name: "description", widget: "markdown", required: true}
-      - {label: "मूल्य", name: "price", widget: "number", value_type: "float", required: true}
-      - {label: "छवि", name: "image", widget: "image", required: false, hint: "उत्पाद के लिए एक छवि अपलोड करें"}
-      - {label: "श्रेणी", name: "category", widget: "string", required: false, hint: "जैसे, इलेक्ट्रॉनिक्स, परिधान, किताबें"}
-      - {label: "SKU", name: "sku", widget: "string", required: false, hint: "स्टॉक कीपिंग यूनिट"}
-      - {label: "स्टॉक में", name: "in_stock", widget: "boolean", default: true}
-      - {label: "विशेष रुप से प्रदर्शित", name: "featured", widget: "boolean", default: false, hint: "होमपेज पर एक विशेष उत्पाद के रूप में चिह्नित करें"}
+      - {label: "Icon", name: "icon", widget: "string", required: false, hint: "Example: fas fa-pills"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Category", name: "category", widget: "string", required: false, hint: "Example: Multivitamin & Nutritional Support"}
+      - {label: "Description", name: "description", widget: "markdown", required: true}
+      - {label: "Price", name: "price", widget: "string", required: true}
 
   # सेटिंग्स संग्रह (एकल फ़ाइल)
   - name: "settings"
@@ -32,31 +28,317 @@ collections:
     files:
       - label: "सामान्य सेटिंग्स"
         name: "general"
-        file: "content/settings/general.json" # एकल सेटिंग्स फ़ाइल का पथ
+        file: "data/settings/general.yml" # एकल सेटिंग्स फ़ाइल का पथ
         fields:
-          - {label: "साइट शीर्षक", name: "site_title", widget: "string", required: true}
-          - {label: "लोगो", name: "logo", widget: "image", required: false, hint: "अपनी साइट का लोगो अपलोड करें"}
-          - label: "रंग"
-            name: "colors"
-            widget: "object"
-            fields:
-              - {label: "प्राथमिक रंग", name: "primary", widget: "color", default: "#007bff", hint: "मुख्य ब्रांड रंग"}
-              - {label: "द्वितीयक रंग", name: "secondary", widget: "color", default: "#6c757d", hint: "द्वितीयक ब्रांड रंग"}
-              - {label: "उच्चारण रंग", name: "accent", widget: "color", default: "#fd7e14", hint: "हाइलाइट रंग"}
-              - {label: "पाठ रंग", name: "text", widget: "color", default: "#343a40", hint: "डिफ़ॉल्ट पाठ रंग"}
-              - {label: "पृष्ठभूमि रंग", name: "background", widget: "color", default: "#f8f9fa", hint: "समग्र पृष्ठ पृष्ठभूमि"}
-          - {label: "संपर्क ईमेल", name: "contact_email", widget: "string", required: false, pattern: ["^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"], hint: "संपर्क के लिए वैध ईमेल पता"} # <--- यहाँ परिवर्तन किया गया है
-          - {label: "फ़ोन नंबर", name: "phone_number", widget: "string", required: false}
-          - {label: "पता", name: "address", widget: "text", required: false}
-          - label: "सोशल मीडिया लिंक"
-            name: "social_media"
+          - {label: "Site Title", name: "siteTitle", widget: "string", required: true}
+          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload your site logo. Path should be like /images/uploads/your-logo.png"}
+          - {label: "Theme Color", name: "themeColor", widget: "color", default: "#6A1B9A"}
+          - label: "Social Links"
+            name: "socialLinks"
             widget: "list"
-            summary: "{{fields.platform}}"
+            allow_add: true
+            field: {label: "URL", name: "url", widget: "string"}
+
+  # FAQs संग्रह
+  - name: "faqs"
+    label: "❓ FAQs"
+    file: "data/faqs.json"
+    widget: "list"
+    fields:
+      - {label: "Question", name: "question", widget: "string", required: true}
+      - {label: "Answer", name: "answer", widget: "markdown", required: true}
+
+  # Testimonials संग्रह
+  - name: "testimonials"
+    label: "💬 Testimonials Items"
+    file: "data/testimonials.json"
+    description: "Manage the individual testimonial entries."
+    widget: "list"
+    fields:
+      - {label: "Stars", name: "stars", widget: "number", min: 1, max: 5, required: true}
+      - {label: "Quote", name: "quote", widget: "markdown", required: true}
+      - {label: "Image URL", name: "image_url", widget: "image", required: false}
+      - {label: "Author Name", name: "author_name", widget: "string", required: true}
+      - {label: "Author Title", name: "author_title", widget: "string", required: false}
+
+  # Testimonials Section Title/Subtitle
+  - name: "content_testimonials_section"
+    label: "Section: Testimonials Title/Subtitle"
+    file: "data/content_testimonials_section.json"
+    description: "Manage the title and subtitle for the testimonials section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+
+  # Reviews Collection
+  - name: "reviews"
+    label: "🌟 Reviews"
+    file: "data/reviews.json"
+    description: "Manage customer reviews."
+    widget: "list"
+    create: true
+    fields:
+      - {label: "Product Name (Optional)", name: "product_name", widget: "string", required: false}
+      - {label: "Author Name", name: "author_name", widget: "string", required: true}
+      - {label: "Rating (1-5)", name: "rating", widget: "number", min: 1, max: 5, step: 1, required: true}
+      - {label: "Review Text", name: "review_text", widget: "markdown", required: true}
+      - {label: "Date", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DD"}
+      - {label: "Verified Purchase?", name: "is_verified", widget: "boolean", default: false, required: false}
+
+  # Advertisements Collection
+  - name: "advertisements"
+    label: "📢 Advertisements"
+    file: "data/ads.json"
+    description: "Manage website advertisements."
+    widget: "list"
+    create: true
+    fields:
+      - {label: "Ad Title (for CMS identification)", name: "ad_title", widget: "string", required: true}
+      - {label: "Ad Image", name: "ad_image", widget: "image", required: true}
+      - {label: "Ad Link URL (Optional)", name: "ad_link", widget: "string", required: false}
+      - {label: "Display Location Hint", name: "display_location", widget: "string", required: false, hint: "e.g., homepage_banner, sidebar_product_page"}
+      - {label: "Is Active?", name: "is_active", widget: "boolean", default: true, required: true}
+
+  # Theme Colors Collection
+  - name: "theme_colors"
+    label: "🎨 Theme Colors"
+    file: "data/theme_colors.json"
+    description: "Manage the website's theme colors."
+    fields:
+      - {label: "Primary Color", name: "primary", widget: "color"}
+      - {label: "Secondary Color", name: "secondary", widget: "color"}
+      - {label: "Accent Color", name: "accent", widget: "color"}
+      - {label: "Header Gradient End Color", name: "header_gradient_end", widget: "color"}
+
+  # Hero Section Collection
+  - name: "content_hero"
+    label: "Section: Hero"
+    file: "data/content_hero.json"
+    description: "Manage the content of the Hero section on the homepage."
+    fields:
+      - {label: "Heading", name: "heading", widget: "string", required: true}
+      - {label: "Paragraph", name: "paragraph", widget: "text", required: true}
+      - {label: "Button 1 Text", name: "button1_text", widget: "string"}
+      - {label: "Button 2 Text", name: "button2_text", widget: "string"}
+      - {label: "Background Image", name: "background_image", widget: "image"}
+
+  # About Us Section Collection
+  - name: "content_about"
+    label: "Section: About Us"
+    file: "data/content_about.json"
+    description: "Manage the content of the About Us section."
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Story Heading", name: "story_heading", widget: "string"}
+      - {label: "Story Paragraph 1", name: "story_paragraph1", widget: "markdown"}
+      - {label: "Story Paragraph 2", name: "story_paragraph2", widget: "markdown"}
+      - {label: "Story Paragraph 3", name: "story_paragraph3", widget: "markdown"}
+      - {label: "Image URL", name: "image_url", widget: "image"}
+      - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+      - name: "values"
+        label: "Our Values"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-lightbulb"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+
+  # Therapeutic Areas Section Collection
+  - name: "content_therapeutic_areas"
+    label: "Section: Therapeutic Areas"
+    file: "data/content_therapeutic_areas.json"
+    description: "Manage content for the Therapeutic Areas section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - name: "areas"
+        label: "Areas List"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-apple-alt"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "List Items", name: "list_items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+
+  # Products Section Overview Collection
+  - name: "content_products_section"
+    label: "Section: Products Overview"
+    file: "data/content_products_section.json"
+    description: "Manage the title, subtitle, and search placeholder for the products section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - {label: "Search Placeholder", name: "search_placeholder", widget: "string"}
+
+  # Why Choose Us Section Collection
+  - name: "content_why_choose_us"
+    label: "Section: Why Choose Us"
+    file: "data/content_why_choose_us.json"
+    description: "Manage items for the 'Why Choose Us' section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - name: "items"
+        label: "Items List"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-user-md"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+
+  # Featured Product Section Collection
+  - name: "content_featured_product"
+    label: "Section: Featured Product"
+    file: "data/content_featured_product.json"
+    description: "Manage the content for the Featured Product section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - {label: "Learn More Button Text", name: "learn_more_button", widget: "string"}
+      - name: "layers"
+        label: "Product Layers"
+        widget: "list"
+        fields:
+          - {label: "ID", name: "id", widget: "string"}
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Description", name: "description", widget: "markdown"}
+          - name: "benefits"
+            label: "Benefits List"
+            widget: "list"
             fields:
-              - {label: "प्लेटफ़ॉर्म", name: "platform", widget: "string", hint: "जैसे, फेसबुक, ट्विटर, इंस्टाग्राम"}
-              - {label: "URL", name: "url", widget: "string", hint: "आपके सोशल मीडिया प्रोफ़ाइल का पूर्ण URL"}
-          - {label: "फुटर टेक्स्ट", name: "footer_text", widget: "markdown", required: false, hint: "साइट फुटर के लिए सामग्री"}
-          - {label: "Google Analytics ID", name: "google_analytics_id", widget: "string", required: false, hint: "UA-XXXXXXXXX-X या G-XXXXXXXXX"}
+              - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-brain"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+  # FAQs Section Title/Subtitle Collection
+  - name: "content_faqs_section"
+    label: "Section: FAQs Title/Subtitle"
+    file: "data/content_faqs_section.json"
+    description: "Manage the title and subtitle for the FAQs section on the homepage. (Actual FAQs are managed in the 'FAQs' collection)."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+
+  # Research Pipeline Section Collection
+  - name: "content_pipeline"
+    label: "Section: Research Pipeline"
+    file: "data/content_pipeline.json"
+    description: "Manage content for the Research Pipeline section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - name: "items"
+        label: "Pipeline Items"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-microscope"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Phase Class", name: "phase_class", widget: "string", hint: "CSS class for styling, e.g., phase-1, phase-2, phase-3"}
+          - {label: "Phase Text", name: "phase_text", widget: "string", hint: "Example: Phase II Clinical Trials"}
+          - {label: "Description", name: "description", widget: "text"}
+
+  # Scientific Differentiation Section Collection
+  - name: "content_scientific_differentiation"
+    label: "Section: Scientific Differentiation"
+    file: "data/content_scientific_differentiation.json"
+    description: "Manage content for the Scientific Differentiation table."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - name: "table_rows"
+        label: "Table Rows"
+        widget: "list"
+        fields:
+          - {label: "Feature", name: "feature", widget: "string"}
+          - {label: "Queens Care Value", name: "queens_care_value", widget: "string"}
+          - {label: "Industry Standard Value", name: "industry_standard_value", widget: "string"}
+
+  # Advisory/Commitment Section Collection
+  - name: "content_advisory"
+    label: "Section: Advisory/Commitment"
+    file: "data/content_advisory.json"
+    description: "Manage content for the Advisory/Commitment to Excellence section."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - {label: "Quote", name: "quote", widget: "text"}
+      - name: "certifications"
+        label: "Certifications"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-certificate"}
+          - {label: "Name", name: "name", widget: "string"}
+
+  # Contact Us Section Collection
+  - name: "content_contact_us"
+    label: "Section: Contact Us"
+    file: "data/content_contact_us.json"
+    description: "Manage content for the Contact Us section, including form details and map."
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "text"}
+      - {label: "Form Heading", name: "form_heading", widget: "string"}
+      - {label: "Form Button Text", name: "form_button", widget: "string"}
+      - name: "details"
+        label: "Contact Details"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-envelope"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Link URL", name: "link", widget: "string"}
+          - {label: "Link Text", name: "link_text", widget: "string"}
+          - {label: "Link Target", name: "link_target", widget: "string", hint: "Example: _blank", required: false}
+      - {label: "Map Iframe Src", name: "map_iframe_src", widget: "text", hint: "Google Maps embed iframe src URL"}
+
+  # Footer Section Collection
+  - name: "content_footer"
+    label: "Section: Footer"
+    file: "data/content_footer.json"
+    description: "Manage content for the website footer."
+    fields:
+      - {label: "Company Name", name: "company_name", widget: "string"}
+      - {label: "Company Description", name: "company_description", widget: "text"}
+      - name: "social_links"
+        label: "Social Links"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fab fa-facebook-f"}
+          - {label: "URL", name: "url", widget: "string"}
+      - {label: "Quick Links Heading", name: "quick_links_heading", widget: "string"}
+      - name: "quick_links"
+        label: "Quick Links"
+        widget: "list"
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+      - {label: "Legal Heading", name: "legal_heading", widget: "string"}
+      - name: "legal_links"
+        label: "Legal Links"
+        widget: "list"
+        fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+      - {label: "Contact Info Heading", name: "contact_info_heading", widget: "string"}
+      - name: "contact_info_items"
+        label: "Contact Info Items"
+        widget: "list"
+        fields:
+          - {label: "Icon", name: "icon", widget: "string", hint: "Example: fas fa-map-marker-alt"}
+          - {label: "Text", name: "text", widget: "string"}
+      - {label: "Copyright Year", name: "copyright_year", widget: "number"}
+
+  # WhatsApp Float Button Collection
+  - name: "content_whatsapp_float"
+    label: "Site: WhatsApp Float Button"
+    file: "data/content_whatsapp_float.json"
+    description: "Manage the WhatsApp floating button settings."
+    fields:
+      - {label: "URL", name: "url", widget: "string", hint: "Full WhatsApp click to chat URL"}
+      - {label: "Icon", name: "icon", widget: "string", hint: "Example: fab fa-whatsapp"}
 
   # ब्लॉग पोस्ट संग्रह
   - name: "blog"

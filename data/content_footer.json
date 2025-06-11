@@ -1,0 +1,36 @@
+{
+  "company_name": "Queens Care Laboratories",
+  "company_description": "Pioneering health innovations through scientific excellence and premium quality.",
+  "social_links": [
+    { "icon": "fab fa-facebook-f", "url": "#" },
+    { "icon": "fab fa-twitter", "url": "#" },
+    { "icon": "fab fa-linkedin-in", "url": "#" },
+    { "icon": "fab fa-instagram", "url": "#" }
+  ],
+  "quick_links_heading": "Quick Links",
+  "quick_links": [
+    { "text": "Home", "url": "#hero" },
+    { "text": "About Us", "url": "#about" },
+    { "text": "Therapeutic Areas", "url": "#therapeutic" },
+    { "text": "Products", "url": "#products" },
+    { "text": "Why Choose Us", "url": "#why-choose-us" },
+    { "text": "Featured Product", "url": "#featured" },
+    { "text": "Testimonials", "url": "#testimonials" },
+    { "text": "FAQs", "url": "#faqs" },
+    { "text": "Research Pipeline", "url": "#pipeline" },
+    { "text": "Contact Us", "url": "#contact-us-section" }
+  ],
+  "legal_heading": "Legal",
+  "legal_links": [
+    { "text": "Privacy Policy", "url": "#" },
+    { "text": "Terms & Conditions", "url": "#" },
+    { "text": "Disclaimer", "url": "#" }
+  ],
+  "contact_info_heading": "Contact Info",
+  "contact_info_items": [
+    { "icon": "fas fa-map-marker-alt", "text": "123 Pharma Lane, Science City, IN 12345" },
+    { "icon": "fas fa-phone-alt", "text": "+91 98765 43210" },
+    { "icon": "fas fa-envelope", "text": "info@queenscarelabs.com" }
+  ],
+  "copyright_year": 2025
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Why Choose Queens Care?",
+  "subtitle": "Our distinct advantages that make us your preferred health partner.",
+  "items": [
+    {
+      "icon": "fas fa-user-md",
+      "heading": "Doctor Recommended",
+      "description": "Trusted by healthcare professionals for proven efficacy and safety."
+    },
+    {
+      "icon": "fas fa-gem",
+      "heading": "Premium Quality",
+      "description": "Only the finest pharmaceutical-grade ingredients in every product."
+    },
+    {
+      "icon": "fas fa-box-open",
+      "heading": "Attractive Packaging",
+      "description": "Thoughtfully designed packaging ensuring product integrity and appeal."
+    },
+    {
+      "icon": "fas fa-smile-beam",
+      "heading": "Customer Satisfaction",
+      "description": "Dedicated to exceeding expectations with exceptional products and service."
+    }
+  ]
+}

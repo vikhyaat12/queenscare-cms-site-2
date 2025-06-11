@@ -1,0 +1,46 @@
+{
+  "title": "Featured Product",
+  "subtitle": "Our flagship formulation combining scientific innovation with premium ingredients",
+  "learn_more_button": "Learn More",
+  "layers": [
+    {
+      "id": "vitamin",
+      "name": "Vitamin Complex",
+      "title": "LikeoQ® Multivitamin Syrup",
+      "subtitle": "Complete Nutritional Support for All Ages",
+      "description": "LikeoQ® provides a comprehensive blend of 15 essential vitamins and 10 minerals in optimal ratios to support daily metabolic functions, energy production, and immune health.",
+      "benefits": [
+        { "icon": "fas fa-brain", "heading": "Cognitive Support", "description": "B vitamins for mental clarity" },
+        { "icon": "fas fa-heart", "heading": "Cardiovascular Health", "description": "CoQ10 for heart function" },
+        { "icon": "fas fa-shield-alt", "heading": "Immune Defense", "description": "Vitamins C, D, Zinc & Selenium" },
+        { "icon": "fas fa-bone", "heading": "Bone Health", "description": "Calcium & Vitamin K2" }
+      ]
+    },
+    {
+      "id": "mineral",
+      "name": "Mineral Matrix",
+      "title": "Advanced Mineral Matrix",
+      "subtitle": "Essential Minerals for Bone & Enzyme Function",
+      "description": "Our Mineral Matrix ensures optimal absorption of vital minerals like Calcium, Magnesium, Zinc, and Selenium, crucial for bone density, enzyme activity, and cellular health.",
+      "benefits": [
+        { "icon": "fas fa-bone", "heading": "Strong Bones & Teeth", "description": "Calcium, Magnesium, Phosphorus" },
+        { "icon": "fas fa-microscope", "heading": "Enzyme & Hormone Support", "description": "Zinc, Selenium, Copper" },
+        { "icon": "fas fa-balance-scale", "heading": "Electrolyte Balance", "description": "Potassium, Sodium, Chloride" },
+        { "icon": "fas fa-tint", "heading": "Fluid Regulation", "description": "Essential for hydration & nerve function" }
+      ]
+    },
+    {
+      "id": "bioavailability",
+      "name": "Bioavailability Enhancers",
+      "title": "Bioavailability Enhancers Complex",
+      "subtitle": "Maximize Nutrient Absorption & Efficacy",
+      "description": "This unique complex includes Piperine, Liposomal technology, and Co-factors to significantly enhance the absorption and utilization of all nutrients, ensuring maximum benefit from every dose.",
+      "benefits": [
+        { "icon": "fas fa-leaf", "heading": "Enhanced Absorption", "description": "Optimized uptake with Piperine" },
+        { "icon": "fas fa-flask", "heading": "Cellular Delivery", "description": "Liposomal technology for direct cell entry" },
+        { "icon": "fas fa-hand-holding-medical", "heading": "Synergistic Action", "description": "Co-factors for complete utilization" },
+        { "icon": "fas fa-chart-line", "heading": "Increased Efficacy", "description": "Ensures nutrients work at their best" }
+      ]
+    }
+  ]
+}

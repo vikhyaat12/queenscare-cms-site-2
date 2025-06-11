@@ -10,9 +10,9 @@
     <style>
         /* CSS Variables for Theme Colors */
         :root {
-            --primary: #0056b3;
-            --secondary: #0d8a72;
-            --accent: #d4af37;
+            --primary: {{ theme_colors.primary }};
+            --secondary: {{ theme_colors.secondary }};
+            --accent: {{ theme_colors.accent }};
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -41,7 +41,7 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary), #003a75);
+            background: linear-gradient(135deg, var(--primary), {{ theme_colors.header_gradient_end }});
             color: white;
             padding: 15px 0;
             position: fixed;
@@ -107,7 +107,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{{ content_hero.background_image }}');
             background-size: cover;
             background-position: center;
             color: white;
@@ -1468,49 +1468,36 @@
 
     <section class="hero" id="home">
         <div id="dna-helix"></div> <div class="container hero-content">
-            <h1>Advancing Health Through Innovation</h1>
-            <p>Pioneering scientific breakthroughs in pharmaceuticals and healthcare solutions for a healthier tomorrow.</p>
-            <a href="#products" class="btn">Explore Products</a>
-            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            <h1>{{ content_hero.heading }}</h1>
+            <p>{{ content_hero.paragraph }}</p>
+            <a href="#products" class="btn">{{ content_hero.button1_text }}</a>
+            <a href="#contact" class="btn btn-outline">{{ content_hero.button2_text }}</a>
         </div>
     </section>
 
     <section class="about-us" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Queens Care Laboratories</h2>
-                <p>Dedicated to excellence in research, development, and delivery of high-quality pharmaceutical products.</p>
+                <h2>{{ content_about.title }}</h2>
+                <p>{{ content_about.subtitle }}</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Our Mission & Vision</h3>
-                    <p>At Queens Care Laboratories, our mission is to improve global health by discovering, developing, and delivering innovative pharmaceutical solutions. We envision a future where advanced medical science is accessible to all, fostering healthier communities worldwide.</p>
-                    <p>With state-of-the-art facilities and a team of world-class scientists, we are committed to rigorous research, ethical practices, and sustainable growth. Our focus extends beyond just treatments; we aim to empower individuals with better health and a higher quality of life.</p>
+                    <h3>{{ content_about.story_heading }}</h3>
+                    <p>{{ content_about.story_paragraph1 }}</p>
+                    <p>{{ content_about.story_paragraph2 }}</p>
                     <div class="about-values">
+                        {% for value in content_about.values %}
                         <div class="value-item">
-                            <i class="fas fa-flask"></i>
-                            <h4>Innovation</h4>
-                            <p>Driving scientific discovery forward.</p>
+                            <i class="{{ value.icon }}"></i>
+                            <h4>{{ value.heading }}</h4>
+                            <p>{{ value.description }}</p>
                         </div>
-                        <div class="value-item">
-                            <i class="fas fa-heartbeat"></i>
-                            <h4>Patient-Centric</h4>
-                            <p>Prioritizing patient well-being in every step.</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-handshake"></i>
-                            <h4>Integrity</h4>
-                            <p>Upholding the highest ethical standards.</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-globe"></i>
-                            <h4>Global Impact</h4>
-                            <p>Contributing to health worldwide.</p>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://placehold.co/500x500/0056b3/ffffff?text=Our+Team" alt="Laboratory Team">
+                    <img src="{{ content_about.image_url }}" alt="{{ content_about.image_alt }}">
                 </div>
             </div>
         </div>
@@ -1519,70 +1506,26 @@
     <section class="therapeutic-areas" id="therapeutic-areas">
         <div class="container">
             <div class="section-title">
-                <h2>Our Therapeutic Areas</h2>
-                <p>Specializing in critical health sectors to address diverse medical needs with targeted solutions.</p>
+                <h2>{{ content_therapeutic_areas.title }}</h2>
+                <p>{{ content_therapeutic_areas.subtitle }}</p>
             </div>
             <div class="areas-container">
+                {% for area in content_therapeutic_areas.areas %}
                 <div class="area-card">
                     <div class="card-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>Neurology</h3>
+                        <i class="{{ area.icon }}"></i>
+                        <h3>{{ area.heading }}</h3>
                     </div>
                     <div class="card-body">
-                        <p>Dedicated to understanding and treating complex neurological disorders.</p>
+                        <p>{{ area.description }}</p>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Alzheimer's Disease Research</li>
-                            <li><i class="fas fa-check-circle"></i> Parkinson's Disease Therapies</li>
-                            <li><i class="fas fa-check-circle"></i> Migraine Management</li>
-                            <li><i class="fas fa-check-circle"></i> Epilepsy Treatments</li>
+                            {% for item in area.list_items %}
+                            <li><i class="fas fa-check-circle"></i> {{ item }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
-                <div class="area-card">
-                    <div class="card-header">
-                        <i class="fas fa-lungs"></i>
-                        <h3>Respiratory</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Developing advanced solutions for respiratory conditions and lung health.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Asthma Inhalers</li>
-                            <li><i class="fas fa-check-circle"></i> COPD Management</li>
-                            <li><i class="fas fa-check-circle"></i> Cystic Fibrosis Therapies</li>
-                            <li><i class="fas fa-check-circle"></i> Pulmonary Hypertension Drugs</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="area-card">
-                    <div class="card-header">
-                        <i class="fas fa-cancer"></i>
-                        <h3>Oncology</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Pioneering cancer research and innovative oncology treatments.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Immunotherapy Development</li>
-                            <li><i class="fas fa-check-circle"></i> Targeted Cancer Therapies</li>
-                            <li><i class="fas fa-check-circle"></i> Chemotherapy Enhancements</li>
-                            <li><i class="fas fa-check-circle"></i> Supportive Care for Cancer Patients</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="area-card">
-                    <div class="card-header">
-                        <i class="fas fa-heart"></i>
-                        <h3>Cardiovascular</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Committed to improving heart health and managing cardiovascular diseases.</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Hypertension Medications</li>
-                            <li><i class="fas fa-check-circle"></i> Cholesterol Management</li>
-                            <li><i class="fas fa-check-circle"></i> Heart Failure Treatments</li>
-                            <li><i class="fas fa-check-circle"></i> Anti-coagulant Therapies</li>
-                        </ul>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -1590,11 +1533,11 @@
     <section class="products-section" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Products</h2>
-                <p>A diverse portfolio of high-quality pharmaceutical products addressing various health needs.</p>
+                <h2>{{ content_products_section.title }}</h2>
+                <p>{{ content_products_section.subtitle }}</p>
             </div>
             <div class="products-filter">
-                <input type="text" id="productSearch" class="search-input" placeholder="Search products by name or category...">
+                <input type="text" id="productSearch" class="search-input" placeholder="{{ content_products_section.search_placeholder }}">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
             <div class="products-grid" id="productsGrid">
@@ -1689,30 +1632,17 @@
     <section class="why-choose-us">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Queens Care?</h2>
-                <p>Our commitment to quality, innovation, and patient well-being sets us apart.</p>
+                <h2>{{ content_why_choose_us.title }}</h2>
+                <p>{{ content_why_choose_us.subtitle }}</p>
             </div>
             <div class="why-grid">
+                {% for item in content_why_choose_us.items %}
                 <div class="why-item">
-                    <i class="fas fa-award"></i>
-                    <h3>Uncompromising Quality</h3>
-                    <p>Adhering to the highest international standards in manufacturing and research.</p>
+                    <i class="{{ item.icon }}"></i>
+                    <h3>{{ item.heading }}</h3>
+                    <p>{{ item.description }}</p>
                 </div>
-                <div class="why-item">
-                    <i class="fas fa-users-medical"></i>
-                    <h3>Expert Team</h3>
-                    <p>A dedicated group of scientists, researchers, and medical professionals.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovative Research</h3>
-                    <p>Continuously exploring new frontiers in medical science and technology.</p>
-                </div>
-                <div class="why-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Patient Safety</h3>
-                    <p>Ensuring the safety and efficacy of all our pharmaceutical products.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -1720,36 +1650,29 @@
     <section class="featured-product">
         <div class="container">
             <div class="section-title">
-                <h2>Featured Product: VitaBoost Complex</h2>
-                <p>A revolutionary multi-nutrient supplement designed for optimal daily health.</p>
+                <h2>{{ content_featured_product.title }}</h2>
+                <p>{{ content_featured_product.subtitle }}</p>
             </div>
             <div class="featured-container">
                 <div class="featured-image">
                     <div id="molecule-container"></div> <div class="nutrient-layers">
-                        <button class="layer-btn active" data-layer="vitamin">Vitamins</button>
-                        <button class="layer-btn" data-layer="mineral">Minerals</button>
-                        <button class="layer-btn" data-layer="antioxidant">Antioxidants</button>
+                        {% for layer in content_featured_product.layers %}
+                        <button class="layer-btn {% if loop.first %}active{% endif %}" data-layer="{{ layer.id }}">{{ layer.name }}</button>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="featured-details">
-                    <h3>VitaBoost Complex: Your Daily Wellness Partner</h3>
-                    <span class="subtitle">Advanced Multi-Nutrient Formula</span>
-                    <p>VitaBoost Complex is meticulously formulated with a synergistic blend of essential vitamins, minerals, and potent antioxidants to support overall health, energy, and immunity. Experience the difference of balanced nutrition.</p>
+                    <h3>{{ content_featured_product.layers[0].title }}</h3>
+                    <span class="subtitle">{{ content_featured_product.layers[0].subtitle }}</span>
+                    <p>{{ content_featured_product.layers[0].description }}</p>
                     <div class="benefits-grid">
+                        {% for benefit in content_featured_product.layers[0].benefits %}
                         <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i> Supports Immune System
+                            <i class="{{ benefit.icon }}"></i> {{ benefit.heading }}
                         </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i> Boosts Energy Levels
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i> Enhances Cognitive Function
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i> Promotes Healthy Skin & Hair
-                        </div>
+                        {% endfor %}
                     </div>
-                    <a href="#" class="btn">Learn More</a>
+                    <a href="#" class="btn">{{ content_featured_product.learn_more_button }}</a>
                 </div>
             </div>
         </div>
@@ -1758,59 +1681,21 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Patients Say</h2>
-                <p>Hear from individuals whose lives have been positively impacted by Queens Care products.</p>
+                <h2>{{ content_testimonials_section.title }}</h2>
+                <p>{{ content_testimonials_section.subtitle }}</p>
             </div>
             <div class="testimonial-slider">
+                {% for testimonial in testimonials %}
                 <div class="testimonial-card">
                     <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        {% for i in (1..testimonial.stars) %}<i class="fas fa-star"></i>{% endfor %}
                     </div>
-                    <p>"Queens Care's respiratory medication changed my life. I can breathe easier and live more freely. Truly grateful for their dedication to patient health."</p>
+                    <p>"{{ testimonial.quote }}"</p>
                     <div class="testimonial-author">
-                        <img src="https://placehold.co/50x50/d4af37/ffffff?text=JD" alt="Patient Avatar">
+                        <img src="{{ testimonial.image_url }}" alt="{{ testimonial.author_name }}">
                         <div>
-                            John D.
-                            <span>Asthma Patient</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>"The pain management solutions from Queens Care are incredibly effective. I finally found relief after years of searching. Highly recommend their products."</p>
-                    <div class="testimonial-author">
-                        <img src="https://placehold.co/50x50/0056b3/ffffff?text=AM" alt="Patient Avatar">
-                        <div>
-                            Anna M.
-                            <span>Chronic Pain Sufferer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Their commitment to quality is evident. My doctor recommended Queens Care, and I've felt a significant improvement in my overall well-being."</p>
-                    <div class="testimonial-author">
-                        <img src="https://placehold.co/50x50/0d8a72/ffffff?text=SK" alt="Patient Avatar">
-                        <div>
-                            Sarah K.
-                            <span>General Wellness</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"As a healthcare professional, I trust Queens Care Laboratories. Their research is cutting-edge, and their products deliver consistent, reliable results."</p>
-                    <div class="testimonial-author">
-                        <img src="https://placehold.co/50x50/6c757d/ffffff?text=DR" alt="Patient Avatar">
-                        <div>
-                            Dr. Robert L.
-                            <span>Medical Practitioner</span>
+                            {{ testimonial.author_name }}
+                            <span>{{ testimonial.author_title }}</span>
                         </div>
                     </div>
                 </div>
@@ -1821,44 +1706,21 @@
     <section class="faqs">
         <div class="container">
             <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our products and services.</p>
+                <h2>{{ content_faqs_section.title }}</h2>
+                <p>{{ content_faqs_section.subtitle }}</p>
             </div>
             <div class="faq-container">
+                {% for faq in faqs %}
                 <div class="faq-item">
                     <div class="faq-question">
-                        What makes Queens Care Laboratories unique?
+                        {{ faq.question }}
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Queens Care Laboratories stands out due to our unwavering commitment to scientific rigor, patient-centric approach, and continuous innovation. We invest heavily in R&D to bring groundbreaking therapies to market, ensuring the highest standards of quality and safety.</p>
+                        <p>{{ faq.answer }}</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Are your products FDA approved?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, all our pharmaceutical products undergo stringent testing and comply with all relevant regulatory body guidelines, including FDA (or equivalent international bodies) approvals, before being released to the market. Patient safety and product efficacy are our top priorities.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How can I purchase your products?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our products are primarily available through licensed pharmacies and healthcare providers. For specific product availability or to find a distributor near you, please contact our customer service team or consult with your healthcare professional.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do you offer international shipping?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Queens Care Laboratories operates globally through a network of authorized distributors. Please check with your local distributor or contact us directly to inquire about product availability and shipping options in your region.</p>
+                {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1868,34 +1730,18 @@
     <section class="future-products">
         <div class="container">
             <div class="section-title">
-                <h2>Our Pipeline: Future Innovations</h2>
-                <p>A glimpse into the groundbreaking therapies and solutions currently under development.</p>
+                <h2>{{ content_pipeline.title }}</h2>
+                <p>{{ content_pipeline.subtitle }}</p>
             </div>
             <div class="pipeline">
+                {% for item in content_pipeline.items %}
                 <div class="pipeline-item">
-                    <i class="fas fa-dna"></i>
-                    <h3>Gene Therapy for Rare Diseases</h3>
-                    <span class="phase-badge phase-2">Phase II Clinical Trials</span>
-                    <p>Developing targeted gene therapies to address the root causes of rare genetic disorders, offering new hope for patients.</p>
+                    <i class="{{ item.icon }}"></i>
+                    <h3>{{ item.heading }}</h3>
+                    <span class="phase-badge {{ item.phase_class }}">{{ item.phase_text }}</span>
+                    <p>{{ item.description }}</p>
                 </div>
-                <div class="pipeline-item">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Next-Gen Antibiotics</h3>
-                    <span class="phase-badge phase-1">Pre-clinical Research</span>
-                    <p>Innovating new classes of antibiotics to combat multi-drug resistant bacteria, a critical global health challenge.</p>
-                </div>
-                <div class="pipeline-item">
-                    <i class="fas fa-syringe"></i>
-                    <h3>Personalized Cancer Vaccines</h3>
-                    <span class="phase-badge phase-3">Phase III Clinical Trials</span>
-                    <p>Creating highly personalized vaccines tailored to individual patient's cancer profiles for more effective treatment.</p>
-                </div>
-                <div class="pipeline-item">
-                    <i class="fas fa-user-md"></i>
-                    <h3>AI-Powered Diagnostics</h3>
-                    <span class="phase-badge phase-1">Concept & Development</span>
-                    <p>Leveraging artificial intelligence to enhance early disease detection and improve diagnostic accuracy.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -1903,8 +1749,8 @@
     <section class="scientific-differentiation">
         <div class="container">
             <div class="section-title">
-                <h2>Scientific Differentiation</h2>
-                <p>What sets our research and development apart from the competition.</p>
+                <h2>{{ content_scientific_differentiation.title }}</h2>
+                <p>{{ content_scientific_differentiation.subtitle }}</p>
             </div>
             <table class="differentiation-table">
                 <thead>
@@ -1916,36 +1762,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for row in content_scientific_differentiation.table_rows %}
                     <tr>
-                        <td>R&D Investment (Annual)</td>
-                        <td><span class="stat-highlight">$$$ (High)</span></td>
-                        <td>$$ (Medium)</td>
-                        <td>$ (Low)</td>
+                        <td>{{ row.feature }}</td>
+                        <td><span class="stat-highlight">{{ row.queens_care_value }}</span></td>
+                        <td>{{ row.industry_standard_value }}</td>
                     </tr>
-                    <tr>
-                        <td>Proprietary Technology</td>
-                        <td><i class="fas fa-check-circle"></i> Yes (Multiple Patents)</td>
-                        <td><i class="fas fa-times-circle"></i> Limited</td>
-                        <td><i class="fas fa-times-circle"></i> No</td>
-                    </tr>
-                    <tr>
-                        <td>Clinical Trial Success Rate</td>
-                        <td><span class="stat-highlight">>85%</span></td>
-                        <td>~70%</td>
-                        <td>~60%</td>
-                    </tr>
-                    <tr>
-                        <td>Patient Outcome Focus</td>
-                        <td><i class="fas fa-check-circle"></i> Excellent</td>
-                        <td><i class="fas fa-check-circle"></i> Good</td>
-                        <td><i class="fas fa-times-circle"></i> Moderate</td>
-                    </tr>
-                    <tr>
-                        <td>Global Collaborations</td>
-                        <td><i class="fas fa-check-circle"></i> Extensive</td>
-                        <td><i class="fas fa-times-circle"></i> Limited</td>
-                        <td><i class="fas fa-times-circle"></i> None</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -1954,29 +1777,19 @@
     <section class="advisory">
         <div class="container">
             <div class="section-title">
-                <h2>Important Advisory</h2>
-                <p>Ensuring transparency and adherence to medical guidelines.</p>
+                <h2>{{ content_advisory.title }}</h2>
+                <p>{{ content_advisory.subtitle }}</p>
             </div>
             <div class="advisory-statement">
-                <p>The information provided on this website is for general informational purposes only and does not constitute medical advice. Always consult with a qualified healthcare professional for diagnosis and treatment of any medical condition. Our products are intended for use under medical supervision.</p>
+                <p>{{ content_advisory.quote }}</p>
             </div>
             <div class="certifications">
+                {% for cert in content_advisory.certifications %}
                 <div class="cert-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>GMP Certified</span>
+                    <i class="{{ cert.icon }}"></i>
+                    <span>{{ cert.name }}</span>
                 </div>
-                <div class="cert-badge">
-                    <i class="fas fa-leaf"></i>
-                    <span>ISO 9001:2015</span>
-                </div>
-                <div class="cert-badge">
-                    <i class="fas fa-certificate"></i>
-                    <span>FDA Compliant</span>
-                </div>
-                <div class="cert-badge">
-                    <i class="fas fa-microscope"></i>
-                    <span>Research Driven</span>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -2008,12 +1821,12 @@
     <section class="contact-us" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Reach out to us for inquiries, partnerships, or support.</p>
+                <h2>{{ content_contact_us.title }}</h2>
+                <p>{{ content_contact_us.subtitle }}</p>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
-                    <h3>Send Us a Message</h3>
+                    <h3>{{ content_contact_us.form_heading }}</h3>
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -2031,43 +1844,22 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Your message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">{{ content_contact_us.form_button }}</button>
                     </form>
                 </div>
                 <div class="contact-info-block">
+                    {% for detail in content_contact_us.details %}
                     <div class="contact-details-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="{{ detail.icon }}"></i>
                         <div>
-                            <h4>Our Headquarters</h4>
-                            <p>123 Pharma Avenue, Science City,<br> Healthland, HL 12345</p>
+                            <h4>{{ detail.heading }}</h4>
+                            <p>{{ detail.description }}</p>
+                            {% if detail.link_text %}<a href="{{ detail.link }}" {% if detail.link_target %}target="{{ detail.link_target }}"{% endif %}>{{ detail.link_text }}</a>{% endif %}
                         </div>
                     </div>
-                    <div class="contact-details-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                            <p><a href="tel:+1987654321">+1 (987) 654-321</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-details-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp Us</h4>
-                            <p>Connect instantly for quick queries.</p>
-                            <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank">+91 97600 06841</a>
-                        </div>
-                    </div>
-                    <div class="contact-details-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p><a href="mailto:info@queenscarelabs.com">info@queenscarelabs.com</a></p>
-                            <p><a href="mailto:support@queenscarelabs.com">support@queenscarelabs.com</a></p>
-                        </div>
-                    </div>
+                    {% endfor %}
                     <div class="google-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.780676102029!2d-93.2669865844877!3d44.9777529790924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b332961e0f0c0f%3A0x86b0f3f2d2b2d2b2!2sScience%20Museum%20of%20Minnesota!5e0!3m2!1sen!2sus!4v1678234567890!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="{{ content_contact_us.map_iframe_src }}" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -2077,62 +1869,49 @@
     <footer>
         <div class="container footer-container">
             <div class="footer-column">
-                <h4>Queens Care Labs</h4>
-                <p>Pioneering pharmaceutical innovation for a healthier world. Committed to research, quality, and patient well-being.</p>
+                <h4>{{ content_footer.company_name }}</h4>
+                <p>{{ content_footer.company_description }}</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    {% for link in content_footer.social_links %}
+                    <a href="{{ link.url }}" aria-label="{{ link.icon | replace('fab fa-', '') | capitalize }}"><i class="{{ link.icon }}"></i></a>
+                    {% endfor %}
                 </div>
             </div>
             <div class="footer-column">
-                <h4>Quick Links</h4>
+                <h4>{{ content_footer.quick_links_heading }}</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#therapeutic-areas">Therapeutic Areas</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#future-products">Pipeline</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#gemini-ai-chat">Ask AI</a></li> </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#contact">Contact Support</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Careers</a></li>
+                    {% for link in content_footer.quick_links %}
+                    <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Contact Info</h4>
+                <h4>{{ content_footer.legal_heading }}</h4>
+                <ul>
+                    {% for link in content_footer.legal_links %}
+                    <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>{{ content_footer.contact_info_heading }}</h4>
                 <div class="contact-info">
+                    {% for item in content_footer.contact_info_items %}
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Pharma Ave, Science City, Healthland</span>
+                        <i class="{{ item.icon }}"></i>
+                        <span>{{ item.text }}</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>+1 (234) 567-890</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@queenscarelabs.com</span>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div class="copyright">
-            © 2025 Queens Care Laboratories. All rights reserved.
+            © {{ content_footer.copyright_year }} {{ content_footer.company_name }}. All rights reserved.
         </div>
     </footer>
 
-    <a href="https://wa.me/919760006841?text=Hello%20Queens%20Care%20Laboratories%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="whatsapp-float" target="_blank" aria-label="WhatsApp Us">
-        <i class="fab fa-whatsapp"></i>
+    <a href="{{ content_whatsapp_float.url }}" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us">
+        <i class="{{ content_whatsapp_float.icon }}"></i>
     </a>
 
     <script>

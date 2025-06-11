@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+    <title>{{ settings.general.siteTitle }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: {{ site.colors.primary }};
-            --secondary: {{ site.colors.secondary }};
-            --accent: {{ site.colors.accent }};
+            --primary: {{ theme_colors.primary }};
+            --secondary: {{ theme_colors.secondary }};
+            --accent: {{ theme_colors.accent }};
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -38,7 +38,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), {{ site.colors.header_gradient_end }});
+            background: linear-gradient(135deg, var(--primary), {{ theme_colors.header_gradient_end }});
             color: white;
             padding: 15px 0;
             position: fixed;
@@ -103,7 +103,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{{ site.hero_background_image }}');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{{ content_hero.background_image }}');
             background-size: cover;
             background-position: center;
             color: white;
@@ -1117,10 +1117,10 @@
         <div id="dna-helix"></div> 
         <div class="container">
             <div class="hero-content">
-                <h1>{{ site.hero.heading }}</h1>
-                <p>{{ site.hero.paragraph }}</p>
-                <a href="#products" class="btn">{{ site.hero.button1_text }}</a>
-                <a href="#contact-us-section" class="btn btn-outline">{{ site.hero.button2_text }}</a>
+                <h1>{{ content_hero.heading }}</h1>
+                <p>{{ content_hero.paragraph }}</p>
+                <a href="#products" class="btn">{{ content_hero.button1_text }}</a>
+                <a href="#contact-us-section" class="btn btn-outline">{{ content_hero.button2_text }}</a>
             </div>
         </div>
     </section>
@@ -1128,22 +1128,22 @@
     <section class="about-us" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.about.title }}</h2>
-                <p>{{ site.about.subtitle }}</p>
+                <h2>{{ content_about.title }}</h2>
+                <p>{{ content_about.subtitle }}</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>{{ site.about.story_heading }}</h3>
-                    <p>{{ site.about.story_paragraph1 }}</p>
-                    <p>{{ site.about.story_paragraph2 }}</p>
-                    <p>{{ site.about.story_paragraph3 }}</p>
+                    <h3>{{ content_about.story_heading }}</h3>
+                    <p>{{ content_about.story_paragraph1 }}</p>
+                    <p>{{ content_about.story_paragraph2 }}</p>
+                    <p>{{ content_about.story_paragraph3 }}</p>
                 </div>
                 <div class="about-image">
-                    <img src="{{ site.about.image_url }}" alt="{{ site.about.image_alt }}">
+                    <img src="{{ content_about.image_url }}" alt="{{ content_about.image_alt }}">
                 </div>
             </div>
             <div class="about-values">
-                {% for value in site.about.values %}
+                {% for value in content_about.values %}
                 <div class="value-item">
                     <i class="{{ value.icon }}"></i>
                     <h4>{{ value.heading }}</h4>
@@ -1157,12 +1157,12 @@
     <section class="therapeutic-areas" id="therapeutic">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.therapeutic_areas.title }}</h2>
-                <p>{{ site.therapeutic_areas.subtitle }}</p>
+                <h2>{{ content_therapeutic_areas.title }}</h2>
+                <p>{{ content_therapeutic_areas.subtitle }}</p>
             </div>
             
             <div class="areas-container">
-                {% for area in site.therapeutic_areas.areas %}
+                {% for area in content_therapeutic_areas.areas %}
                 <div class="area-card">
                     <div class="card-header">
                         <i class="{{ area.icon }}"></i>
@@ -1185,12 +1185,12 @@
     <section class="products-section" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.products_section.title }}</h2>
-                <p>{{ site.products_section.subtitle }}</p>
+                <h2>{{ content_products_section.title }}</h2>
+                <p>{{ content_products_section.subtitle }}</p>
             </div>
             
             <div class="products-filter">
-                <input type="text" class="search-input" placeholder="{{ site.products_section.search_placeholder }}">
+                <input type="text" class="search-input" placeholder="{{ content_products_section.search_placeholder }}">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
             
@@ -1218,11 +1218,11 @@
     <section class="why-choose-us" id="why-choose-us">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.why_choose_us.title }}</h2>
-                <p>{{ site.why_choose_us.subtitle }}</p>
+                <h2>{{ content_why_choose_us.title }}</h2>
+                <p>{{ content_why_choose_us.subtitle }}</p>
             </div>
             <div class="why-grid">
-                {% for item in site.why_choose_us.items %}
+                {% for item in content_why_choose_us.items %}
                 <div class="why-item">
                     <i class="{{ item.icon }}"></i>
                     <h3>{{ item.heading }}</h3>
@@ -1236,26 +1236,26 @@
     <section class="featured-product" id="featured">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.featured_product.title }}</h2>
-                <p>{{ site.featured_product.subtitle }}</p>
+                <h2>{{ content_featured_product.title }}</h2>
+                <p>{{ content_featured_product.subtitle }}</p>
             </div>
             
             <div class="featured-container">
                 <div class="featured-image">
                     <div id="molecule-container"></div> 
                     <div class="nutrient-layers">
-                        {% for layer in site.featured_product.layers %}
+                        {% for layer in content_featured_product.layers %}
                         <div class="layer-btn {% if loop.first %}active{% endif %}" data-layer="{{ layer.id }}">{{ layer.name }}</div>
                         {% endfor %}
                     </div>
                 </div>
                 <div class="featured-details">
-                    <h3 id="featured-title">{{ site.featured_product.layers[0].title }}</h3>
-                    <span class="subtitle" id="featured-subtitle">{{ site.featured_product.layers[0].subtitle }}</span>
-                    <p id="featured-description">{{ site.featured_product.layers[0].description }}</p>
+                    <h3 id="featured-title">{{ content_featured_product.layers[0].title }}</h3>
+                    <span class="subtitle" id="featured-subtitle">{{ content_featured_product.layers[0].subtitle }}</span>
+                    <p id="featured-description">{{ content_featured_product.layers[0].description }}</p>
                     
                     <div class="benefits-grid" id="featured-benefits">
-                        {% for benefit in site.featured_product.layers[0].benefits %}
+                        {% for benefit in content_featured_product.layers[0].benefits %}
                         <div class="benefit-item">
                             <i class="{{ benefit.icon }}"></i>
                             <div>
@@ -1265,7 +1265,7 @@
                         </div>
                         {% endfor %}
                     </div>
-                    <a href="#" class="btn">{{ site.featured_product.learn_more_button }}</a>
+                    <a href="#" class="btn">{{ content_featured_product.learn_more_button }}</a>
                 </div>
             </div>
         </div>
@@ -1274,11 +1274,11 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.testimonials.title }}</h2>
-                <p>{{ site.testimonials.subtitle }}</p>
+                <h2>{{ content_testimonials_overview.title }}</h2>
+                <p>{{ content_testimonials_overview.subtitle }}</p>
             </div>
             <div class="testimonial-slider">
-                {% for testimonial in site.testimonials.items %}
+                {% for testimonial in testimonials %}
                 <div class="testimonial-card">
                     <div class="stars">
                         {% for i in (1..testimonial.stars) %}
@@ -1300,8 +1300,8 @@
     <section class="faqs" id="faqs">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.faqs_section.title }}</h2>
-                <p>{{ site.faqs_section.subtitle }}</p>
+                <h2>{{ content_faqs_section.title }}</h2>
+                <p>{{ content_faqs_section.subtitle }}</p>
             </div>
             <div class="faq-container">
                 {% for faq in faqs %}
@@ -1322,12 +1322,12 @@
     <section class="future-products" id="pipeline">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.pipeline.title }}</h2>
-                <p>{{ site.pipeline.subtitle }}</p>
+                <h2>{{ content_pipeline.title }}</h2>
+                <p>{{ content_pipeline.subtitle }}</p>
             </div>
             
             <div class="pipeline">
-                {% for item in site.pipeline.items %}
+                {% for item in content_pipeline.items %}
                 <div class="pipeline-item">
                     <i class="{{ item.icon }}"></i>
                     <h3>{{ item.heading }}</h3>
@@ -1342,8 +1342,8 @@
     <section class="scientific-differentiation">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.scientific_differentiation.title }}</h2>
-                <p>{{ site.scientific_differentiation.subtitle }}</p>
+                <h2>{{ content_scientific_differentiation.title }}</h2>
+                <p>{{ content_scientific_differentiation.subtitle }}</p>
             </div>
             
             <table class="differentiation-table">
@@ -1355,7 +1355,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for row in site.scientific_differentiation.table_rows %}
+                    {% for row in content_scientific_differentiation.table_rows %}
                     <tr>
                         <td>{{ row.feature }}</td>
                         <td><span class="stat-highlight">{{ row.queens_care_value }}</span></td>
@@ -1370,16 +1370,16 @@
     <section class="advisory">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.advisory.title }}</h2>
-                <p>{{ site.advisory.subtitle }}</p>
+                <h2>{{ content_advisory.title }}</h2>
+                <p>{{ content_advisory.subtitle }}</p>
             </div>
             
             <div class="advisory-statement">
-                <p>“{{ site.advisory.quote }}”</p>
+                <p>“{{ content_advisory.quote }}”</p>
             </div>
             
             <div class="certifications">
-                {% for cert in site.advisory.certifications %}
+                {% for cert in content_advisory.certifications %}
                 <div class="cert-badge">
                     <i class="{{ cert.icon }}"></i>
                     <span>{{ cert.name }}</span>
@@ -1392,12 +1392,12 @@
     <section class="contact-us" id="contact-us-section">
         <div class="container">
             <div class="section-title">
-                <h2>{{ site.contact_us.title }}</h2>
-                <p>{{ site.contact_us.subtitle }}</p>
+                <h2>{{ content_contact_us.title }}</h2>
+                <p>{{ content_contact_us.subtitle }}</p>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
-                    <h3>{{ site.contact_us.form_heading }}</h3>
+                    <h3>{{ content_contact_us.form_heading }}</h3>
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -1411,11 +1411,11 @@
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">{{ site.contact_us.form_button }}</button>
+                        <button type="submit" class="btn">{{ content_contact_us.form_button }}</button>
                     </form>
                 </div>
                 <div class="contact-info-block">
-                    {% for detail in site.contact_us.details %}
+                    {% for detail in content_contact_us.details %}
                     <div class="contact-details-item">
                         <i class="{{ detail.icon }}"></i>
                         <div>
@@ -1428,7 +1428,7 @@
                     </div>
                     {% endfor %}
                     <div class="google-map">
-                        <iframe src="{{ site.contact_us.map_iframe_src }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{ content_contact_us.map_iframe_src }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -1438,34 +1438,34 @@
     <footer id="footer">
         <div class="container footer-container">
             <div class="footer-column">
-                <h4>{{ site.footer.company_name }}</h4>
-                <p>{{ site.footer.company_description }}</p>
+                <h4>{{ content_footer.company_name }}</h4>
+                <p>{{ content_footer.company_description }}</p>
                 <div class="social-links">
-                    {% for social in site.footer.social_links %}
+                    {% for social in content_footer.social_links %}
                     <a href="{{ social.url }}"><i class="{{ social.icon }}"></i></a>
                     {% endfor %}
                 </div>
             </div>
             <div class="footer-column">
-                <h4>{{ site.footer.quick_links_heading }}</h4>
+                <h4>{{ content_footer.quick_links_heading }}</h4>
                 <ul>
-                    {% for link in site.footer.quick_links %}
+                    {% for link in content_footer.quick_links %}
                     <li><a href="{{ link.url }}">{{ link.text }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>{{ site.footer.legal_heading }}</h4>
+                <h4>{{ content_footer.legal_heading }}</h4>
                 <ul>
-                    {% for link in site.footer.legal_links %}
+                    {% for link in content_footer.legal_links %}
                     <li><a href="{{ link.url }}">{{ link.text }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>{{ site.footer.contact_info_heading }}</h4>
+                <h4>{{ content_footer.contact_info_heading }}</h4>
                 <div class="contact-info">
-                    {% for item in site.footer.contact_info_items %}
+                    {% for item in content_footer.contact_info_items %}
                     <div class="contact-item">
                         <i class="{{ item.icon }}"></i>
                         <span>{{ item.text }}</span>
@@ -1475,12 +1475,12 @@
             </div>
         </div>
         <div class="copyright">
-            © {{ site.footer.copyright_year }} {{ site.footer.company_name }}. All rights reserved.
+            © {{ content_footer.copyright_year }} {{ content_footer.company_name }}. All rights reserved.
         </div>
     </footer>
 
-    <a href="{{ site.whatsapp_float.url }}" class="whatsapp-float" target="_blank">
-        <i class="{{ site.whatsapp_float.icon }}"></i>
+    <a href="{{ content_whatsapp_float.url }}" class="whatsapp-float" target="_blank">
+        <i class="{{ content_whatsapp_float.icon }}"></i>
     </a>
 
     <script>
@@ -1735,7 +1735,7 @@
             const featuredBenefits = document.getElementById('featured-benefits');
 
             const layerContent = {
-                {% for layer in site.featured_product.layers %}
+                {% for layer in content_featured_product.layers %}
                 {{ layer.id }}: {
                     title: "{{ layer.title }}",
                     subtitle: "{{ layer.subtitle }}",

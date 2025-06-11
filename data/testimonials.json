@@ -1,0 +1,37 @@
+[
+  {
+    "stars": 5,
+    "quote": "Queens Care Laboratories' products have significantly improved my overall health. The quality is unmatched!",
+    "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Dr.P",
+    "author_name": "Dr. Priya Sharma",
+    "author_title": "General Physician"
+  },
+  {
+    "stars": 5,
+    "quote": "I've been using LikeoQ® Multivitamin Syrup for my children, and I've noticed a remarkable improvement in their energy levels and immunity.",
+    "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Mrs.A",
+    "author_name": "Mrs. Anjali Singh",
+    "author_title": "Parent & Homemaker"
+  },
+  {
+    "stars": 5,
+    "quote": "The research pipeline at Queens Care is truly impressive. They are at the forefront of pharmaceutical innovation.",
+    "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Prof.R",
+    "author_name": "Prof. Rahul Kumar",
+    "author_title": "Pharmacology Researcher"
+  },
+  {
+    "stars": 5,
+    "quote": "As a fitness enthusiast, finding supplements that genuinely work is hard. Queens Care's products have become a staple in my routine!",
+    "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Mr.V",
+    "author_name": "Mr. Vikramjeet Singh",
+    "author_title": "Fitness Coach"
+  },
+  {
+    "stars": 5,
+    "quote": "I highly recommend Queens Care for their commitment to quality and efficacy. Their products are a game-changer for daily health.",
+    "image_url": "https://placehold.co/80x80/0d8a72/ffffff?text=Ms.S",
+    "author_name": "Ms. Sneha Reddy",
+    "author_title": "Nutritionist"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "title": "Our Research Pipeline",
+  "subtitle": "Innovating for tomorrow's health challenges with a robust pipeline of new formulations.",
+  "items": [
+    {
+      "icon": "fas fa-microscope",
+      "heading": "Advanced Oncology Drug",
+      "phase_class": "phase-2",
+      "phase_text": "Phase II Clinical Trials",
+      "description": "Targeted therapy for specific cancer types, showing promising results in early trials."
+    },
+    {
+      "icon": "fas fa-virus",
+      "heading": "Next-Gen Antiviral Agent",
+      "phase_class": "phase-1",
+      "phase_text": "Pre-Clinical Research",
+      "description": "Novel broad-spectrum antiviral with potential against emerging viral threats."
+    },
+    {
+      "icon": "fas fa-dna",
+      "heading": "Gene Therapy for Rare Diseases",
+      "phase_class": "phase-3",
+      "phase_text": "Phase III Clinical Trials",
+      "description": "Groundbreaking gene therapy aiming to correct genetic defects in rare conditions."
+    },
+    {
+      "icon": "fas fa-brain",
+      "heading": "Neurodegenerative Disorder Treatment",
+      "phase_class": "phase-1",
+      "phase_text": "Discovery Phase",
+      "description": "Exploring new pathways for treating Alzheimer's and Parkinson's diseases."
+    }
+  ]
+}

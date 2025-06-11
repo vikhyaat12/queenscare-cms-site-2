@@ -1,0 +1,26 @@
+{
+  "title": "Our Scientific Edge",
+  "subtitle": "What sets Queens Care Laboratories apart: innovation, quality, and proven efficacy.",
+  "table_rows": [
+    {
+      "feature": "Research & Development Investment",
+      "queens_care_value": "15% of Revenue",
+      "industry_standard_value": "5-8% of Revenue"
+    },
+    {
+      "feature": "Quality Control Protocols",
+      "queens_care_value": "Triple-Layered QA",
+      "industry_standard_value": "Standard QA"
+    },
+    {
+      "feature": "Bioavailability Enhancement",
+      "queens_care_value": "Proprietary Liposomal Delivery",
+      "industry_standard_value": "Conventional Absorption"
+    },
+    {
+      "feature": "Clinical Trial Success Rate",
+      "queens_care_value": "75%",
+      "industry_standard_value": "40-50%"
+    }
+  ]
+}
